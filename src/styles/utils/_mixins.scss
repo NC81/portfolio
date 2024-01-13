@@ -1,0 +1,11 @@
+@mixin page-titre($priColor, $secColor) {
+  display: flex;
+  margin-bottom: 70px;
+  &:after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    margin-top: 18px;
+    background: linear-gradient(90deg, $color-intro, $secColor 95%);
+  }
+}

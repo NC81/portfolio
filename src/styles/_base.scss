@@ -1,13 +1,49 @@
+@font-face {
+  font-family: "Libre Franklin";
+  src: url(../assets/LibreFranklin-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Telegraph";
+  src: url(../assets/Telegraf-Regular-400.otf);
+}
+
 body {
-    margin: auto;
-    width: 1000px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: black;
-    color: white;
-    user-select: none;
-  }
+  margin: auto;
+  width: 100%;
+  font-family: "Libre Franklin", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color: white;
+  user-select: none;
+}
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1 {
+  position: absolute;
+  bottom: 10%;
+  width: 425px;
+  margin: 0;
+  font: bold 7rem "Telegraph";
+}
+
+h2 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 2.1rem;
+}
+
+.page-conteneur {
+  position: relative;
+  height: 900px;
+  padding: 70px 50px 0 0;
+  .page-contenu {
+    width: 90%;
+    margin: auto;
   }
+}
