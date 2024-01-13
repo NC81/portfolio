@@ -6,7 +6,7 @@
     rgba(92, 53, 57, 1) 100%
   );
   .page-titre {
-    @include page-titre($color-intro, black);
+    @include page-titre($color-intro);
   }
 }
 

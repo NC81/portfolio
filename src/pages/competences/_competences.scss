@@ -1,0 +1,44 @@
+.page-competences {
+  color: white;
+  background: linear-gradient(180deg, rgb(92, 53, 57) 0%, #bb7c4e 100%);
+  .page-titre {
+    @include page-titre(white);
+  }
+  &__corps {
+    display: flex;
+    justify-content: space-between;
+    gap: 4%;
+  }
+  &__metier {
+    width: 46%;
+    ul {
+      margin-top: 70px;
+    }
+    li {
+      margin-bottom: 25px;
+    }
+  }
+  &__graphique {
+    position: relative;
+    width: 42%;
+    height: 620px;
+    ul {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      z-index: 1;
+      list-style: none;
+      font: bold 1.3rem "Telegraph";
+      letter-spacing: 0.3rem;
+      text-align: center;
+      li {
+        line-height: 35px;
+      }
+    }
+  }
+}
