@@ -10,10 +10,10 @@ export default function Intro() {
         <div className="page-titre">
           <h2>Nom de page</h2>
         </div>
-        <div className="galerie-intro">
-          <img className="galerie-intro__img--petit" src={cerveau} alt="" />
-          <img className="galerie-intro__img--moyen" src={vaisseau} alt="" />
-          <div className="galerie-intro__hero">
+        <div className="page-intro-corps">
+          <img className="page-intro-corps__img--petit" src={cerveau} alt="" />
+          <img className="page-intro-corps__img--moyen" src={vaisseau} alt="" />
+          <div className="image page-intro-corps__hero">
             <img src={hero} alt="" />
             <span>VOIR MON TRAVAIL</span>
           </div>

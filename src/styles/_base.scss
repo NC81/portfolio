@@ -17,7 +17,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  font-weight: 300;
   user-select: none;
 }
 
@@ -27,21 +28,21 @@ body {
 
 h1 {
   position: absolute;
-  bottom: 10%;
+  bottom: 22%;
   width: 425px;
   margin: 0;
-  font: bold 7rem "Telegraph";
+  font: bold 6.5rem "Telegraph";
 }
 
 h2 {
   margin: 0 40px 0 0;
-  font-weight: 400;
-  font-size: 2.1rem;
+  font-weight: 300;
+  font-size: 1.8rem;
 }
 
 h3 {
   margin: 0;
-  font: normal 1.6rem "Telegraph";
+  font: 700 1.3rem "Telegraph";
   letter-spacing: 0.3rem;
   line-height: 34px;
   text-align: center;
@@ -50,9 +51,19 @@ h3 {
 .page-conteneur {
   position: relative;
   height: 900px;
-  padding: 70px 50px 0 0;
+  padding: 70px 40px 0 0;
   .page-contenu {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
   }
+}
+
+.image {
+  width: 42%;
+}
+
+.lien {
+  font: bold 1.5rem "Telegraph";
+  text-align: center;
 }

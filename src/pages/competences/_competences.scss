@@ -1,6 +1,7 @@
 .page-competences {
   color: white;
-  background: linear-gradient(180deg, rgb(92, 53, 57) 0%, #bb7c4e 100%);
+  background: linear-gradient(180deg, $color-sec 0%, #bb7c4e 100%);
+  font-size: 1.35rem;
   .page-titre {
     @include page-titre(white);
   }
@@ -10,7 +11,8 @@
     gap: 4%;
   }
   &__metier {
-    width: 46%;
+    width: 49%;
+    text-align: justify;
     ul {
       margin-top: 70px;
     }
@@ -20,8 +22,7 @@
   }
   &__graphique {
     position: relative;
-    width: 42%;
-    height: 620px;
+    height: 540px;
     ul {
       position: absolute;
       display: flex;
@@ -33,11 +34,11 @@
       padding: 0;
       z-index: 1;
       list-style: none;
-      font: bold 1.3rem "Telegraph";
+      font: bold 1rem "Telegraph";
       letter-spacing: 0.3rem;
       text-align: center;
       li {
-        line-height: 35px;
+        line-height: 32px;
       }
     }
   }

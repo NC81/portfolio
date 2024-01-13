@@ -1,22 +1,17 @@
 .page-intro {
-  color: $color-intro;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(92, 53, 57, 1) 100%
-  );
+  color: $color-pri;
+  background: linear-gradient(180deg, black 0%, $color-sec 100%);
   .page-titre {
-    @include page-titre($color-intro);
+    @include page-titre($color-pri);
   }
 }
 
-.galerie-intro {
+.page-intro-corps {
   display: flex;
   justify-content: space-between;
   img {
     height: fit-content;
-    object-fit: cover;
-    border: 1px solid $color-intro;
+    border: 1px solid $color-pri;
   }
   &__img--petit {
     width: 15%;
@@ -26,7 +21,6 @@
   }
   &__hero {
     position: relative;
-    width: 42%;
     img {
       width: 100%;
     }

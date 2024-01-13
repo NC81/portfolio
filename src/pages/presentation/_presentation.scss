@@ -1,0 +1,22 @@
+.page-presentation {
+  color: $color-ter;
+  background-color: $color-sec;
+  .page-titre {
+    @include page-titre($color-ter);
+  }
+  &__corps {
+    display: flex;
+    justify-content: space-between;
+    img {
+      border: 1px solid $color-ter;
+    }
+  }
+  &__corps {
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 48%;
+    }
+  }
+}

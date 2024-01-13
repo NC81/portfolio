@@ -85,7 +85,7 @@ export default function Competences() {
               <li>Mettre en œuvre une veille technologique</li>
             </ul>
           </div>
-          <div className="page-competences__graphique">
+          <div className="image page-competences__graphique">
             <ul>
               {data.map((el, index) => (
                 <li key={`el.name-${index}`}>{el.name}</li>
@@ -98,7 +98,7 @@ export default function Competences() {
                   top: -15,
                   bottom: -15,
                 }}
-                barSize={35}
+                barSize={32}
                 layout="vertical"
               >
                 <XAxis hide type="number" domain={[0, 5]} />

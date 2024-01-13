@@ -1,4 +1,4 @@
-@mixin page-titre($priColor) {
+@mixin page-titre($color) {
   display: flex;
   margin-bottom: 75px;
   &:after {
@@ -6,6 +6,6 @@
     flex: 1;
     height: 1px;
     margin-top: 18px;
-    background: linear-gradient(90deg, $color-intro, transparent);
+    background: linear-gradient(90deg, $color, transparent);
   }
 }
