@@ -1,4 +1,4 @@
-export default function Presentation({ donnees, inverse }) {
+export default function Presentation({ donnees, inverse, epique }) {
   const styleDuConteneur = {
     color: `${donnees.couleur.texte}`,
     background: `linear-gradient(180deg, ${donnees.couleur.fond1} 0%, ${donnees.couleur.fond2} 100%)`,
@@ -20,6 +20,7 @@ export default function Presentation({ donnees, inverse }) {
   }
 
   const styleDeFlex = inverse && { flexDirection: "row-reverse" }
+  const styleDeConteneur = epique && { width: "25%", height: "fit-content" }
 
   return (
     <div className="page-conteneur page-presentation" style={styleDuConteneur}>
@@ -31,11 +32,19 @@ export default function Presentation({ donnees, inverse }) {
         <div className="page-presentation__corps" style={styleDeFlex}>
           <img
             className="image"
-            src={donnees.image}
+            src={donnees.image[0].source}
             style={styleDeBordureDimage}
             alt=""
           />
-          <div>
+          {epique && (
+            <img
+              className="image--secondaire"
+              src={donnees.image[1].source}
+              style={styleDeBordureDimage}
+              alt=""
+            />
+          )}
+          <div style={styleDeConteneur}>
             <p>{donnees.texte1}</p>
             {donnees.texte2 && <p>{donnees.texte2}</p>}
             {donnees.lien && (

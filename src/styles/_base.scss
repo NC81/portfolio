@@ -59,17 +59,22 @@ h3 {
   }
 }
 
+.page-titre {
+  display: flex;
+  margin-bottom: 75px;
+}
+
 .image {
   width: 42%;
+  &--secondaire {
+    width: 15%;
+    height: 300px;
+    object-fit: cover;
+  }
 }
 
 .lien {
   font: bold 1.5rem "Telegraph";
   text-align: center;
   text-decoration: none;
-}
-
-.page-titre {
-  display: flex;
-  margin-bottom: 75px;
 }
