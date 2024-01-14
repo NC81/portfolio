@@ -8,6 +8,11 @@
   src: url(../assets/polices/Telegraf-Regular-400.otf);
 }
 
+@font-face {
+  font-family: "Telegraph Ultra";
+  src: url(../assets/polices/Telegraf-UltraBold-800.otf);
+}
+
 body {
   margin: auto;
   width: 100%;
@@ -43,7 +48,7 @@ h2 {
 h3 {
   margin: 0;
   font: 700 1.3rem "Telegraph";
-  letter-spacing: 0.3rem;
+  letter-spacing: $letter-spacing-title;
   line-height: 34px;
   text-align: center;
 }

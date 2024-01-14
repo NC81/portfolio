@@ -1,5 +1,4 @@
 .page-competences {
-  color: white;
   background: linear-gradient(180deg, $color-sec 0%, #bb7c4e 100%);
   font-size: 1.35rem;
   .page-titre {
@@ -35,7 +34,7 @@
       z-index: 1;
       list-style: none;
       font: bold 1rem "Telegraph";
-      letter-spacing: 0.3rem;
+      letter-spacing: $letter-spacing-title;
       text-align: center;
       li {
         line-height: 32px;

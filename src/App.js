@@ -1,6 +1,7 @@
 import Intro from "./pages/intro/Intro"
 import Presentation from "./pages/presentation/Presentation"
 import Competences from "./pages/competences/Competences"
+import Contact from "./pages/contact/Contact"
 import { biographie } from "./pages/donnees"
 import { philosophie } from "./pages/donnees"
 import { combat } from "./pages/donnees"
@@ -15,6 +16,7 @@ export default function App() {
       <Presentation donnees={philosophie} inverse={true} />
       <Presentation donnees={combat} inverse={true} epique={true} />
       <Presentation donnees={conclusion} />
+      <Contact />
     </div>
   )
 }

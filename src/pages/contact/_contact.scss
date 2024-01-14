@@ -1,0 +1,37 @@
+.page-contact {
+  background-color: #243435;
+  &__titre {
+    font-family: "Telegraph Ultra";
+    font-size: 5rem;
+    margin-bottom: $margin-bottom-title;
+  }
+  &__corps {
+    display: flex;
+    align-items: center;
+  }
+  &__ligne {
+    flex: 1;
+    height: 1px;
+    background-color: white;
+  }
+  img {
+    width: 25%;
+    border: 1px solid white;
+  }
+}
+
+footer {
+  display: flex;
+  margin-top: 100px;
+  flex-wrap: wrap;
+
+  div {
+    width: 260px;
+    p:first-child {
+      font-family: "Telegraph";
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: $letter-spacing-title;
+    }
+  }
+}
