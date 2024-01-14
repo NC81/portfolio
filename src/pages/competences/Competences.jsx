@@ -64,7 +64,7 @@ export default function Competences() {
     <div className="page-conteneur page-competences">
       <div className="page-contenu">
         <div className="page-titre">
-          <h2>Mes compétences</h2>
+          <h2>Mes Compétences</h2>
         </div>
         <div className="page-competences__corps">
           <div className="page-competences__metier">

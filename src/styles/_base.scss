@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Libre Franklin";
-  src: url(../assets/LibreFranklin-VariableFont_wght.ttf);
+  src: url(../assets/polices/LibreFranklin-VariableFont_wght.ttf);
 }
 
 @font-face {
   font-family: "Telegraph";
-  src: url(../assets/Telegraf-Regular-400.otf);
+  src: url(../assets/polices/Telegraf-Regular-400.otf);
 }
 
 body {
@@ -66,4 +66,10 @@ h3 {
 .lien {
   font: bold 1.5rem "Telegraph";
   text-align: center;
+  text-decoration: none;
+}
+
+.page-titre {
+  display: flex;
+  margin-bottom: 75px;
 }

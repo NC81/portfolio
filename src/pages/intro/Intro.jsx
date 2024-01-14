@@ -1,6 +1,6 @@
-import cerveau from "../../assets/cerveau.jpg"
-import vaisseau from "../../assets/vaisseau.jpg"
-import hero from "../../assets/hero.jpg"
+import cerveau from "../../assets/images/cerveau.jpg"
+import vaisseau from "../../assets/images/vaisseau.jpg"
+import hero from "../../assets/images/hero.jpg"
 
 export default function Intro() {
   return (

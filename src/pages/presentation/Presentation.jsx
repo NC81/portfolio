@@ -1,28 +1,52 @@
-import reveur from "../../assets/reveur.jpg"
+export default function Presentation({ donnees, inverse }) {
+  const styleDuConteneur = {
+    color: `${donnees.couleur.texte}`,
+    background: `linear-gradient(180deg, ${donnees.couleur.fond1} 0%, ${donnees.couleur.fond2} 100%)`,
+  }
 
-export default function Presentation() {
+  const styleDuTitreEtDuLien = {
+    color: `${donnees.couleur.texte}`,
+  }
+
+  const styleDeBordureDimage = {
+    border: `1px solid ${donnees.couleur.texte}`,
+  }
+
+  const styleDeLigne = {
+    flex: "1",
+    height: "1px",
+    marginTop: "18px",
+    background: `linear-gradient(90deg, ${donnees.couleur.texte}, transparent)`,
+  }
+
+  const styleDeFlex = inverse && { flexDirection: "row-reverse" }
+
   return (
-    <div className="page-conteneur page-presentation">
+    <div className="page-conteneur page-presentation" style={styleDuConteneur}>
       <div className="page-contenu">
         <div className="page-titre">
-          <h2>Ma présentation</h2>
+          <h2 style={styleDuTitreEtDuLien}>{donnees.titre}</h2>
+          <div style={styleDeLigne}></div>
         </div>
-        <div className="page-presentation__corps">
-          <img className="image" src={reveur} alt="" />
+        <div className="page-presentation__corps" style={styleDeFlex}>
+          <img
+            className="image"
+            src={donnees.image}
+            style={styleDeBordureDimage}
+            alt=""
+          />
           <div>
-            <p>
-              Après un long parcours qui m’a mené dans l’horticulture, j’ai
-              décidé de reprendre le fil de ma vie en m’engageant dans le
-              développement informatique pour lequel j’ai toujours nourri de
-              grands rêves.
-            </p>
-            <p>
-              À force de persévérance, je suis aujourd’hui à l’aune de récolter
-              les fruits de mon travail. Certains outils restent à aiguiser,
-              mais d’ores et déjà, les idées de projets germent dans mon esprit.
-              Toujours tourné vers le ciel.
-            </p>
-            <p className="lien">{"> mon cv"}</p>
+            <p>{donnees.texte1}</p>
+            {donnees.texte2 && <p>{donnees.texte2}</p>}
+            {donnees.lien && (
+              <a
+                className="lien"
+                style={styleDuTitreEtDuLien}
+                href={donnees.lien.url}
+              >
+                {`> ${donnees.lien.texte}`}
+              </a>
+            )}
           </div>
         </div>
       </div>
