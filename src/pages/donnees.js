@@ -1,5 +1,6 @@
 import reveur from "../assets/images/reveur.jpg"
 import travail from "../assets/images/travail.jpg"
+import aventure from "../assets/images/aventure.jpg"
 
 export const biographie = {
   titre: "Qui suis-je ?",
@@ -20,4 +21,12 @@ export const philosophie1 = {
     "Cela tombe bien : le bonheur réside dans l’effort et non seulement dans la réalisation.",
   image: travail,
   couleur: { texte: "#FFFFFF", fond1: "#bb7c4e", fond2: "#919ba5" },
+}
+
+export const philosophie3 = {
+  titre: "Ma Philosophie",
+  texte1:
+    "Travailler sous contraintes exige d’être créatif. C’est la raison pour laquelle j’ai soif d’aventures professionnelles.",
+  image: aventure,
+  couleur: { texte: "#ffeaed", fond1: "#2b7357", fond2: "#243435" },
 }
