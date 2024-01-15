@@ -20,9 +20,18 @@ export default function App() {
       <Competences />
       <Presentation donnees={philosophie} inverse={true} />
       <Presentation donnees={projet1} projet={true} />
-      <Presentation donnees={projet2} projet={true} inverse={true} />
+      <Presentation
+        donnees={projet2}
+        projet={true}
+        inverse={true}
+        mobile={{ placement: "gauche", media: "video" }}
+      />
       <Presentation donnees={combat} inverse={true} epique={true} />
-      <Presentation donnees={projet3} projet={true} />
+      <Presentation
+        donnees={projet3}
+        projet={true}
+        mobile={{ placement: "droite", media: "image" }}
+      />
       <Presentation donnees={projet4} projet={true} inverse={true} />
       <Presentation donnees={projet5} projet={true} />
       <Presentation donnees={conclusion} />

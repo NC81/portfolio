@@ -5,23 +5,57 @@
     align-items: center;
   }
   &__demo {
-    width: 42%;
+    width: 44%;
     img {
       width: 100%;
       margin-bottom: 30px;
+    }
+  }
+  &__visuel {
+    box-sizing: content-box;
+    position: relative;
+    width: 42%;
+    &--mobile-gauche {
+      padding-left: 8%;
+    }
+    &--mobile-droite {
+      padding-right: 8%;
+    }
+    &--projet {
+      width: 46%;
+    }
+  }
+  &__image {
+    width: 100%;
+    &--secondaire {
+      width: 15%;
+      height: 300px;
+      object-fit: cover;
     }
   }
   &__liens {
     display: flex;
     justify-content: space-around;
   }
-  &__textes {
+  &__liste-textes {
     display: flex;
     flex-direction: column;
     width: 48%;
-    p {
-      line-height: 32px;
-      text-align: justify;
+    &--mobile {
+      width: 35%;
+    }
+    &--epique {
+      width: 25%;
+    }
+  }
+  &__texte {
+    line-height: 32px;
+    text-align: justify;
+    &--projet {
+      font-size: 1.35rem;
+    }
+    &--grand-projet {
+      margin: 10px;
     }
   }
 }

@@ -5,9 +5,12 @@ import general from "../assets/images/general.jpg"
 import ennemi from "../assets/images/ennemi.jpg"
 import reservia from "../assets/images/Reservia - Planifiez vos vacances.png"
 import ohMyFood from "../assets/images/Oh my food - Réservez vos repas.png"
+import ohMyFoodMobile from "../assets/videos/Oh_my_food-Animation_chargement.webm"
 import maquetteChatDesktop from "../assets/images/Maquette - Chat.png"
+import maquetteChatMobile from "../assets/images/Maquette - Chat mobile.png"
 import sportSee from "../assets/images/SportSee - La référence du coaching sportif.png"
 import hrnet from "../assets/images/HRnet - Gestion d'employés.png"
+console.log("maquetteChatMobile", maquetteChatMobile)
 
 export const biographie = {
   titre: "Qui suis-je ?",
@@ -17,6 +20,7 @@ export const biographie = {
   ],
   lien: [{ texte: "mon cv", url: "" }],
   image: [{ description: "", source: reveur }],
+  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffe6ea", fond1: "#5c3539", fond2: "#5c3539" },
 }
 
@@ -27,6 +31,7 @@ export const philosophie = {
     "Cela tombe bien : le bonheur réside dans l’effort et non seulement dans la réalisation.",
   ],
   image: [{ description: "", source: travail }],
+  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffffff", fond1: "#bb7c4e", fond2: "#919ba5" },
 }
 
@@ -39,6 +44,7 @@ export const combat = {
     { description: "", source: general },
     { description: "", source: ennemi },
   ],
+  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffffff", fond1: "#5e4a7d", fond2: "#032637" },
 }
 
@@ -48,6 +54,7 @@ export const conclusion = {
     "Travailler sous contraintes exige d’être créatif. C’est la raison pour laquelle j’ai soif d’aventures professionnelles.",
   ],
   image: [{ description: "", source: aventure }],
+  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffeaed", fond1: "#2b7357", fond2: "#243435" },
 }
 
@@ -64,6 +71,7 @@ export const projet1 = {
     },
   ],
   image: [{ description: "", source: reservia }],
+  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#919ba5" },
 }
 
@@ -80,6 +88,7 @@ export const projet2 = {
     },
   ],
   image: [{ description: "", source: ohMyFood }],
+  mobile: [{ description: "", source: ohMyFoodMobile }],
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#5e4a7d" },
 }
 
@@ -96,6 +105,12 @@ export const projet3 = {
     },
   ],
   image: [{ description: "", source: maquetteChatDesktop }],
+  mobile: [
+    {
+      description: "",
+      source: maquetteChatMobile,
+    },
+  ],
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#032637" },
 }
 
@@ -112,6 +127,7 @@ export const projet4 = {
     },
   ],
   image: [{ description: "", source: sportSee }],
+  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#2b7357" },
 }
 
@@ -134,5 +150,6 @@ export const projet5 = {
     },
   ],
   image: [{ description: "", source: hrnet }],
+  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffffff", fond1: "#2b7357", fond2: "#2b7357" },
 }
