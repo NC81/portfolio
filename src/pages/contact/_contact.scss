@@ -1,9 +1,10 @@
 .page-contact {
   background-color: #243435;
   &__titre {
+    max-width: 100%;
     font-family: "Telegraph Ultra";
-    font-size: 5rem;
-    margin-bottom: $margin-bottom-title;
+    font-size: 4.8rem;
+    margin-bottom: 55px;
   }
   &__corps {
     display: flex;
@@ -15,14 +16,14 @@
     background-color: white;
   }
   img {
-    width: 25%;
+    width: 23%;
     border: 1px solid white;
   }
 }
 
 footer {
   display: flex;
-  margin-top: 100px;
+  margin-top: 90px;
   flex-wrap: wrap;
 
   div {

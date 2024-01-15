@@ -2,11 +2,26 @@
   &__corps {
     display: flex;
     justify-content: space-between;
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 48%;
+    align-items: center;
+  }
+  &__demo {
+    width: 42%;
+    img {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  &__liens {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__textes {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    p {
+      line-height: 32px;
+      text-align: justify;
     }
   }
 }

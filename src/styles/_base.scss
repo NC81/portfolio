@@ -33,13 +33,14 @@ body {
 
 h1 {
   position: absolute;
-  bottom: 22%;
+  bottom: 11%;
   width: 425px;
   margin: 0;
   font: bold 6.5rem "Telegraph";
 }
 
 h2 {
+  max-width: 40%;
   margin: 0 40px 0 0;
   font-weight: 300;
   font-size: 1.8rem;
@@ -55,7 +56,7 @@ h3 {
 
 .page-conteneur {
   position: relative;
-  height: 900px;
+  height: 760px;
   padding: 70px 40px 0 0;
   .page-contenu {
     width: 90%;
@@ -76,10 +77,4 @@ h3 {
     height: 300px;
     object-fit: cover;
   }
-}
-
-.lien {
-  font: bold 1.5rem "Telegraph";
-  text-align: center;
-  text-decoration: none;
 }

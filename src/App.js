@@ -6,6 +6,11 @@ import { biographie } from "./pages/donnees"
 import { philosophie } from "./pages/donnees"
 import { combat } from "./pages/donnees"
 import { conclusion } from "./pages/donnees"
+import { projet1 } from "./pages/donnees"
+import { projet2 } from "./pages/donnees"
+import { projet3 } from "./pages/donnees"
+import { projet4 } from "./pages/donnees"
+import { projet5 } from "./pages/donnees"
 
 export default function App() {
   return (
@@ -14,7 +19,12 @@ export default function App() {
       <Presentation donnees={biographie} />
       <Competences />
       <Presentation donnees={philosophie} inverse={true} />
+      <Presentation donnees={projet1} projet={true} />
+      <Presentation donnees={projet2} projet={true} inverse={true} />
       <Presentation donnees={combat} inverse={true} epique={true} />
+      <Presentation donnees={projet3} projet={true} />
+      <Presentation donnees={projet4} projet={true} inverse={true} />
+      <Presentation donnees={projet5} projet={true} />
       <Presentation donnees={conclusion} />
       <Contact />
     </div>
