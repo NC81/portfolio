@@ -1,4 +1,5 @@
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
+import { motion } from "framer-motion"
 
 export default function Competences() {
   const data = [
@@ -64,16 +65,30 @@ export default function Competences() {
     <div className="page-conteneur page-competences">
       <div className="page-contenu">
         <div className="page-titre">
-          <h2>Mes Compétences</h2>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Mes Compétences
+          </motion.h2>
         </div>
         <div className="page-competences__corps">
           <div className="page-competences__metier">
-            <h3>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               DÉVELOPPEUR D'APPLICATION
               <br />
               JAVASCRIPT / REACT
-            </h3>
-            <ul>
+            </motion.h3>
+            <motion.ul
+              initial={{ opacity: 0, translateX: -20 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <li>Analyser les besoins et préconiser une solution</li>
               <li>Concevoir une solution technique</li>
               <li>Développer une application en adéquation avec les besoins</li>
@@ -83,9 +98,14 @@ export default function Competences() {
                 technique et fonctionnelle
               </li>
               <li>Mettre en œuvre une veille technologique</li>
-            </ul>
+            </motion.ul>
           </div>
-          <div className="image page-competences__graphique">
+          <motion.div
+            initial={{ opacity: 0, translateX: -20 }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 1, ease: "anticipate" }}
+            className="image page-competences__graphique"
+          >
             <ul>
               {data.map((el, index) => (
                 <li key={`el.name-${index}`}>{el.name}</li>
@@ -116,7 +136,7 @@ export default function Competences() {
                 />
               </BarChart>
             </ResponsiveContainer>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -1,7 +1,12 @@
+import { motion } from "framer-motion"
+
 export default function Lien({ objet, style }) {
   return (
     <>
-      <a
+      <motion.a
+        initial={{ opacity: 0, translateY: -40 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "anticipate" }}
         className="lien-conteneur"
         style={style}
         href={objet.url}
@@ -13,7 +18,7 @@ export default function Lien({ objet, style }) {
           <span className="lien-contenu__texte">{objet.texte}</span>
           <span className="lien-contenu__signe lien-contenu__signe--sortie">{`<`}</span>
         </span>
-      </a>
+      </motion.a>
     </>
   )
 }

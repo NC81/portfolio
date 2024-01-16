@@ -1,5 +1,6 @@
 import Lien from "../../composants/lien/Lien"
 import Mobile from "../../composants/mobile/Mobile"
+import { motion } from "framer-motion"
 
 export default function Presentation({
   donnees,
@@ -61,13 +62,23 @@ export default function Presentation({
       style={styleDuConteneurDePage}
     >
       <div className="page-contenu">
-        <div className="page-titre">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="page-titre"
+        >
           <h2 style={styleDeTexte}>{donnees.titre}</h2>
           <div className="page-titre__ligne" style={styleDeLigne}></div>
-        </div>
+        </motion.div>
         <div className="page-presentation__corps" style={styleDeFlex}>
           {donnees.texte.length > 2 ? (
-            <div className="page-presentation__demo">
+            <motion.div
+              initial={{ opacity: 0, translateX: -20 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              transition={{ duration: 0.8 }}
+              className="page-presentation__demo"
+            >
               <img
                 src={donnees.image[0].source}
                 style={styleDeBordureDimage}
@@ -76,9 +87,12 @@ export default function Presentation({
               {donnees.lien.map((objet, index) => (
                 <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
               ))}
-            </div>
+            </motion.div>
           ) : (
-            <div
+            <motion.div
+              initial={{ opacity: 0, translateY: -20 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className={`page-presentation__visuel ${visuelMobile} ${visuelProjet}`}
             >
               {mobile && (
@@ -94,18 +108,24 @@ export default function Presentation({
                 style={styleDeBordureDimage}
                 alt=""
               />
-            </div>
+            </motion.div>
           )}
 
           {epique && (
-            <img
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
               className="page-presentation__image--secondaire"
               src={donnees.image[1].source}
               style={styleDeBordureDimage}
               alt=""
-            />
+            ></motion.img>
           )}
-          <div
+          <motion.div
+            initial={{ opacity: 0, translateY: 20 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 0.8 }}
             className={`page-presentation__liste-textes ${listeTextesMobile} ${listeTextesEpique}`}
             style={styleDeTexte}
           >
@@ -125,7 +145,7 @@ export default function Presentation({
               donnees.lien.map((objet, index) => (
                 <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
               ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -34,13 +34,20 @@ h1 {
   bottom: 11%;
   width: max-content;
   margin: 0;
-  font: bold 6.5rem "Telegraph";
+  font: normal 5.6rem "Telegraph Ultra";
+  line-height: 102px;
+  animation: glisseEnBas 250ms 150ms backwards ease-in;
   @include laptop {
     position: static;
     margin-bottom: $margin-responsive;
   }
+  @include tablette {
+    font-size: 4.6rem;
+    line-height: 85px;
+  }
   @include mobile {
     font-size: 4rem;
+    line-height: 75px;
   }
 }
 
@@ -109,5 +116,16 @@ h3 {
   @include laptop {
     width: 100%;
     margin-top: $margin-responsive;
+  }
+}
+
+@keyframes glisseEnBas {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
