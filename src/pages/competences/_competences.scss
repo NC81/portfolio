@@ -48,18 +48,18 @@
       font: bold 1rem "Telegraph";
       letter-spacing: $letter-spacing-title;
       text-align: center;
-      li {
-        padding-left: 6px;
-        line-height: 32px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        @include tablette {
-          font-size: 0.9rem;
-        }
-        @include mobile {
-          font-size: 0.8rem;
-        }
+    }
+    li {
+      padding-left: 6px;
+      line-height: 32px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      @include tablette {
+        font-size: 0.9rem;
+      }
+      @include mobile {
+        font-size: 0.8rem;
       }
     }
   }

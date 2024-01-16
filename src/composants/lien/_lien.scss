@@ -1,9 +1,27 @@
-.lien {
-  margin-top: 20px;
-  font: bold 1.5rem "Telegraph";
-  text-align: center;
-  letter-spacing: $letter-spacing-title;
-  @include tablette {
-    font-size: 1.35rem;
+.lien-conteneur {
+  margin: 20px auto 0;
+  text-decoration: none;
+  .lien-contenu {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    font: normal 1.5rem "Telegraph";
+    letter-spacing: $letter-spacing-title;
+    @include tablette {
+      font-size: 1.35rem;
+    }
+    &__signe {
+      transition: transform 330ms ease-in-out;
+    }
+    &:hover {
+      font-weight: bold;
+    }
+    &:hover .lien-contenu__signe--entree {
+      transform: translateX(50px);
+    }
+
+    &:hover .lien-contenu__signe--sortie {
+      transform: translateX(-50px);
+    }
   }
 }

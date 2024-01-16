@@ -8,6 +8,8 @@
     }
   }
   &__demo {
+    display: flex;
+    flex-direction: column;
     width: 44%;
     @include laptop {
       width: 100%;
@@ -50,10 +52,6 @@
       }
     }
   }
-  &__liens {
-    display: flex;
-    justify-content: space-around;
-  }
   &__liste-textes {
     display: flex;
     flex-direction: column;
@@ -77,6 +75,7 @@
   &__texte {
     line-height: 32px;
     text-align: justify;
+    font-size: 1.5rem;
     @include tablette {
       margin-top: 0;
       font-size: 1.25rem;

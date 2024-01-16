@@ -73,11 +73,9 @@ export default function Presentation({
                 style={styleDeBordureDimage}
                 alt=""
               />
-              <div className="page-presentation__liens">
-                {donnees.lien.map((objet, index) => (
-                  <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
-                ))}
-              </div>
+              {donnees.lien.map((objet, index) => (
+                <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
+              ))}
             </div>
           ) : (
             <div
