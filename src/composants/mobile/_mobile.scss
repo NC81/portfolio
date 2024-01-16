@@ -1,22 +1,31 @@
 .mobile-conteneur {
   position: absolute;
-  width: 200px;
+  width: 34%;
   &--gauche {
-    top: 35px;
-    left: -160px;
+    top: 10%;
+    left: -27%;
+    @include laptop {
+      top: -12%;
+      left: initial;
+      right: -6%;
+    }
   }
   &--droite {
-    top: 0px;
-    right: -180px;
+    top: 5%;
+    right: -30%;
+    @include laptop {
+      top: -16%;
+      right: -9%;
+    }
   }
   .mobile-android {
     width: 100%;
     &__ecran {
       position: absolute;
-      width: 157px;
-      height: 280px;
-      top: 47px;
-      left: 21px;
+      width: 78.5%;
+      height: 72%;
+      top: 12%;
+      left: 10%;
       overflow: hidden;
     }
     &__video {

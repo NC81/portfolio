@@ -1,11 +1,28 @@
 @mixin page-titre($color) {
   display: flex;
-  margin-bottom: $margin-bottom-title;
   &:after {
     content: "";
     flex: 1;
     height: 1px;
     margin-top: 18px;
     background: linear-gradient(90deg, $color, transparent);
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoint, mobile)) {
+    @content;
+  }
+}
+
+@mixin tablette {
+  @media screen and (max-width: map-get($breakpoint, tablette)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: map-get($breakpoint, laptop)) {
+    @content;
   }
 }

@@ -9,15 +9,24 @@
 .page-intro-corps {
   display: flex;
   justify-content: space-between;
+  @include laptop {
+    flex-wrap: wrap;
+  }
   img {
     height: fit-content;
     border: 1px solid $color-pri;
   }
   &__img--petit {
     width: 15%;
+    @include laptop {
+      width: 30%;
+    }
   }
   &__img--moyen {
     width: 22%;
+    @include laptop {
+      width: 40%;
+    }
   }
   &__hero {
     position: relative;
@@ -31,6 +40,9 @@
       width: 100%;
       text-align: center;
       font-size: 1.5rem;
+      @include tablette {
+        font-size: 1.35rem;
+      }
     }
   }
 }

@@ -6,7 +6,10 @@ export default function Intro() {
   return (
     <div className="page-conteneur page-intro">
       <div className="page-contenu">
-        <h1>2024 Portfolio</h1>
+        <h1>
+          2024
+          <br /> Portfolio
+        </h1>
         <div className="page-titre">
           <h2>Nom de page</h2>
         </div>

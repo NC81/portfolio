@@ -1,10 +1,21 @@
 .page-contact {
   background-color: #243435;
+  padding-bottom: 55px;
   &__titre {
     max-width: 100%;
     font-family: "Telegraph Ultra";
     font-size: 4.8rem;
-    margin-bottom: 55px;
+    margin: 0 0 55px;
+    @include laptop {
+      font-size: 3.8rem;
+    }
+    @include tablette {
+      margin: 0 0 40px;
+      font-size: 2.7rem;
+    }
+    @include mobile {
+      font-size: 2rem;
+    }
   }
   &__corps {
     display: flex;
@@ -18,19 +29,35 @@
   img {
     width: 23%;
     border: 1px solid white;
+    @include laptop {
+      width: 30%;
+    }
+    @include mobile {
+      width: 40%;
+    }
   }
 }
 
 footer {
   display: flex;
   margin-top: 90px;
-  flex-wrap: wrap;
-
+  font-size: 1.35rem;
+  gap: 12%;
+  @include laptop {
+    justify-content: space-between;
+  }
+  @include tablette {
+    flex-wrap: wrap;
+    margin-top: 60px;
+    font-size: 1.2rem;
+  }
+  @include mobile {
+    font-size: 1.1rem;
+    margin-top: $margin-responsive;
+  }
   div {
-    width: 260px;
     p:first-child {
       font-family: "Telegraph";
-      font-size: 1.3rem;
       font-weight: bold;
       letter-spacing: $letter-spacing-title;
     }

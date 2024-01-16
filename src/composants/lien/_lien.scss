@@ -3,4 +3,7 @@
   font: bold 1.5rem "Telegraph";
   text-align: center;
   letter-spacing: $letter-spacing-title;
+  @include tablette {
+    font-size: 1.35rem;
+  }
 }

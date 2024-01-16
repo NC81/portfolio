@@ -8,15 +8,27 @@
     display: flex;
     justify-content: space-between;
     gap: 4%;
+    @include laptop {
+      display: block;
+    }
   }
   &__metier {
     width: 49%;
     text-align: justify;
+    @include laptop {
+      width: 100%;
+    }
     ul {
       margin-top: 70px;
+      @include laptop {
+        margin-top: $margin-responsive;
+      }
     }
     li {
       margin-bottom: 25px;
+      @include tablette {
+        font-size: 1.25rem;
+      }
     }
   }
   &__graphique {
@@ -37,7 +49,17 @@
       letter-spacing: $letter-spacing-title;
       text-align: center;
       li {
+        padding-left: 6px;
         line-height: 32px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include tablette {
+          font-size: 0.9rem;
+        }
+        @include mobile {
+          font-size: 0.8rem;
+        }
       }
     }
   }
