@@ -18,17 +18,17 @@ export default function Footer() {
   }
 
   return (
-    <footer className="page-conteneur page-contact">
+    <footer className="page-conteneur footer">
       <div className="page-contenu">
         <motion.h2
           initial={{ opacity: 0, translateY: -20 }}
           whileInView={{ opacity: 1, translateY: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="page-contact__titre"
+          className="footer__titre"
         >
           Contactez-moi
         </motion.h2>
-        <div className="page-contact__corps">
+        <div className="footer__corps">
           <motion.img
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -41,7 +41,7 @@ export default function Footer() {
             initial={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 1, delay: 0.1, ease: "anticipate" }}
-            className="page-contact__ligne"
+            className="footer__ligne"
           ></motion.div>
           <motion.img
             initial={{ opacity: 0, scale: 1.3 }}
@@ -51,13 +51,12 @@ export default function Footer() {
             alt=""
           />
         </div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeIn" }}
         >
-          <ul className="page-contact__liste">
+          <ul className="footer__liste">
             <li>
               <p>ADRESSE</p>
               <p>78000 Versailles</p>
@@ -78,7 +77,7 @@ export default function Footer() {
                 onClick={() => {
                   gereClic()
                 }}
-                className="page-contact__email"
+                className="footer__email"
               >
                 {survol ? (
                   <img src={pressePapierPlein2} alt="" />
@@ -86,13 +85,11 @@ export default function Footer() {
                   <img src={pressePapierVide2} alt="" />
                 )}
                 {!confirmation ? (
-                  <span className="page-contact__email-texte">
+                  <span className="footer__email-texte">
                     nicolas.candeli@outlook.fr
                   </span>
                 ) : (
-                  <span className="page-contact__email-confirmation">
-                    copié!
-                  </span>
+                  <span className="footer__email-confirmation">copié!</span>
                 )}
               </p>
             </li>

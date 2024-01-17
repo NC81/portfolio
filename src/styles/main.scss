@@ -1,9 +1,9 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./base";
-@import "../composants/lien/lien";
-@import "../composants/mobile/mobile";
-@import "../pages/header/header";
-@import "../pages/competences/competences";
-@import "../pages/presentation/presentation";
-@import "../pages/footer/footer";
+@import "../components/lien/lien";
+@import "../components/mobile/mobile";
+@import "../components/header/header";
+@import "../components/competences/competences";
+@import "../components/presentation/presentation";
+@import "../components/footer/footer";

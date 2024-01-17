@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
-import Lien from "../../composants/lien/Lien"
-import Mobile from "../../composants/mobile/Mobile"
+import Lien from "../../components/lien/Lien"
+import Mobile from "../../components/mobile/Mobile"
 import { motion } from "framer-motion"
 
 export default forwardRef(function Presentation(
