@@ -1,14 +1,12 @@
+import { forwardRef } from "react"
 import Lien from "../../composants/lien/Lien"
 import Mobile from "../../composants/mobile/Mobile"
 import { motion } from "framer-motion"
 
-export default function Presentation({
-  donnees,
-  inverse,
-  projet,
-  epique,
-  mobile,
-}) {
+export default forwardRef(function Presentation(
+  { donnees, inverse, projet, epique, mobile },
+  ref
+) {
   function formateTexteGras(texte) {
     return texte.replace(/(\*\*|__)(.*?)\1/g, "<strong>$2</strong>")
   }
@@ -57,9 +55,10 @@ export default function Presentation({
     : ""
 
   return (
-    <div
+    <section
       className="page-conteneur page-presentation"
       style={styleDuConteneurDePage}
+      ref={ref}
     >
       <div className="page-contenu">
         <motion.div
@@ -148,6 +147,6 @@ export default function Presentation({
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
-}
+})

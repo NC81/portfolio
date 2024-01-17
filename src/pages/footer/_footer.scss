@@ -1,0 +1,80 @@
+.page-contact {
+  background-color: #243435;
+  padding-bottom: 55px;
+  &__titre {
+    max-width: 100%;
+    font-family: "Telegraph Ultra";
+    font-size: 4.8rem;
+    margin: 0 0 55px;
+    @include laptop {
+      font-size: 3.8rem;
+    }
+    @include tablette {
+      margin: 0 0 40px;
+      font-size: 2.7rem;
+    }
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+  &__corps {
+    display: flex;
+    align-items: center;
+  }
+  &__ligne {
+    flex: 1;
+    height: 1px;
+    background-color: white;
+  }
+  img {
+    width: 23%;
+    border: 1px solid white;
+    @include laptop {
+      width: 30%;
+    }
+    @include mobile {
+      width: 40%;
+    }
+  }
+  &__liste {
+    display: flex;
+    margin-top: 90px;
+    padding: 0;
+    font-size: 1.35rem;
+    gap: 12%;
+    list-style: none;
+    @include laptop {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 5%;
+      font-size: 1.2rem;
+    }
+    @include tablette {
+      margin-top: 60px;
+    }
+    @include mobile {
+      font-size: 1.1rem;
+      margin-top: $margin-responsive;
+    }
+    p:first-child {
+      font-family: "Telegraph";
+      font-weight: bold;
+      letter-spacing: $letter-spacing-title;
+    }
+  }
+  &__email {
+    cursor: pointer;
+    img {
+      width: 20px;
+      margin-right: 10px;
+      border: none;
+      vertical-align: middle;
+    }
+    &-confirmation {
+      margin-left: 5px;
+      padding: 0 3px;
+      background-color: white;
+      color: black;
+    }
+  }
+}

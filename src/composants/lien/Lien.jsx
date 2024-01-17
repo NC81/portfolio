@@ -14,9 +14,9 @@ export default function Lien({ objet, style }) {
         rel="noreferrer noopener"
       >
         <span className="lien-contenu">
-          <span className="lien-contenu__signe lien-contenu__signe--entree">{`>`}</span>
+          <span className="lien-contenu__signe lien-contenu__signe--gauche">{`>`}</span>
           <span className="lien-contenu__texte">{objet.texte}</span>
-          <span className="lien-contenu__signe lien-contenu__signe--sortie">{`<`}</span>
+          <span className="lien-contenu__signe lien-contenu__signe--droite">{`<`}</span>
         </span>
       </motion.a>
     </>

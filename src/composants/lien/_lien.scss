@@ -16,11 +16,11 @@
     &:hover {
       font-weight: bold;
     }
-    &:hover .lien-contenu__signe--entree {
+    &:hover .lien-contenu__signe--gauche {
       transform: translateX(50px);
     }
 
-    &:hover .lien-contenu__signe--sortie {
+    &:hover .lien-contenu__signe--droite {
       transform: translateX(-50px);
     }
   }

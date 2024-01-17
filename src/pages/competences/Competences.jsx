@@ -62,7 +62,7 @@ export default function Competences() {
   }
 
   return (
-    <div className="page-conteneur page-competences">
+    <section className="page-conteneur page-competences">
       <div className="page-contenu">
         <div className="page-titre">
           <motion.h2
@@ -101,9 +101,9 @@ export default function Competences() {
             </motion.ul>
           </div>
           <motion.div
-            initial={{ opacity: 0, translateX: -20 }}
+            initial={{ opacity: 0, translateX: 20 }}
             whileInView={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 1, ease: "anticipate" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="image page-competences__graphique"
           >
             <ul>
@@ -139,6 +139,6 @@ export default function Competences() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

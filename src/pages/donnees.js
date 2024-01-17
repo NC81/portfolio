@@ -3,14 +3,13 @@ import travail from "../assets/images/travail.jpg"
 import aventure from "../assets/images/aventure.jpg"
 import general from "../assets/images/general.jpg"
 import ennemi from "../assets/images/ennemi.jpg"
-import reservia from "../assets/images/Reservia - Planifiez vos vacances.png"
-import ohMyFood from "../assets/images/Oh my food - Réservez vos repas.png"
-import ohMyFoodMobile from "../assets/videos/Oh_my_food-Animation_chargement.webm"
-import maquetteChatDesktop from "../assets/images/Maquette - Chat.png"
-import maquetteChatMobile from "../assets/images/Maquette - Chat mobile.png"
-import sportSee from "../assets/images/SportSee - La référence du coaching sportif.png"
-import hrnet from "../assets/images/HRnet - Gestion d'employés.png"
-console.log("maquetteChatMobile", maquetteChatMobile)
+import reservia from "../assets/images/reservia.png"
+import ohMyFood from "../assets/images/ohmyfood-desktop.png"
+import ohMyFoodMobile from "../assets/videos/ohmyfood-anim-chargement.webm"
+import maquetteChatDesktop from "../assets/images/maquette-chat-desktop.png"
+import maquetteChatMobile from "../assets/images/maquette-chat-mobile.png"
+import sportSee from "../assets/images/sportsee.png"
+import hrnet from "../assets/images/hrnet.png"
 
 export const biographie = {
   titre: "Qui suis-je ?",
@@ -18,7 +17,12 @@ export const biographie = {
     "Après un long parcours qui m’a mené dans l’horticulture, j’ai décidé de reprendre le fil de ma vie en m’engageant dans le développement informatique pour lequel j’ai toujours nourri de grands rêves.",
     "À force de persévérance, je suis aujourd’hui à l’aune de récolter les fruits de mon travail. Certains outils restent à aiguiser, mais d’ores et déjà, les idées de projets germent dans mon esprit. Toujours tourné vers le ciel.",
   ],
-  lien: [{ texte: "mon cv", url: "" }],
+  lien: [
+    {
+      texte: "mon cv",
+      url: "https://drive.google.com/file/d/195qGy9iQF--YwkrVw1jtEIGIaBUqJjij/view?usp=sharing",
+    },
+  ],
   image: [{ description: "", source: reveur }],
   mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffe6ea", fond1: "#5c3539", fond2: "#5c3539" },

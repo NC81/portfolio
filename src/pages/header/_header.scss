@@ -1,9 +1,14 @@
 .page-intro {
+  height: 780px;
   color: $color-pri;
   background: linear-gradient(180deg, black 0%, $color-sec 100%);
   .page-titre {
     @include page-titre($color-pri);
     animation: apparition 200ms 50ms backwards ease;
+  }
+  @include laptop {
+    height: auto;
+    padding-bottom: 30px;
   }
 }
 
@@ -33,21 +38,46 @@
   }
   &__hero {
     position: relative;
+    animation: glisseADroite 0.8s 700ms backwards ease;
+    cursor: pointer;
     img {
       width: 100%;
-      animation: glisseADroite 0.8s 700ms backwards ease;
     }
-    span {
-      position: absolute;
-      left: 0;
-      bottom: -25px;
-      width: 100%;
-      text-align: center;
-      font-size: 1.5rem;
-      animation: apparition 250ms 1150ms backwards ease;
-      @include tablette {
-        font-size: 1.35rem;
-      }
+    &:hover img {
+      border-width: 2px;
+    }
+    &:hover .page-intro-corps__travail {
+      animation: tombe 250ms both cubic-bezier(0.03, 0.58, 0.31, 0.99);
+    }
+    &:hover .page-intro-corps__signe--gauche {
+      left: -10px;
+    }
+    &:hover .page-intro-corps__signe--droite {
+      right: -10px;
+    }
+  }
+  &__signe {
+    position: absolute;
+    font-weight: bold;
+    top: 50%;
+    &--gauche {
+      left: -30px;
+    }
+    &--droite {
+      right: -30px;
+    }
+  }
+  &__travail {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    bottom: -2%;
+    opacity: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.35rem;
+    @include tablette {
+      font-size: 1.35rem;
     }
   }
 }
@@ -68,6 +98,16 @@
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+
+@keyframes tombe {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
     opacity: 1;
   }
 }
