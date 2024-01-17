@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.22a10dd2.css",
+    "main.js": "/portfolio/static/js/main.cf1b883e.js",
+    "static/media/ohmyfood-anim-chargement.webm": "/portfolio/static/media/ohmyfood-anim-chargement.540c6fa51b2d906aaa5d.webm",
+    "static/media/ohmyfood-desktop.png": "/portfolio/static/media/ohmyfood-desktop.4d8b00eb2aaee305f4f1.png",
+    "static/media/reservia.png": "/portfolio/static/media/reservia.c379b7f124097fcb1c58.png",
+    "static/media/hrnet.png": "/portfolio/static/media/hrnet.213638dcc2010e471a09.png",
+    "static/media/maquette-chat-desktop.png": "/portfolio/static/media/maquette-chat-desktop.72f0dd911ae026725b46.png",
+    "static/media/LibreFranklin-VariableFont_wght.ttf": "/portfolio/static/media/LibreFranklin-VariableFont_wght.b6fbb7c6d08be7baa7d7.ttf",
+    "static/media/sportsee.png": "/portfolio/static/media/sportsee.4518a3bf415909b8a552.png",
+    "static/media/travail.jpg": "/portfolio/static/media/travail.97f4097751bc4994a035.jpg",
+    "static/media/reveur.jpg": "/portfolio/static/media/reveur.5efee43167fc50a944e5.jpg",
+    "static/media/hero.jpg": "/portfolio/static/media/hero.e2eebaa6bdaa07520cbf.jpg",
+    "static/media/general.jpg": "/portfolio/static/media/general.aa09a5e1e54df035cc59.jpg",
+    "static/media/aventure.jpg": "/portfolio/static/media/aventure.e4fbdaba326dcc5c86f6.jpg",
+    "static/media/ennemi.jpg": "/portfolio/static/media/ennemi.fea7ae51b5942ea92dfe.jpg",
+    "static/media/Telegraf-UltraBold-800.otf": "/portfolio/static/media/Telegraf-UltraBold-800.eca514c0219abe9f46e4.otf",
+    "static/media/Telegraf-Regular-400.otf": "/portfolio/static/media/Telegraf-Regular-400.0c6d87bb06a137bca9a3.otf",
+    "static/media/emetteur.jpg": "/portfolio/static/media/emetteur.59456805458a50f502af.jpg",
+    "static/media/vaisseau.jpg": "/portfolio/static/media/vaisseau.fdded494635cf4b63621.jpg",
+    "static/media/recepteur.jpg": "/portfolio/static/media/recepteur.1cc21f5d6232ce193b72.jpg",
+    "static/media/cerveau.jpg": "/portfolio/static/media/cerveau.9b726e6dd0c776245456.jpg",
+    "static/media/maquette-chat-mobile.png": "/portfolio/static/media/maquette-chat-mobile.611d175342b5a8c6022c.png",
+    "static/media/iconmonstr-paste-clipboard-lined.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-lined.6a98b41f5d4505adab6ee158b71af600.svg",
+    "static/media/iconmonstr-paste-clipboard-filled.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-filled.f3a68cf1d81ac6b1ccfb89048c061b62.svg",
+    "index.html": "/portfolio/index.html",
+    "main.22a10dd2.css.map": "/portfolio/static/css/main.22a10dd2.css.map",
+    "main.cf1b883e.js.map": "/portfolio/static/js/main.cf1b883e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22a10dd2.css",
+    "static/js/main.cf1b883e.js"
+  ]
+}
