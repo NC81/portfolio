@@ -4,12 +4,32 @@ import aventure from "../../assets//images/aventure.jpg"
 import general from "../../assets//images/general.jpg"
 import ennemi from "../../assets//images/ennemi.jpg"
 import reservia from "../../assets//images/reservia.png"
-import ohMyFood from "../../assets//images/ohmyfood-desktop.png"
-import ohMyFoodMobile from "../../assets//videos/ohmyfood-anim-chargement.webm"
-import maquetteChatDesktop from "../../assets//images/maquette-chat-desktop.png"
-import maquetteChatMobile from "../../assets//images/maquette-chat-mobile.png"
+import ohMyFoodDesktop1 from "../../assets//images/ohmyfood-desktop-1.png"
+import ohMyFoodDesktop2 from "../../assets//images/ohmyfood-desktop-2.png"
+import ohMyFoodMobile1 from "../../assets/images/ohmyfood-mobile-1.png"
+import ohMyFoodMobile2 from "../../assets/images/ohmyfood-mobile-2.png"
+import ohMyFoodVideo1Webm from "../../assets/videos/ohmyfood-anim-chargement.webm"
+import ohMyFoodVideo1Mp4 from "../../assets/videos/ohmyfood-anim-chargement.mp4"
+import ohMyFoodVideo2Webm from "../../assets/videos/ohmyfood-anim-site.webm"
+import ohMyFoodVideo2Mp4 from "../../assets/videos/ohmyfood-anim-site.mp4"
+import maquetteDesktop1 from "../../assets/images/maquette-desktop-1.png"
+import maquetteDesktop2 from "../../assets/images/maquette-desktop-2.png"
+import maquetteDesktop3 from "../../assets/images/maquette-desktop-3.png"
+import maquetteDesktop4 from "../../assets/images/maquette-desktop-4.png"
+import maquetteDesktop5 from "../../assets/images/maquette-desktop-5.png"
+import maquetteMobile1 from "../../assets/images/maquette-mobile-1.png"
+import maquetteMobile21 from "../../assets/images/maquette-mobile-2-1.png"
+import maquetteMobile22 from "../../assets/images/maquette-mobile-2-2.png"
+import maquetteMobile31 from "../../assets/images/maquette-mobile-3-1.png"
+import maquetteMobile32 from "../../assets/images/maquette-mobile-3-2.png"
+import maquetteMobile33 from "../../assets/images/maquette-mobile-3-3.png"
+import maquetteMobile41 from "../../assets/images/maquette-mobile-4-1.png"
+import maquetteMobile42 from "../../assets/images/maquette-mobile-4-2.png"
+import maquetteMobile51 from "../../assets/images/maquette-mobile-5-1.png"
+import maquetteMobile52 from "../../assets/images/maquette-mobile-5-2.png"
 import sportSee from "../../assets//images/sportsee.png"
-import hrnet from "../../assets//images/hrnet.png"
+import hrnet1 from "../../assets//images/hrnet-1.png"
+import hrnet2 from "../../assets//images/hrnet-2.png"
 
 export const biographie = {
   titre: "Qui suis-je ?",
@@ -23,8 +43,13 @@ export const biographie = {
       url: "https://drive.google.com/file/d/195qGy9iQF--YwkrVw1jtEIGIaBUqJjij/view?usp=sharing",
     },
   ],
-  image: [{ description: "", source: reveur }],
-  mobile: [{ description: "", source: "" }],
+  image: [
+    {
+      description:
+        "Un jardinier avec un panier rempli de plantes à la main observe un vaisseau spatial devant une immense planète en arrière-plan.",
+      source: reveur,
+    },
+  ],
   couleur: { texte: "#ffe6ea", fond1: "#5c3539", fond2: "#5c3539" },
 }
 
@@ -34,21 +59,25 @@ export const philosophie = {
     "Il n'y a pas de gloire à atteindre un objectif sans y consacrer d'efforts.",
     "Cela tombe bien : le bonheur réside dans l’effort et non seulement dans la réalisation.",
   ],
-  image: [{ description: "", source: travail }],
-  mobile: [{ description: "", source: "" }],
+  image: [
+    {
+      description:
+        "Un mécanicien répare les pièces d'un vaisseau spatial placé derrière lui.",
+      source: travail,
+    },
+  ],
   couleur: { texte: "#ffffff", fond1: "#bb7c4e", fond2: "#919ba5" },
 }
 
 export const combat = {
   titre: "Ma Philosophie",
   texte: [
-    "Les obstacles sont ces choses effrayantes que vous voyez lorsque vous détournez les yeux de vos objectifs",
+    "Les obstacles sont ces choses effrayantes que vous voyez lorsque vous détournez les yeux de vos objectifs.",
   ],
   image: [
     { description: "", source: general },
     { description: "", source: ennemi },
   ],
-  mobile: [{ description: "", source: "" }],
   couleur: { texte: "#ffffff", fond1: "#5e4a7d", fond2: "#032637" },
 }
 
@@ -57,8 +86,13 @@ export const conclusion = {
   texte: [
     "Travailler sous contraintes exige d’être créatif. C’est la raison pour laquelle j’ai soif d’aventures professionnelles.",
   ],
-  image: [{ description: "", source: aventure }],
-  mobile: [{ description: "", source: "" }],
+  image: [
+    {
+      description:
+        "Un homme observe un paysage extra-terrestre avec d'étranges montagnes à l'horizon et de grandes planètes dans le ciel",
+      source: aventure,
+    },
+  ],
   couleur: { texte: "#ffeaed", fond1: "#2b7357", fond2: "#243435" },
 }
 
@@ -74,8 +108,13 @@ export const projet1 = {
       url: "https://github.com/NC81/NicolasCandeli_2_21052021",
     },
   ],
-  image: [{ description: "", source: reservia }],
-  mobile: [{ description: "", source: "" }],
+  image: [
+    {
+      description:
+        "Une capture d'écran d'une application de location de logement appelée Reservia.",
+      source: reservia,
+    },
+  ],
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#919ba5" },
 }
 
@@ -91,8 +130,25 @@ export const projet2 = {
       url: "https://github.com/NC81/NicolasCandeli_3_28062021",
     },
   ],
-  image: [{ description: "", source: ohMyFood }],
-  mobile: [{ description: "", source: ohMyFoodMobile }],
+  image: [
+    {
+      description:
+        "Une capture d'écran du restaurant Oh My Food montrant la page d'accueil.",
+      source: ohMyFoodDesktop1,
+    },
+    {
+      description:
+        "Une capture d'écran du restaurant Oh My Food montrant la page d'un restaurant avec différents menus.",
+      source: ohMyFoodDesktop2,
+    },
+  ],
+  mobile: {
+    image: [[ohMyFoodMobile1], [ohMyFoodMobile2]],
+    video: [
+      { webm: ohMyFoodVideo1Webm, mp4: ohMyFoodVideo1Mp4 },
+      { webm: ohMyFoodVideo2Webm, mp4: ohMyFoodVideo2Mp4 },
+    ],
+  },
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#5e4a7d" },
 }
 
@@ -108,13 +164,43 @@ export const projet3 = {
       url: "https://drive.google.com/file/d/1FRpa833DhwfRX3kstbwJIsfB5IUQJ4Rj/view?usp=drive_link",
     },
   ],
-  image: [{ description: "", source: maquetteChatDesktop }],
-  mobile: [
+  image: [
     {
-      description: "",
-      source: maquetteChatMobile,
+      description:
+        "Une capture d'écran d'une application de soutien scolaire montrant la page d'accueil.",
+      source: maquetteDesktop1,
+    },
+    {
+      description:
+        "Une capture d'écran d'une application de soutien scolaire montrant le tableau de bord.",
+      source: maquetteDesktop2,
+    },
+    {
+      description:
+        "Une capture d'écran d'une application de soutien scolaire montrant le chat.",
+      source: maquetteDesktop3,
+    },
+    {
+      description:
+        "Une capture d'écran d'une application de soutien scolaire montrant la gestion de tâches.",
+      source: maquetteDesktop4,
+    },
+    {
+      description:
+        "Une capture d'écran d'une application de soutien scolaire montrant le calendrier",
+      source: maquetteDesktop5,
     },
   ],
+  mobile: {
+    image: [
+      [maquetteMobile1],
+      [maquetteMobile21, maquetteMobile22],
+      [maquetteMobile31, maquetteMobile32, maquetteMobile33],
+      [maquetteMobile41, maquetteMobile42],
+      [maquetteMobile51, maquetteMobile52],
+    ],
+    video: [],
+  },
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#032637" },
 }
 
@@ -130,8 +216,13 @@ export const projet4 = {
       url: "https://github.com/NC81/NicolasCandeli_12_22042023",
     },
   ],
-  image: [{ description: "", source: sportSee }],
-  mobile: [{ description: "", source: "" }],
+  image: [
+    {
+      description:
+        "Une capture d'écran d'une application de suivi de performances sportives appelée SportSee montrant divers types de graphiques.",
+      source: sportSee,
+    },
+  ],
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#2b7357" },
 }
 
@@ -153,7 +244,17 @@ export const projet5 = {
       url: "https://www.npmjs.com/package/ocr-table-p14",
     },
   ],
-  image: [{ description: "", source: hrnet }],
-  mobile: [{ description: "", source: "" }],
+  image: [
+    {
+      description:
+        "Une capture d'écran d'une application de gestion d'employés appelée HRnet montrant un formulaire d'inscription.",
+      source: hrnet1,
+    },
+    {
+      description:
+        "Une capture d'écran d'une application de gestion d'employés appelée HRnet montrant une liste d'employés.",
+      source: hrnet2,
+    },
+  ],
   couleur: { texte: "#ffffff", fond1: "#2b7357", fond2: "#2b7357" },
 }

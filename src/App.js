@@ -20,30 +20,33 @@ export default function App() {
   }
 
   return (
-    <div className="conteneur-global">
+    <>
       <Header gereClic={gereClic} />
       <main>
-        <Presentation donnees={biographie} />
+        <Presentation histoire={true} donnees={biographie} />
         <Competences />
-        <Presentation donnees={philosophie} inverse={true} />
-        <Presentation ref={ref} donnees={projet1} projet={true} />
+        <Presentation histoire={true} donnees={philosophie} inverse={true} />
+        <Presentation ref={ref} donnees={projet1} />
         <Presentation
           donnees={projet2}
-          projet={true}
           inverse={true}
-          mobile={{ placement: "gauche", media: "video" }}
+          mobile={{ placement: "gauche", media: "image" }}
         />
-        <Presentation donnees={combat} inverse={true} epique={true} />
+        <Presentation
+          histoire={true}
+          donnees={combat}
+          inverse={true}
+          epique={true}
+        />
         <Presentation
           donnees={projet3}
-          projet={true}
           mobile={{ placement: "droite", media: "image" }}
         />
-        <Presentation donnees={projet4} projet={true} inverse={true} />
-        <Presentation donnees={projet5} projet={true} />
-        <Presentation donnees={conclusion} />
+        <Presentation donnees={projet4} inverse={true} />
+        <Presentation donnees={projet5} />
+        <Presentation histoire={true} donnees={conclusion} />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }

@@ -20,6 +20,7 @@
     }
     ul {
       margin-top: 70px;
+      list-style-type: square;
       @include laptop {
         margin-top: $margin-responsive;
       }
@@ -41,10 +42,7 @@
       justify-content: space-between;
       width: 100%;
       height: 100%;
-      margin: 0;
-      padding: 0;
       z-index: 1;
-      list-style: none;
       font: bold 1rem "Telegraph";
       letter-spacing: $letter-spacing-title;
       text-align: center;

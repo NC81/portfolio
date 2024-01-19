@@ -1,12 +1,17 @@
+import { useState } from "react"
 import { forwardRef } from "react"
 import Lien from "../../components/lien/Lien"
 import Mobile from "../../components/mobile/Mobile"
 import { motion } from "framer-motion"
+import Carrousel from "../carrousel/Carrousel"
 
 export default forwardRef(function Presentation(
-  { donnees, inverse, projet, epique, mobile },
+  { donnees, histoire, inverse, epique, mobile },
   ref
 ) {
+  const [indexImage, etablitindexImage] = useState(0)
+  const [sousIndexImage, etablitSousIndexImage] = useState(0)
+
   function formateTexteGras(texte) {
     return texte.replace(/(\*\*|__)(.*?)\1/g, "<strong>$2</strong>")
   }
@@ -14,22 +19,18 @@ export default forwardRef(function Presentation(
   const styleDeTexte = {
     color: `${donnees.couleur.texte}`,
   }
-
   const styleDuConteneurDePage = {
     color: `${donnees.couleur.texte}`,
     background: `linear-gradient(180deg, ${donnees.couleur.fond1} 0%, ${donnees.couleur.fond2} 100%)`,
   }
-
-  const styleDeBordureDimage = !projet
+  const styleDeBordureDimage = !donnees.lien
     ? {
         border: `1px solid ${donnees.couleur.texte}`,
       }
     : undefined
-
   const styleDeLigne = {
     background: `linear-gradient(90deg, ${donnees.couleur.texte}, transparent)`,
   }
-
   const styleDeFlex = inverse && { flexDirection: "row-reverse" }
 
   const visuelMobile =
@@ -38,18 +39,19 @@ export default forwardRef(function Presentation(
       : mobile && mobile.placement === "droite"
       ? "page-presentation__visuel--mobile--droite"
       : ""
-  const visuelProjet = projet ? "page-presentation__visuel--projet" : ""
-
-  const texteProjet = projet ? "page-presentation__texte--projet" : ""
-  const texteProjetGrand =
-    projet && donnees.texte.length >= 3
-      ? "page-presentation__texte--grand-projet"
+  const visuelProjet = !histoire ? "page-presentation__visuel--projet" : ""
+  const texteProjet = !histoire ? "page-presentation__paragr--projet" : ""
+  const visuelGrandTexte =
+    donnees.lien && donnees.texte.length >= 3
+      ? "page-presentation__visuel--grand-texte"
       : ""
-
+  const lectureGrandTexte =
+    donnees.lien && donnees.texte.length >= 3
+      ? "page-presentation__paragr--grand-texte"
+      : ""
   const listeTextesEpique = epique
     ? "page-presentation__liste-textes--epique"
     : ""
-
   const listeTextesMobile = mobile
     ? "page-presentation__liste-textes--mobile"
     : ""
@@ -71,44 +73,44 @@ export default forwardRef(function Presentation(
           <div className="page-titre__ligne" style={styleDeLigne}></div>
         </motion.div>
         <div className="page-presentation__corps" style={styleDeFlex}>
-          {donnees.texte.length > 2 ? (
-            <motion.div
-              initial={{ opacity: 0, translateX: -20 }}
-              whileInView={{ opacity: 1, translateX: 0 }}
-              transition={{ duration: 0.8 }}
-              className="page-presentation__demo"
-            >
-              <img
-                src={donnees.image[0].source}
-                style={styleDeBordureDimage}
-                alt=""
+          <motion.div
+            initial={{ opacity: 0, translateY: -20 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className={`page-presentation__visuel ${visuelMobile} ${visuelProjet} ${visuelGrandTexte}`}
+          >
+            {mobile && (
+              <Mobile
+                indexImage={indexImage}
+                sousIndexImage={sousIndexImage}
+                etablitSousIndexImage={etablitSousIndexImage}
+                objet={donnees.mobile}
+                placement={mobile.placement}
               />
-              {donnees.lien.map((objet, index) => (
-                <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
-              ))}
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, translateY: -20 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className={`page-presentation__visuel ${visuelMobile} ${visuelProjet}`}
-            >
-              {mobile && (
-                <Mobile
-                  media={mobile.media}
-                  source={donnees.mobile[0].source}
-                  placement={mobile.placement}
+            )}
+            {donnees.lien && !histoire ? (
+              <>
+                <Carrousel
+                  indexImage={indexImage}
+                  etablitindexImage={etablitindexImage}
+                  etablitSousIndexImage={etablitSousIndexImage}
+                  liste={donnees.image}
+                  style={styleDeBordureDimage}
                 />
-              )}
+                {donnees.texte.length >= 3 &&
+                  donnees.lien.map((objet, index) => (
+                    <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
+                  ))}
+              </>
+            ) : (
               <img
-                className="page-presentation__image "
+                className="page-presentation__image"
                 src={donnees.image[0].source}
                 style={styleDeBordureDimage}
-                alt=""
+                alt={donnees.image[0].description}
               />
-            </motion.div>
-          )}
+            )}
+          </motion.div>
 
           {epique && (
             <motion.img
@@ -130,7 +132,7 @@ export default forwardRef(function Presentation(
           >
             {donnees.texte.map((el, index) => (
               <p
-                className={`page-presentation__texte ${texteProjet} ${texteProjetGrand}`}
+                className={`page-presentation__paragr ${texteProjet} ${lectureGrandTexte}`}
                 style={styleDeTexte}
                 key={`${index}`}
                 dangerouslySetInnerHTML={{

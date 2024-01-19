@@ -18,10 +18,21 @@ export default function Header({ gereClic }) {
           </h2>
         </div>
         <div className="header-corps">
-          <img className="header-corps__img--petit" src={cerveau} alt="" />
-          <img className="header-corps__img--moyen" src={vaisseau} alt="" />
+          <img
+            className="header-corps__img--petit"
+            src={cerveau}
+            alt="Un cerveau rayonnant comme une étoile"
+          />
+          <img
+            className="header-corps__img--moyen"
+            src={vaisseau}
+            alt="Un vaisseau dans un nuage de gas multicolore en face d'une étoile."
+          />
           <div onClick={() => gereClic()} className="image header-corps__hero">
-            <img src={hero} alt="" />
+            <img
+              src={hero}
+              alt="Un pilote de vaisseau observe l'espace dans son cockpit à proximité d'une planète, en face d'une étoile."
+            />
             <span className="header-corps__signe header-corps__signe--gauche">
               {">"}
             </span>
