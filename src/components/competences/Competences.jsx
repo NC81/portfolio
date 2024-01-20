@@ -11,7 +11,7 @@ export default function Competences() {
 
     {
       name: "CSS",
-      score: 4,
+      score: 3,
       left: 1,
     },
     {
@@ -51,7 +51,7 @@ export default function Competences() {
     },
     {
       name: "RECHARTS",
-      score: 4,
+      score: 3,
       left: 1,
     },
   ]

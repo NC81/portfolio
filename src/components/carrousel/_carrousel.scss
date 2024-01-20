@@ -1,20 +1,28 @@
 .carrousel {
-  max-height: 419px;
-  &::-webkit-scrollbar {
-    width: 9px;
+  position: relative;
+  &__cont-img {
+    max-height: 420px;
+    overflow-y: scroll;
   }
-  &::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 0 10px;
-    border: 4px solid transparent;
+  &__img {
+    width: 100%;
   }
-  overflow-y: scroll;
   &__barre-boutons {
     display: flex;
-    margin: 10px auto 0;
-    width: 250px;
+    margin: auto;
+    width: 156px;
+    height: 50px;
     justify-content: space-between;
-    button {
-      width: 30px;
+  }
+  &__liste-vues {
+    position: absolute;
+    bottom: 28px;
+    right: 10px;
+    @include mobile {
+      right: initial;
+    }
+    li {
+      display: inline-block;
     }
   }
 }

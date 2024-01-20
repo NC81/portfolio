@@ -4,13 +4,13 @@ import android from "../../assets/images/android.png"
 export default function Mobile({
   objet,
   indexImage,
-  sousIndexImage,
-  etablitSousIndexImage,
+  sousIndexImageMobile,
+  etablitSousIndexImageMobile,
   placement,
 }) {
   const videoref = useRef()
   const [sourceVideo, etablitSourceVideo] = useState(objet.video[0])
-  const [typeDAffichage, etablitTypeDAffichage] = useState(
+  const [typeDeMedia, etablitTypeDeMedia] = useState(
     objet.image ? "image" : "video"
   )
 
@@ -18,16 +18,16 @@ export default function Mobile({
     videoref.current?.load()
   }, [sourceVideo])
 
-  function gereClicTypeDAffichage() {
-    if (typeDAffichage === "image") {
+  function gereClicTypeDeMedia() {
+    if (typeDeMedia === "image") {
       return "video"
     } else {
       return "image"
     }
   }
 
-  const imageSelection = typeDAffichage === "image" ? "selection" : ""
-  const videoSelection = typeDAffichage === "video" ? "selection" : ""
+  const imageSelection = typeDeMedia === "image" ? "selection" : ""
+  const videoSelection = typeDeMedia === "video" ? "selection" : ""
 
   function definiClasseSource(source) {
     if (source.webm === sourceVideo.webm) {
@@ -37,8 +37,8 @@ export default function Mobile({
     }
   }
 
-  function definiClasseSousIndex(sousIndex) {
-    if (sousIndex === sousIndexImage) {
+  function definiClasseSousIndex(index) {
+    if (index === sousIndexImageMobile) {
       return "selection"
     } else {
       return ""
@@ -46,42 +46,49 @@ export default function Mobile({
   }
 
   return (
-    <div className={`mobile-conteneur mobile-conteneur--${placement}`}>
-      <img className="mobile-android" src={android} alt="Un mobile android" />
-      <div className="mobile-conteneur__barre-boutons">
-        {objet.image && objet.video.length > 0 && (
+    <div className={`mobile mobile--${placement}`}>
+      <img className="mobile__boitier" src={android} alt="Un mobile android" />
+      <div className="mobile__barre-boutons">
+        {objet.image.length > 0 && objet.video.length > 0 && (
           <>
             <button
-              onClick={() => etablitTypeDAffichage(gereClicTypeDAffichage())}
-              className={`bouton ${imageSelection}`}
+              onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
+              className={`bouton bouton--mobile ${imageSelection}`}
             >
               IMAGE
             </button>
             <button
-              onClick={() => etablitTypeDAffichage(gereClicTypeDAffichage())}
-              className={`bouton ${videoSelection}`}
+              onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
+              className={`bouton bouton--mobile ${videoSelection}`}
             >
               VIDÉO
             </button>
           </>
         )}
       </div>
-      {objet.video && typeDAffichage === "video" && objet.video.length > 1 && (
+      {objet.video && typeDeMedia === "video" && objet.video.length > 1 && (
         <ul>
           {objet.video.map((el, index) => (
             <li onClick={() => etablitSourceVideo(el)} key={`${index}`}>
-              <button className={`bouton ${definiClasseSource(el)}`}>
+              <button
+                className={`bouton bouton--vue ${definiClasseSource(el)}`}
+              >
                 {index + 1}
               </button>
             </li>
           ))}
         </ul>
       )}
-      {objet.image[indexImage].length > 1 && typeDAffichage === "image" && (
+      {objet.image[indexImage].length > 1 && typeDeMedia === "image" && (
         <ul>
           {objet.image[indexImage].map((el, index) => (
-            <li onClick={() => etablitSousIndexImage(index)} key={`${index}`}>
-              <button className={`bouton ${definiClasseSousIndex(index)}`}>
+            <li
+              onClick={() => etablitSousIndexImageMobile(index)}
+              key={`${index}`}
+            >
+              <button
+                className={`bouton bouton--vue ${definiClasseSousIndex(index)}`}
+              >
                 {index + 1}
               </button>
             </li>
@@ -89,22 +96,17 @@ export default function Mobile({
         </ul>
       )}
 
-      <div className="mobile-android__ecran">
-        {typeDAffichage === "video" && (
-          <video
-            ref={videoref}
-            className="mobile-android__video"
-            controls
-            autoPlay
-          >
+      <div className="mobile__ecran barre-defilement">
+        {typeDeMedia === "video" && (
+          <video ref={videoref} className="mobile__video" controls autoPlay>
             <source src={sourceVideo.webm} type="video/webm" />
             <source src={sourceVideo.mp4} type="video/mp4" />
           </video>
         )}
-        {typeDAffichage === "image" && (
+        {typeDeMedia === "image" && (
           <img
-            className="mobile-android__image"
-            src={objet.image[indexImage][sousIndexImage]}
+            className="mobile__img"
+            src={objet.image[indexImage][sousIndexImageMobile]}
             alt=""
           />
         )}

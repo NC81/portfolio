@@ -12,11 +12,18 @@ import ohMyFoodVideo1Webm from "../../assets/videos/ohmyfood-anim-chargement.web
 import ohMyFoodVideo1Mp4 from "../../assets/videos/ohmyfood-anim-chargement.mp4"
 import ohMyFoodVideo2Webm from "../../assets/videos/ohmyfood-anim-site.webm"
 import ohMyFoodVideo2Mp4 from "../../assets/videos/ohmyfood-anim-site.mp4"
-import maquetteDesktop1 from "../../assets/images/maquette-desktop-1.png"
-import maquetteDesktop2 from "../../assets/images/maquette-desktop-2.png"
-import maquetteDesktop3 from "../../assets/images/maquette-desktop-3.png"
-import maquetteDesktop4 from "../../assets/images/maquette-desktop-4.png"
-import maquetteDesktop5 from "../../assets/images/maquette-desktop-5.png"
+import maquetteDesktop11 from "../../assets/images/maquette-desktop-1-1.png"
+import maquetteDesktop12 from "../../assets/images/maquette-desktop-1-2.png"
+import maquetteDesktop21 from "../../assets/images/maquette-desktop-2-1.png"
+import maquetteDesktop22 from "../../assets/images/maquette-desktop-2-2.png"
+import maquetteDesktop23 from "../../assets/images/maquette-desktop-2-3.png"
+import maquetteDesktop31 from "../../assets/images/maquette-desktop-3-1.png"
+import maquetteDesktop32 from "../../assets/images/maquette-desktop-3-2.png"
+import maquetteDesktop33 from "../../assets/images/maquette-desktop-3-3.png"
+import maquetteDesktop41 from "../../assets/images/maquette-desktop-4-1.png"
+import maquetteDesktop42 from "../../assets/images/maquette-desktop-4-2.png"
+import maquetteDesktop51 from "../../assets/images/maquette-desktop-5-1.png"
+import maquetteDesktop52 from "../../assets/images/maquette-desktop-5-2.png"
 import maquetteMobile1 from "../../assets/images/maquette-mobile-1.png"
 import maquetteMobile21 from "../../assets/images/maquette-mobile-2-1.png"
 import maquetteMobile22 from "../../assets/images/maquette-mobile-2-2.png"
@@ -112,7 +119,7 @@ export const projet1 = {
     {
       description:
         "Une capture d'écran d'une application de location de logement appelée Reservia.",
-      source: reservia,
+      source: [reservia],
     },
   ],
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#919ba5" },
@@ -134,12 +141,13 @@ export const projet2 = {
     {
       description:
         "Une capture d'écran du restaurant Oh My Food montrant la page d'accueil.",
-      source: ohMyFoodDesktop1,
+      source: [ohMyFoodDesktop1],
     },
+
     {
       description:
         "Une capture d'écran du restaurant Oh My Food montrant la page d'un restaurant avec différents menus.",
-      source: ohMyFoodDesktop2,
+      source: [ohMyFoodDesktop2],
     },
   ],
   mobile: {
@@ -168,27 +176,27 @@ export const projet3 = {
     {
       description:
         "Une capture d'écran d'une application de soutien scolaire montrant la page d'accueil.",
-      source: maquetteDesktop1,
+      source: [maquetteDesktop11, maquetteDesktop12],
     },
     {
       description:
         "Une capture d'écran d'une application de soutien scolaire montrant le tableau de bord.",
-      source: maquetteDesktop2,
+      source: [maquetteDesktop21, maquetteDesktop22, maquetteDesktop23],
     },
     {
       description:
         "Une capture d'écran d'une application de soutien scolaire montrant le chat.",
-      source: maquetteDesktop3,
+      source: [maquetteDesktop31, maquetteDesktop32, maquetteDesktop33],
     },
     {
       description:
         "Une capture d'écran d'une application de soutien scolaire montrant la gestion de tâches.",
-      source: maquetteDesktop4,
+      source: [maquetteDesktop41, maquetteDesktop42],
     },
     {
       description:
         "Une capture d'écran d'une application de soutien scolaire montrant le calendrier",
-      source: maquetteDesktop5,
+      source: [maquetteDesktop51, maquetteDesktop52],
     },
   ],
   mobile: {
@@ -220,7 +228,7 @@ export const projet4 = {
     {
       description:
         "Une capture d'écran d'une application de suivi de performances sportives appelée SportSee montrant divers types de graphiques.",
-      source: sportSee,
+      source: [sportSee],
     },
   ],
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#2b7357" },
@@ -248,12 +256,12 @@ export const projet5 = {
     {
       description:
         "Une capture d'écran d'une application de gestion d'employés appelée HRnet montrant un formulaire d'inscription.",
-      source: hrnet1,
+      source: [hrnet1],
     },
     {
       description:
         "Une capture d'écran d'une application de gestion d'employés appelée HRnet montrant une liste d'employés.",
-      source: hrnet2,
+      source: [hrnet2],
     },
   ],
   couleur: { texte: "#ffffff", fond1: "#2b7357", fond2: "#2b7357" },

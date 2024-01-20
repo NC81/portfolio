@@ -10,7 +10,7 @@ export default forwardRef(function Presentation(
   ref
 ) {
   const [indexImage, etablitindexImage] = useState(0)
-  const [sousIndexImage, etablitSousIndexImage] = useState(0)
+  const [sousIndexImageMobile, etablitSousIndexImageMobile] = useState(0)
 
   function formateTexteGras(texte) {
     return texte.replace(/(\*\*|__)(.*?)\1/g, "<strong>$2</strong>")
@@ -33,18 +33,8 @@ export default forwardRef(function Presentation(
   }
   const styleDeFlex = inverse && { flexDirection: "row-reverse" }
 
-  const visuelMobile =
-    mobile && mobile.placement === "gauche"
-      ? "page-presentation__visuel--mobile--gauche"
-      : mobile && mobile.placement === "droite"
-      ? "page-presentation__visuel--mobile--droite"
-      : ""
   const visuelProjet = !histoire ? "page-presentation__visuel--projet" : ""
   const texteProjet = !histoire ? "page-presentation__paragr--projet" : ""
-  const visuelGrandTexte =
-    donnees.lien && donnees.texte.length >= 3
-      ? "page-presentation__visuel--grand-texte"
-      : ""
   const lectureGrandTexte =
     donnees.lien && donnees.texte.length >= 3
       ? "page-presentation__paragr--grand-texte"
@@ -77,23 +67,14 @@ export default forwardRef(function Presentation(
             initial={{ opacity: 0, translateY: -20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`page-presentation__visuel ${visuelMobile} ${visuelProjet} ${visuelGrandTexte}`}
+            className={`page-presentation__visuel ${visuelProjet}`}
           >
-            {mobile && (
-              <Mobile
-                indexImage={indexImage}
-                sousIndexImage={sousIndexImage}
-                etablitSousIndexImage={etablitSousIndexImage}
-                objet={donnees.mobile}
-                placement={mobile.placement}
-              />
-            )}
             {donnees.lien && !histoire ? (
               <>
                 <Carrousel
                   indexImage={indexImage}
                   etablitindexImage={etablitindexImage}
-                  etablitSousIndexImage={etablitSousIndexImage}
+                  etablitSousIndexImageMobile={etablitSousIndexImageMobile}
                   liste={donnees.image}
                   style={styleDeBordureDimage}
                 />
@@ -104,10 +85,19 @@ export default forwardRef(function Presentation(
               </>
             ) : (
               <img
-                className="page-presentation__image"
+                className="page-presentation__img-histoire"
                 src={donnees.image[0].source}
                 style={styleDeBordureDimage}
                 alt={donnees.image[0].description}
+              />
+            )}
+            {mobile && (
+              <Mobile
+                indexImage={indexImage}
+                sousIndexImageMobile={sousIndexImageMobile}
+                etablitSousIndexImageMobile={etablitSousIndexImageMobile}
+                objet={donnees.mobile}
+                placement={mobile.placement}
               />
             )}
           </motion.div>
@@ -117,7 +107,7 @@ export default forwardRef(function Presentation(
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeIn" }}
-              className="page-presentation__image--secondaire"
+              className="page-presentation__img-histoire--secondaire"
               src={donnees.image[1].source}
               style={styleDeBordureDimage}
               alt=""
