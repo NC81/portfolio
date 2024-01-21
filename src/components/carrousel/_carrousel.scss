@@ -7,22 +7,28 @@
   &__img {
     width: 100%;
   }
-  &__barre-boutons {
+  &__liste-medias {
     display: flex;
     margin: auto;
     width: 156px;
     height: 50px;
     justify-content: space-between;
   }
+  &__liste-pages {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 2%;
+  }
   &__liste-vues {
     position: absolute;
-    bottom: 28px;
-    right: 10px;
+    display: flex;
+    bottom: 20px;
+    right: 20px;
+    gap: 5px;
     @include mobile {
       right: initial;
-    }
-    li {
-      display: inline-block;
     }
   }
 }

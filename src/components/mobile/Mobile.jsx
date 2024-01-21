@@ -29,16 +29,16 @@ export default function Mobile({
   const imageSelection = typeDeMedia === "image" ? "selection" : ""
   const videoSelection = typeDeMedia === "video" ? "selection" : ""
 
-  function definiClasseSource(source) {
-    if (source.webm === sourceVideo.webm) {
+  function definiClasseSelonSousIndex(index) {
+    if (index === sousIndexImageMobile) {
       return "selection"
     } else {
       return ""
     }
   }
 
-  function definiClasseSousIndex(index) {
-    if (index === sousIndexImageMobile) {
+  function definiClasseSelonSourceVideo(source) {
+    if (source === sourceVideo) {
       return "selection"
     } else {
       return ""
@@ -48,18 +48,18 @@ export default function Mobile({
   return (
     <div className={`mobile mobile--${placement}`}>
       <img className="mobile__boitier" src={android} alt="Un mobile android" />
-      <div className="mobile__barre-boutons">
+      <div className="mobile__liste-medias">
         {objet.image.length > 0 && objet.video.length > 0 && (
           <>
             <button
               onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
-              className={`bouton bouton--mobile ${imageSelection}`}
+              className={`bouton bouton--media ${imageSelection}`}
             >
               IMAGE
             </button>
             <button
               onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
-              className={`bouton bouton--mobile ${videoSelection}`}
+              className={`bouton bouton--media ${videoSelection}`}
             >
               VIDÉO
             </button>
@@ -67,31 +67,28 @@ export default function Mobile({
         )}
       </div>
       {objet.video && typeDeMedia === "video" && objet.video.length > 1 && (
-        <ul>
+        <ul className="mobile__liste-vues">
           {objet.video.map((el, index) => (
-            <li onClick={() => etablitSourceVideo(el)} key={`${index}`}>
-              <button
-                className={`bouton bouton--vue ${definiClasseSource(el)}`}
-              >
-                {index + 1}
-              </button>
-            </li>
+            <li
+              onClick={() => etablitSourceVideo(el)}
+              className={`bouton bouton--vue-mobile ${definiClasseSelonSourceVideo(
+                el
+              )}`}
+              key={`${index}`}
+            ></li>
           ))}
         </ul>
       )}
       {objet.image[indexImage].length > 1 && typeDeMedia === "image" && (
-        <ul>
+        <ul className="mobile__liste-vues">
           {objet.image[indexImage].map((el, index) => (
             <li
               onClick={() => etablitSousIndexImageMobile(index)}
+              className={`bouton bouton--vue-mobile ${definiClasseSelonSousIndex(
+                index
+              )}`}
               key={`${index}`}
-            >
-              <button
-                className={`bouton bouton--vue ${definiClasseSousIndex(index)}`}
-              >
-                {index + 1}
-              </button>
-            </li>
+            ></li>
           ))}
         </ul>
       )}

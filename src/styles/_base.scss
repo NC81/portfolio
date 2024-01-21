@@ -125,39 +125,6 @@ ul {
   }
 }
 
-.bouton {
-  padding: 0;
-  border: none;
-  color: white;
-  background-color: transparent;
-  cursor: pointer;
-  &--page {
-    width: 35px;
-    font-size: 1.5rem;
-  }
-  &--vue {
-    width: 20px;
-    height: 20px;
-    font-family: inherit;
-    font-size: 0.75rem;
-    color: #959595;
-    &:hover {
-      text-decoration: underline;
-    }
-    @include tablette {
-      font-size: 0.6rem;
-    }
-    &.selection {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-  &--faux {
-    width: 35px;
-    cursor: initial;
-  }
-}
-
 .barre-defilement {
   &::-webkit-scrollbar {
     width: 8px;
@@ -183,6 +150,50 @@ ul {
   }
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.bouton {
+  background-color: #959595;
+  cursor: pointer;
+  &--media {
+    width: 25%;
+    padding: 3px 0 2px;
+    font-size: 0.7rem;
+  }
+  &:hover {
+    animation: clignote 600ms both infinite;
+  }
+  &.selection {
+    background-color: white;
+  }
+  &--page {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #959595;
+  }
+  &--vue-desktop {
+    width: 20px;
+    height: 15px;
+  }
+  &--vue-mobile {
+    width: 14px;
+    height: 18px;
+    @include tablette {
+      width: 12px;
+      height: 16px;
+    }
+    @include mobile {
+      width: 10px;
+      height: 14px;
+    }
+  }
+}
+
 @keyframes glisseEnBas {
   from {
     transform: translateY(-20px);
@@ -191,5 +202,17 @@ ul {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes clignote {
+  0% {
+    background-color: #959595;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: #959595;
   }
 }
