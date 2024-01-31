@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import Carrousel from "../carrousel/Carrousel"
 
 export default forwardRef(function Presentation(
-  { donnees, histoire, inverse, epique, mobile },
+  { donnees, histoire, inverse, mobile },
   ref
 ) {
   const [indexImage, etablitindexImage] = useState(0)
@@ -23,7 +23,7 @@ export default forwardRef(function Presentation(
     color: `${donnees.couleur.texte}`,
     background: `linear-gradient(180deg, ${donnees.couleur.fond1} 0%, ${donnees.couleur.fond2} 100%)`,
   }
-  const styleDeBordureDimage = !donnees.lien
+  const styleDeBordureDimage = histoire
     ? {
         border: `1px solid ${donnees.couleur.texte}`,
       }
@@ -39,9 +39,6 @@ export default forwardRef(function Presentation(
     donnees.lien && donnees.texte.length >= 3
       ? "page-presentation__paragr--grand-texte"
       : ""
-  const listeTextesEpique = epique
-    ? "page-presentation__liste-textes--epique"
-    : ""
   const listeTextesMobile = mobile
     ? "page-presentation__liste-textes--mobile"
     : ""
@@ -78,10 +75,18 @@ export default forwardRef(function Presentation(
                   liste={donnees.image}
                   style={styleDeBordureDimage}
                 />
-                {donnees.texte.length >= 3 &&
-                  donnees.lien.map((objet, index) => (
-                    <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
-                  ))}
+
+                {donnees.texte.length >= 3 && (
+                  <div className="page-presentation__grand-cont-liens">
+                    {donnees.lien.map((objet, index) => (
+                      <Lien
+                        style={styleDeTexte}
+                        objet={objet}
+                        key={`${index}`}
+                      />
+                    ))}
+                  </div>
+                )}
               </>
             ) : (
               <img
@@ -101,23 +106,11 @@ export default forwardRef(function Presentation(
               />
             )}
           </motion.div>
-
-          {epique && (
-            <motion.img
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeIn" }}
-              className="page-presentation__img-histoire--secondaire"
-              src={donnees.image[1].source}
-              style={styleDeBordureDimage}
-              alt=""
-            ></motion.img>
-          )}
           <motion.div
             initial={{ opacity: 0, translateY: 20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8 }}
-            className={`page-presentation__liste-textes ${listeTextesMobile} ${listeTextesEpique}`}
+            className={`page-presentation__liste-textes ${listeTextesMobile}`}
             style={styleDeTexte}
           >
             {donnees.texte.map((el, index) => (

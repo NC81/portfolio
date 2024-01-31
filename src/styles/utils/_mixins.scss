@@ -9,6 +9,16 @@
   }
 }
 
+@mixin cache-image($hauteur, $zIndex) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: $hauteur;
+  background-color: white;
+  opacity: 0;
+  z-index: $zIndex;
+}
+
 @mixin mobile {
   @media screen and (max-width: map-get($breakpoint, mobile)) {
     @content;

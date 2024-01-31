@@ -1,8 +1,6 @@
 import reveur from "../../assets//images/reveur.jpg"
 import travail from "../../assets//images/travail.jpg"
 import aventure from "../../assets//images/aventure.jpg"
-import general from "../../assets//images/general.jpg"
-import ennemi from "../../assets//images/ennemi.jpg"
 import reservia from "../../assets//images/reservia.png"
 import ohMyFoodDesktop1 from "../../assets//images/ohmyfood-desktop-1.png"
 import ohMyFoodDesktop2 from "../../assets//images/ohmyfood-desktop-2.png"
@@ -37,6 +35,14 @@ import maquetteMobile52 from "../../assets/images/maquette-mobile-5-2.png"
 import sportSee from "../../assets//images/sportsee.png"
 import hrnet1 from "../../assets//images/hrnet-1.png"
 import hrnet2 from "../../assets//images/hrnet-2.png"
+import temple from "../../assets/images/temple.jpg"
+import relique from "../../assets/images/relique.jpg"
+import gardien from "../../assets/images/gardien.jpg"
+import puissance from "../../assets/images/puissance.jpg"
+import arbre from "../../assets/images/arbre.jpg"
+import oiseau from "../../assets/images/oiseau.jpg"
+import nourrir from "../../assets/images/nourrir.jpg"
+import vol from "../../assets/images/vol.jpg"
 
 export const biographie = {
   titre: "Qui suis-je ?",
@@ -76,14 +82,33 @@ export const philosophie = {
   couleur: { texte: "#ffffff", fond1: "#bb7c4e", fond2: "#919ba5" },
 }
 
-export const combat = {
-  titre: "Ma Philosophie",
+export const donneesAventure = {
+  titre: "Mes Aventures",
   texte: [
-    "Les obstacles sont ces choses effrayantes que vous voyez lorsque vous détournez les yeux de vos objectifs.",
+    [
+      "Cette statue menaçante gardant l'entrée d'une salle sacrée me ressemblait étrangement. Mais où m'étais-je donc rendu ?",
+      "À l'intérieur de la salle, tout ne faisait plus qu'un. Je regardais la relique comme elle semblait me regarder",
+      "après l'avoir touché du doigt, j'avais gagné un nouveau regard sur moi-même. Depuis lors, je vois des parcelles de futur.",
+    ],
+    [
+      "Un grand oiseau mystique poussait des cris stridents à proximité de l'arbre millénaire pour me dissuader de l'approcher.",
+      "Après d'innombrables tentatives, j'avais fini par comprendre la pureté de l'énergie qui l'animait. Cela m'avait permis de l'apprivoiser",
+      "mais avant de me quitter, celui-ci m'avait transmis son aptitude a survoler le monde. Depuis lors, je pense apercevoir ma destinée.",
+    ],
   ],
   image: [
-    { description: "", source: general },
-    { description: "", source: ennemi },
+    [
+      { description: "", source: temple },
+      { description: "", source: gardien },
+      { description: "", source: relique },
+      { description: "", source: puissance },
+    ],
+    [
+      { description: "", source: arbre },
+      { description: "", source: oiseau },
+      { description: "", source: nourrir },
+      { description: "", source: vol },
+    ],
   ],
   couleur: { texte: "#ffffff", fond1: "#5e4a7d", fond2: "#032637" },
 }
@@ -103,11 +128,11 @@ export const conclusion = {
   couleur: { texte: "#ffeaed", fond1: "#2b7357", fond2: "#243435" },
 }
 
-export const projet1 = {
+export const donneesProjet1 = {
   titre: "Site de location d’hébergement",
   texte: [
-    "Ce premier projet, basé sur l’apprentissage de **HTML** et **CSS**, m'a permis de canaliser mon perfectionnisme naissant : j'ai consacré chaque effort pour reproduire rigoureusement la maquette initiale.",
-    "Bien plus que la simple validation de compétences techniques, il a jeté les bases d’un état d'esprit axé sur la qualité et le dépassement constant de mes limites.",
+    "Ce premier projet, basé sur l’apprentissage de **HTML** et **CSS**, m'a permis de canaliser mon perfectionnisme naissant en consacrant mes efforts à la reproduction rigoureuse de la maquette initiale.",
+    "Bien plus qu'une simple validation de compétences techniques, il a jeté les bases d’un état d'esprit axé sur la qualité et le dépassement de mes limites.",
   ],
   lien: [
     {
@@ -125,10 +150,10 @@ export const projet1 = {
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#919ba5" },
 }
 
-export const projet2 = {
+export const donneesProjet2 = {
   titre: "Dynamisation de pages d’un restaurant avec des animations CSS",
   texte: [
-    "Ce projet a été l’occasion d’apprendre à structurer le code CSS avec **Sass** pour donner vie à une expérience visuelle immersive, aidée par une **animation** de chargement complexe.",
+    "Ce projet a été l’occasion d’apprendre à structurer le code CSS avec **Sass** pour proposer une expérience visuelle immersive, aidée par une **animation** de chargement complexe.",
     "J’ai touché du doigt pour la première fois le plaisir de laisser mon empreinte créative sur un site web et d’en **assurer la cohérence graphique**.",
   ],
   lien: [
@@ -160,11 +185,11 @@ export const projet2 = {
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#5e4a7d" },
 }
 
-export const projet3 = {
+export const donneesProjet3 = {
   titre: "Définition des besoins pour une App de soutien scolaire",
   texte: [
-    "Participer à la conception de cette application m'a permis de fusionner l'**analyse des besoins** avec la **création de maquettes** détaillées sur **Figma**.",
-    "En contribuant à ce projet avec une **méthodologie agile**, j'ai pu apporter une vision complète, de la conception de **solutions techniques** à la matérialisation de ma créativité.",
+    "Participer à la conception de cette application m'a permis de fusionner l'**analyse des besoins** à partir d'un cahier des charges avec la **création de maquettes** sur **Figma**.",
+    "En contribuant à ce projet avec une **méthodologie agile**, j'ai pu apporter une vision complète, de la conception de **solutions techniques** à la matérialisation d'idées visuelles.",
   ],
   lien: [
     {
@@ -212,11 +237,11 @@ export const projet3 = {
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#032637" },
 }
 
-export const projet4 = {
+export const donneesProjet4 = {
   titre: "Tableau de bord d'analytics avec Recharts",
   texte: [
-    "Ce projet a été une fusion d'expertises : j'ai travaillé sur la **qualité de données** issues d'une **API** pour créer un tableau de bord d'analytics dans une application **React**.",
-    "La visualisation précise des performances physiques des utilisateurs à l'aide de diagrammes développés avec **Recharts** m’a permis de combiner la manipulation de données et le développement front-end avancé.",
+    "Ce projet a été l'occasion de travailler sur la **qualité de données** issues d'une **API** pour créer un tableau de bord d'analytics dans une application **React**.",
+    "L'affichage des performances physiques des utilisateurs m'a demandé de combiner la manipulation de données avec leur représentation visuelle par des diagrammes avancés développés avec **Recharts**.",
   ],
   lien: [
     {
@@ -234,13 +259,13 @@ export const projet4 = {
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#2b7357" },
 }
 
-export const projet5 = {
+export const donneesProjet5 = {
   titre: "Migration d’une librairie jQuery vers React",
   texte: [
     "La dernière étape de ma formation a été la **conversion d'un tableau de données jQuery** avec toutes ses fonctionnalités en composant React, pour une application de gestion d’employés.",
     "J’ai su **optimiser** ses performances grâce à une gestion de la mise en cache des nouvelles entrées.",
-    "Après avoir confirmé mes compétences en **Redux** et **React Testing Library**, j’ai aussi saisi l’opportunité de refondre le design de l’application pour intégrer un style simple et élégant.",
-    "Enfin, j'ai **déployé le package** final sur **npm** avec une **documentation** exhaustive, proposant une solution prête à l’emploi  pour la communauté des développeurs.",
+    "Après avoir confirmé mes compétences en **Redux** et **React Testing Library**, j’ai saisi l’opportunité de refondre le design de l’application pour intégrer un style simple et élégant.",
+    "Enfin, j'ai **déployé le package** final sur **npm** avec une **documentation** exhaustive, proposant une solution prête à l’emploi.",
   ],
   lien: [
     {

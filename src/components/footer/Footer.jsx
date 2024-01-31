@@ -7,13 +7,13 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   const [survol, etablitSurvol] = useState(false)
-  const [confirmation, afficheconfirmation] = useState(false)
+  const [confirmation, afficheConfirmation] = useState(false)
 
   function gereClic() {
     navigator.clipboard.writeText("nicolas.candeli@outlook.fr")
-    afficheconfirmation(true)
+    afficheConfirmation(true)
     setTimeout(() => {
-      afficheconfirmation(false)
+      afficheConfirmation(false)
     }, 3000)
   }
 
@@ -90,7 +90,9 @@ export default function Footer() {
                     nicolas.candeli@outlook.fr
                   </span>
                 ) : (
-                  <span className="footer__email-confirmation">copié!</span>
+                  <span className="footer__email-confirmation">
+                    email copié!
+                  </span>
                 )}
               </p>
             </li>

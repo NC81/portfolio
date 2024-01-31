@@ -105,6 +105,7 @@ ul {
 }
 
 .page-titre {
+  position: relative;
   display: flex;
   margin-bottom: 75px;
   @include laptop {
@@ -114,6 +115,17 @@ ul {
     flex: 1;
     height: 1px;
     margin-top: 18px;
+  }
+  &__icone-recharger {
+    position: absolute;
+    width: 30px;
+    bottom: -40px;
+    right: 0;
+    cursor: pointer;
+    transition: transform 600ms;
+    &:hover {
+      transform: rotate(360deg);
+    }
   }
 }
 
@@ -138,51 +150,46 @@ ul {
   scrollbar-width: thin;
 }
 
-.icone {
-  &--bas {
-    transform: scaleY(-1);
-  }
-  &--gauche {
-    transform: rotate(90deg);
-  }
-  &--droite {
-    transform: rotate(-90deg);
-  }
-}
-
 button {
   border: none;
   background-color: transparent;
 }
 
 .bouton {
-  background-color: #959595;
+  background-color: #9595959c;
   cursor: pointer;
   &--media {
-    width: 25%;
-    padding: 3px 0 2px;
-    font-size: 0.7rem;
+    width: 14%;
+    height: 100%;
+    padding: 1px;
+    @include mobile {
+      width: 16%;
+      padding: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
-  &:hover {
-    animation: clignote 600ms both infinite;
+  &:not(.selection):hover {
+    animation: clignote 600ms infinite;
   }
   &.selection {
     background-color: white;
   }
   &--page {
     position: relative;
-    width: 25px;
-    height: 20px;
+    width: 23px;
+    height: 18px;
     cursor: pointer;
-    background-color: #959595;
   }
   &--vue-desktop {
-    width: 20px;
-    height: 15px;
+    width: 18px;
+    height: 13px;
   }
   &--vue-mobile {
-    width: 14px;
-    height: 18px;
+    width: 13px;
+    height: 17px;
     @include tablette {
       width: 12px;
       height: 16px;

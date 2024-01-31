@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import android from "../../assets/images/android.png"
+import iconeVideo from "../../assets/icones/icons8-film-30.png"
+import iconeImage from "../../assets/icones/icons8-photo-24.png"
 
 export default function Mobile({
   objet,
@@ -29,7 +31,7 @@ export default function Mobile({
   const imageSelection = typeDeMedia === "image" ? "selection" : ""
   const videoSelection = typeDeMedia === "video" ? "selection" : ""
 
-  function definiClasseSelonSousIndex(index) {
+  function definitClasseSelonSousIndex(index) {
     if (index === sousIndexImageMobile) {
       return "selection"
     } else {
@@ -37,7 +39,7 @@ export default function Mobile({
     }
   }
 
-  function definiClasseSelonSourceVideo(source) {
+  function definitClasseSelonSourceVideo(source) {
     if (source === sourceVideo) {
       return "selection"
     } else {
@@ -55,13 +57,13 @@ export default function Mobile({
               onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
               className={`bouton bouton--media ${imageSelection}`}
             >
-              IMAGE
+              <img src={iconeImage} alt="Captures d'écran" />
             </button>
             <button
               onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
               className={`bouton bouton--media ${videoSelection}`}
             >
-              VIDÉO
+              <img src={iconeVideo} alt="Vidéos" />
             </button>
           </>
         )}
@@ -71,7 +73,7 @@ export default function Mobile({
           {objet.video.map((el, index) => (
             <li
               onClick={() => etablitSourceVideo(el)}
-              className={`bouton bouton--vue-mobile ${definiClasseSelonSourceVideo(
+              className={`bouton bouton--vue-mobile ${definitClasseSelonSourceVideo(
                 el
               )}`}
               key={`${index}`}
@@ -84,7 +86,7 @@ export default function Mobile({
           {objet.image[indexImage].map((el, index) => (
             <li
               onClick={() => etablitSousIndexImageMobile(index)}
-              className={`bouton bouton--vue-mobile ${definiClasseSelonSousIndex(
+              className={`bouton bouton--vue-mobile ${definitClasseSelonSousIndex(
                 index
               )}`}
               key={`${index}`}

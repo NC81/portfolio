@@ -21,16 +21,11 @@
       }
     }
   }
+  &__grand-cont-liens {
+    margin-top: 30px;
+  }
   &__img-histoire {
     width: 100%;
-    &--secondaire {
-      width: 15%;
-      height: 300px;
-      object-fit: cover;
-      @include laptop {
-        width: 36%;
-      }
-    }
   }
   &__liste-textes {
     display: flex;
@@ -43,12 +38,6 @@
       width: 35%;
       @include laptop {
         width: 100%;
-      }
-    }
-    &--epique {
-      width: 25%;
-      @include laptop {
-        width: 50%;
       }
     }
   }
