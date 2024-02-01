@@ -27,17 +27,17 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
           </h2>
         </div>
         <div className="header__corps">
-          <div className="header__colonne header--petit">
-            <div
-              onClick={() => gereClicDefilement("compétences")}
-              onMouseEnter={() => {
-                etablitVerrouillageCiblePetite(true)
-              }}
-              onMouseLeave={() => {
-                etablitVerrouillageCiblePetite(false)
-              }}
-              className="header__cont-img"
-            >
+          <div
+            onClick={() => gereClicDefilement("compétences")}
+            onMouseEnter={() => {
+              etablitVerrouillageCiblePetite(true)
+            }}
+            onMouseLeave={() => {
+              etablitVerrouillageCiblePetite(false)
+            }}
+            className="header__colonne header--petit"
+          >
+            <div className="header__cont-img">
               <img
                 className="header__img"
                 src={cerveau}

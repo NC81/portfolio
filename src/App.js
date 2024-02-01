@@ -23,22 +23,6 @@ export default function App() {
   const refAventures = useRef(null)
   const refRealisations = useRef(null)
 
-  useEffect(() => {
-    window.addEventListener("scroll", observeDefilement)
-    return () => window.removeEventListener("scroll", observeDefilement)
-  }, [])
-
-  function observeDefilement() {
-    const hauteurCachantBouton = 1000
-    const defilement =
-      document.body.scrollTop || document.documentElement.scrollTop
-    if (defilement < hauteurCachantBouton) {
-      etablitBoutonRetourVisible(false)
-    } else {
-      etablitBoutonRetourVisible(true)
-    }
-  }
-
   function gereClicDefilement(string) {
     if (string === "compétences") {
       ref.current = refCompetences.current
@@ -51,6 +35,22 @@ export default function App() {
     }
     ref.current?.scrollIntoView({ behavior: "smooth" })
   }
+
+  function observeDefilement() {
+    const hauteurCachantBouton = 1000
+    const defilement =
+      document.body.scrollTop || document.documentElement.scrollTop
+    if (defilement < hauteurCachantBouton) {
+      etablitBoutonRetourVisible(false)
+    } else {
+      etablitBoutonRetourVisible(true)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", observeDefilement)
+    return () => window.removeEventListener("scroll", observeDefilement)
+  }, [])
 
   return (
     <>
