@@ -1,9 +1,17 @@
+import { useState } from "react"
 import cerveau from "../../assets/images/cerveau.jpg"
 import vaisseau from "../../assets/images/vaisseau.jpg"
 import hero from "../../assets/images/hero.jpg"
-import fleche from "../../assets/icones/icons8-chevron-bas-48-or.png"
+import Ciblage from "../ciblage/Ciblage"
 
 export default function Header({ gereClic }) {
+  const [verrouillageCiblePetite, etablitVerrouillageCiblePetite] =
+    useState(false)
+  const [verrouillageCibleMoyenne, etablitVerrouillageCibleMoyenne] =
+    useState(false)
+  const [verrouillageCibleGrande, etablitVerrouillageCibleGrande] =
+    useState(false)
+
   return (
     <header className="page-conteneur header">
       <div className="page-contenu">
@@ -18,36 +26,70 @@ export default function Header({ gereClic }) {
             Développeur Front-End
           </h2>
         </div>
-        <div className="header-corps">
-          <img
-            className="header-corps__img header-corps__img--petit"
-            src={cerveau}
-            alt="Un cerveau rayonnant comme une étoile"
-          />
-          <img
-            className="header-corps__img header-corps__img--moyen"
-            src={vaisseau}
-            alt="Un vaisseau dans un nuage de gas multicolore en face d'une étoile."
-          />
-          <div onClick={() => gereClic()} className="image header-hero">
-            <div className="header-hero__cont-img">
+        <div className="header__corps">
+          <div className="header__colonne header--petit">
+            <div
+              onClick={() => gereClic("compétences")}
+              onMouseEnter={() => {
+                etablitVerrouillageCiblePetite(true)
+              }}
+              onMouseLeave={() => {
+                etablitVerrouillageCiblePetite(false)
+              }}
+              className="header__cont-img"
+            >
               <img
-                className="header-hero__img"
+                className="header__img"
+                src={cerveau}
+                alt="Un cerveau rayonnant comme une étoile"
+              />
+            </div>
+            <Ciblage verrouillage={verrouillageCiblePetite} couleur="#dcbc9f" />
+            <span>COMPÉTENCES</span>
+          </div>
+          <div
+            onClick={() => gereClic("aventures")}
+            onMouseEnter={() => {
+              etablitVerrouillageCibleMoyenne(true)
+            }}
+            onMouseLeave={() => {
+              etablitVerrouillageCibleMoyenne(false)
+            }}
+            className="header__colonne header--moyen"
+          >
+            <div className="header__cont-img">
+              <img
+                className="header__img"
+                src={vaisseau}
+                alt="Un vaisseau dans un nuage de gas multicolore en face d'une étoile."
+              />
+            </div>
+            <Ciblage
+              verrouillage={verrouillageCibleMoyenne}
+              couleur="#dcbc9f"
+            />
+            <span>AVENTURES</span>
+          </div>
+
+          <div
+            onClick={() => gereClic("réalisations")}
+            onMouseEnter={() => {
+              etablitVerrouillageCibleGrande(true)
+            }}
+            onMouseLeave={() => {
+              etablitVerrouillageCibleGrande(false)
+            }}
+            className="header__colonne header--grand"
+          >
+            <div className="header__cont-img">
+              <img
+                className="header__img"
                 src={hero}
                 alt="Un pilote de vaisseau observe l'espace dans son cockpit à proximité d'une planète, en face d'une étoile."
               />
             </div>
-            <img
-              className="header-hero__icone header-hero__icone--gauche"
-              src={fleche}
-              alt="Flèche bas"
-            />
-            <img
-              className="header-hero__icone header-hero__icone--droite"
-              src={fleche}
-              alt="Flèche haut"
-            />
-            <span className="header-hero__travail">VOIR MON TRAVAIL</span>
+            <Ciblage verrouillage={verrouillageCibleGrande} couleur="#dcbc9f" />
+            <span>RÉALISATIONS</span>
           </div>
         </div>
       </div>

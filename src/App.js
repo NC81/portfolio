@@ -16,7 +16,18 @@ import { donneesAventure } from "./components/presentation/donnees"
 
 export default function App() {
   const ref = useRef(null)
-  const gereClic = () => {
+  const refCompetences = useRef(null)
+  const refAventures = useRef(null)
+  const refRealisations = useRef(null)
+
+  function gereClic(string) {
+    if (string === "compétences") {
+      ref.current = refCompetences.current
+    } else if (string === "aventures") {
+      ref.current = refAventures.current
+    } else if (string === "réalisations") {
+      ref.current = refRealisations.current
+    }
     ref.current?.scrollIntoView({ behavior: "smooth" })
   }
 
@@ -25,15 +36,15 @@ export default function App() {
       <Header gereClic={gereClic} />
       <main>
         <Presentation histoire={true} donnees={biographie} />
-        <Competences />
+        <Competences ref={refCompetences} />
         <Presentation histoire={true} donnees={philosophie} inverse={true} />
-        <Presentation ref={ref} donnees={donneesProjet1} />
+        <Presentation ref={refRealisations} donnees={donneesProjet1} />
         <Presentation
           donnees={donneesProjet2}
           inverse={true}
           mobile={{ placement: "gauche", media: "image" }}
         />
-        <Aventure donnees={donneesAventure} />
+        <Aventure ref={refAventures} donnees={donneesAventure} />
         <Presentation
           donnees={donneesProjet3}
           mobile={{ placement: "droite", media: "image" }}

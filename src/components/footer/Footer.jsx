@@ -1,8 +1,8 @@
 import { useState } from "react"
 import emetteur from "../../assets/images/emetteur.jpg"
 import recepteur from "../../assets/images/recepteur.jpg"
-import pressePapierVide2 from "../../assets/icones/iconmonstr-paste-clipboard-lined.svg"
-import pressePapierPlein2 from "../../assets/icones/iconmonstr-paste-clipboard-filled.svg"
+import pressePapierVide2 from "../../assets/icons/iconmonstr-paste-clipboard-lined.svg"
+import pressePapierPlein2 from "../../assets/icons/iconmonstr-paste-clipboard-filled.svg"
 import { motion } from "framer-motion"
 
 export default function Footer() {

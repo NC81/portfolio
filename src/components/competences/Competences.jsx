@@ -1,7 +1,8 @@
+import { forwardRef } from "react"
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
 import { motion } from "framer-motion"
 
-export default function Competences() {
+export default forwardRef(function Competences({}, ref) {
   const data = [
     {
       name: "HTML",
@@ -62,7 +63,7 @@ export default function Competences() {
   }
 
   return (
-    <section className="page-conteneur page-competences">
+    <section ref={ref} className="page-conteneur page-competences">
       <div className="page-contenu">
         <div className="page-titre">
           <motion.h2
@@ -141,4 +142,4 @@ export default function Competences() {
       </div>
     </section>
   )
-}
+})

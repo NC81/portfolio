@@ -1,25 +1,14 @@
 .lien {
-  display: flex;
-  justify-content: space-between;
   margin: 20px auto 0;
   text-decoration: none;
-  width: 250px;
+  width: fit-content;
+  padding-left: 5px;
   font: normal 1.5rem "Telegraph";
   letter-spacing: $letter-spacing-title;
   @include tablette {
     font-size: 1.35rem;
   }
-  &__signe {
-    transition: transform 150ms ease-in;
-  }
   &:hover {
     font-weight: bold;
-  }
-  &:hover .lien__signe--gauche {
-    transform: translateX(50px);
-  }
-
-  &:hover .lien__signe--droite {
-    transform: translateX(-50px);
   }
 }

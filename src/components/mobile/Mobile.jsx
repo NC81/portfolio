@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import android from "../../assets/images/android.png"
-import iconeVideo from "../../assets/icones/icons8-film-30.png"
-import iconeImage from "../../assets/icones/icons8-photo-24.png"
+import iconeVideo from "../../assets/icons/icons8-film-30.png"
+import iconeImage from "../../assets/icons/icons8-photo-24.png"
 
 export default function Mobile({
   objet,

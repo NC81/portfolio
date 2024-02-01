@@ -1,0 +1,46 @@
+.angle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: transform 150ms;
+  &.petit {
+    width: 10px;
+    height: 10px;
+  }
+  &--haut-gauche {
+    top: -10px;
+    left: -10px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    &.verrouillage {
+      transform: translate(8px, 8px);
+    }
+  }
+  &--haut-droite {
+    top: -10px;
+    right: -10px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    &.verrouillage {
+      transform: translate(-8px, 8px);
+    }
+  }
+  &--bas-gauche {
+    bottom: -10px;
+    left: -10px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    &.verrouillage {
+      transform: translate(8px, -8px);
+    }
+  }
+  &--bas-droite {
+    bottom: -10px;
+    right: -10px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    &.verrouillage {
+      transform: translate(-8px, -8px);
+    }
+  }
+}

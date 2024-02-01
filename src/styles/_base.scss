@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Libre Franklin";
-  src: url(../assets/polices/LibreFranklin-VariableFont_wght.ttf);
+  src: url(../assets/fonts/LibreFranklin-VariableFont_wght.ttf);
 }
 
 @font-face {
   font-family: "Telegraph";
-  src: url(../assets/polices/Telegraf-Regular-400.otf);
+  src: url(../assets/fonts/Telegraf-Regular-400.otf);
 }
 
 @font-face {
   font-family: "Telegraph Ultra";
-  src: url(../assets/polices/Telegraf-UltraBold-800.otf);
+  src: url(../assets/fonts/Telegraf-UltraBold-800.otf);
 }
 
 body {
@@ -118,13 +118,13 @@ ul {
   }
   &__icone-recharger {
     position: absolute;
-    width: 30px;
+    width: 24px;
     bottom: -40px;
     right: 0;
     cursor: pointer;
-    transition: transform 600ms;
+    transition: transform 300ms;
     &:hover {
-      transform: rotate(360deg);
+      transform: rotate(180deg);
     }
   }
 }
@@ -146,8 +146,8 @@ ul {
     border: 3px solid transparent;
   }
   // FireFox
-  scrollbar-color: #cacaca transparent;
-  scrollbar-width: thin;
+  // scrollbar-color: #cacaca transparent;
+  // scrollbar-width: thin;
 }
 
 button {

@@ -1,9 +1,19 @@
 import { motion } from "framer-motion"
+import { useState } from "react"
+import Ciblage from "../ciblage/Ciblage"
 
 export default function Lien({ objet, style }) {
+  const [verrouillageLien, etablitVerrouillageLien] = useState(false)
+
   return (
     <>
       <motion.a
+        onMouseEnter={() => {
+          etablitVerrouillageLien(true)
+        }}
+        onMouseLeave={() => {
+          etablitVerrouillageLien(false)
+        }}
         initial={{ opacity: 0, translateY: -40 }}
         whileInView={{ opacity: 1, translateY: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "anticipate" }}
@@ -13,9 +23,8 @@ export default function Lien({ objet, style }) {
         target="_blank"
         rel="noreferrer noopener"
       >
-        <span className="lien__signe lien__signe--gauche">{`>`}</span>
-        <span className="lien__texte">{objet.texte}</span>
-        <span className="lien__signe lien__signe--droite">{`<`}</span>
+        {objet.texte}
+        <Ciblage verrouillage={verrouillageLien} couleur="white" petit={true} />
       </motion.a>
     </>
   )

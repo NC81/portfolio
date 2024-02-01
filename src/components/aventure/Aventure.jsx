@@ -1,9 +1,10 @@
+import { forwardRef } from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import fleche from "../../assets/icones/icons8-chevron-bas-24.png"
-import recharger from "../../assets/icones/icons8-recharger-50.png"
+import chevron from "../../assets/icons/icons8-chevron-bas-24.png"
+import recharger from "../../assets/icons/icons8-recharger-50.png"
 
-export default function Aventure({ donnees }) {
+export default forwardRef(function Competences({ donnees }, ref) {
   const [indexListeImages, etablitIndexListeImages] = useState(0)
   const [etape, etablitEtape] = useState(1)
 
@@ -26,7 +27,11 @@ export default function Aventure({ donnees }) {
   const deuxiemeAventure = indexListeImages === 1 ? "deuxieme-aventure" : ""
 
   return (
-    <section className="page-conteneur" style={styleDuConteneurDePage}>
+    <section
+      ref={ref}
+      className="page-conteneur"
+      style={styleDuConteneurDePage}
+    >
       <div className="page-contenu">
         <div className="page-titre">
           <h2 style={styleDeTexte}>{donnees.titre}</h2>
@@ -50,12 +55,12 @@ export default function Aventure({ donnees }) {
             >
               <img
                 className="aventure-etape__icone aventure-etape__icone--haut"
-                src={fleche}
+                src={chevron}
                 alt="Flèche bas"
               />
               <img
                 className="aventure-etape__icone aventure-etape__icone--bas"
-                src={fleche}
+                src={chevron}
                 alt="Flèche haut"
               />
               <div
@@ -82,12 +87,12 @@ export default function Aventure({ donnees }) {
             >
               <img
                 className="aventure-etape__icone aventure-etape__icone--haut"
-                src={fleche}
+                src={chevron}
                 alt="Flèche bas"
               />
               <img
                 className="aventure-etape__icone aventure-etape__icone--bas"
-                src={fleche}
+                src={chevron}
                 alt="flèche haut"
               />
               <div
@@ -115,12 +120,12 @@ export default function Aventure({ donnees }) {
             <div className="aventure-etape__colonne aventure-etape--2__relative">
               <img
                 className="aventure-etape__icone aventure-etape__icone--haut"
-                src={fleche}
+                src={chevron}
                 alt="Flèche bas"
               />
               <img
                 className="aventure-etape__icone aventure-etape__icone--bas"
-                src={fleche}
+                src={chevron}
                 alt="flèche haut"
               />
               <div
@@ -171,4 +176,4 @@ export default function Aventure({ donnees }) {
       </div>
     </section>
   )
-}
+})
