@@ -16,7 +16,7 @@ export default function Lien({ objet, style }) {
         }}
         initial={{ opacity: 0, translateY: -40 }}
         whileInView={{ opacity: 1, translateY: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "anticipate" }}
+        transition={{ duration: 0.8, ease: "anticipate" }}
         className="lien"
         style={style}
         href={objet.url}

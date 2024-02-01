@@ -47,7 +47,7 @@ import vol from "../../assets/images/vol.jpg"
 export const biographie = {
   titre: "Qui suis-je ?",
   texte: [
-    "Après un long parcours qui m’a mené dans l’horticulture, j’ai décidé de reprendre le fil de ma vie en m’engageant dans le développement informatique pour lequel j’ai toujours nourri de grands rêves.",
+    "Après un long parcours qui m’a mené dans le travail de la terre, j’ai décidé de reprendre le fil de ma vie en m’engageant dans le développement informatique pour lequel j’ai toujours nourri de grands rêves.",
     "À force de persévérance, je suis aujourd’hui à l’aune de récolter les fruits de mon travail. Certains outils restent à aiguiser, mais d’ores et déjà, les idées de projets germent dans mon esprit. Toujours tourné vers le ciel.",
   ],
   lien: [

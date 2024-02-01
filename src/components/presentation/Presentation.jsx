@@ -100,7 +100,8 @@ export default forwardRef(function Presentation(
                 indexImage={indexImage}
                 sousIndexImageMobile={sousIndexImageMobile}
                 etablitSousIndexImageMobile={etablitSousIndexImageMobile}
-                objet={donnees.mobile}
+                donneesMobile={donnees.mobile}
+                donneesDesktop={donnees.image}
                 placement={mobile.placement}
               />
             )}

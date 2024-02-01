@@ -4,16 +4,17 @@ import iconeVideo from "../../assets/icons/icons8-film-30.png"
 import iconeImage from "../../assets/icons/icons8-photo-24.png"
 
 export default function Mobile({
-  objet,
+  donneesMobile,
+  donneesDesktop,
   indexImage,
   sousIndexImageMobile,
   etablitSousIndexImageMobile,
   placement,
 }) {
   const videoref = useRef()
-  const [sourceVideo, etablitSourceVideo] = useState(objet.video[0])
+  const [sourceVideo, etablitSourceVideo] = useState(donneesMobile.video[0])
   const [typeDeMedia, etablitTypeDeMedia] = useState(
-    objet.image ? "image" : "video"
+    donneesMobile.image ? "image" : "video"
   )
 
   useEffect(() => {
@@ -47,11 +48,20 @@ export default function Mobile({
     }
   }
 
+  function convertitDescriptionDesktopEnMobile() {
+    const descriptionImageDesktop = donneesDesktop[indexImage].description
+    const descriptionImageAvecMinuscule =
+      descriptionImageDesktop[0].toLowerCase() +
+      descriptionImageDesktop.slice(1)
+    const ajoutTexteMobile = "En format mobile, "
+    return ajoutTexteMobile + descriptionImageAvecMinuscule
+  }
+
   return (
     <div className={`mobile mobile--${placement}`}>
       <img className="mobile__boitier" src={android} alt="Un mobile android" />
       <div className="mobile__liste-medias">
-        {objet.image.length > 0 && objet.video.length > 0 && (
+        {donneesMobile.image.length > 0 && donneesMobile.video.length > 0 && (
           <>
             <button
               onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
@@ -68,32 +78,35 @@ export default function Mobile({
           </>
         )}
       </div>
-      {objet.video && typeDeMedia === "video" && objet.video.length > 1 && (
-        <ul className="mobile__liste-vues">
-          {objet.video.map((el, index) => (
-            <li
-              onClick={() => etablitSourceVideo(el)}
-              className={`bouton bouton--vue-mobile ${definitClasseSelonSourceVideo(
-                el
-              )}`}
-              key={`${index}`}
-            ></li>
-          ))}
-        </ul>
-      )}
-      {objet.image[indexImage].length > 1 && typeDeMedia === "image" && (
-        <ul className="mobile__liste-vues">
-          {objet.image[indexImage].map((el, index) => (
-            <li
-              onClick={() => etablitSousIndexImageMobile(index)}
-              className={`bouton bouton--vue-mobile ${definitClasseSelonSousIndex(
-                index
-              )}`}
-              key={`${index}`}
-            ></li>
-          ))}
-        </ul>
-      )}
+      {donneesMobile.video &&
+        typeDeMedia === "video" &&
+        donneesMobile.video.length > 1 && (
+          <ul className="mobile__liste-vues">
+            {donneesMobile.video.map((el, index) => (
+              <li
+                onClick={() => etablitSourceVideo(el)}
+                className={`bouton bouton--vue-mobile ${definitClasseSelonSourceVideo(
+                  el
+                )}`}
+                key={`${index}`}
+              ></li>
+            ))}
+          </ul>
+        )}
+      {donneesMobile.image[indexImage].length > 1 &&
+        typeDeMedia === "image" && (
+          <ul className="mobile__liste-vues">
+            {donneesMobile.image[indexImage].map((el, index) => (
+              <li
+                onClick={() => etablitSousIndexImageMobile(index)}
+                className={`bouton bouton--vue-mobile ${definitClasseSelonSousIndex(
+                  index
+                )}`}
+                key={`${index}`}
+              ></li>
+            ))}
+          </ul>
+        )}
 
       <div className="mobile__ecran barre-defilement">
         {typeDeMedia === "video" && (
@@ -105,8 +118,8 @@ export default function Mobile({
         {typeDeMedia === "image" && (
           <img
             className="mobile__img"
-            src={objet.image[indexImage][sousIndexImageMobile]}
-            alt=""
+            src={donneesMobile.image[indexImage][sousIndexImageMobile]}
+            alt={convertitDescriptionDesktopEnMobile()}
           />
         )}
       </div>
