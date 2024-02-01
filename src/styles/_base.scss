@@ -121,9 +121,11 @@ ul {
     width: 24px;
     bottom: -40px;
     right: 0;
+    opacity: 0.6;
     cursor: pointer;
     transition: transform 300ms;
     &:hover {
+      opacity: 1;
       transform: rotate(180deg);
     }
   }

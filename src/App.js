@@ -1,4 +1,5 @@
-import { useRef } from "react"
+import { useState, useEffect, useRef } from "react"
+import BoutonRetour from "./components/bouton-retour/BoutonRetour"
 import Header from "./components/header/Header"
 import Presentation from "./components/presentation/Presentation"
 import Competences from "./components/competences/Competences"
@@ -15,25 +16,48 @@ import { donneesProjet5 } from "./components/presentation/donnees"
 import { donneesAventure } from "./components/presentation/donnees"
 
 export default function App() {
+  const [boutonRetourVisible, etablitBoutonRetourVisible] = useState(false)
   const ref = useRef(null)
+  const refHeader = useRef(null)
   const refCompetences = useRef(null)
   const refAventures = useRef(null)
   const refRealisations = useRef(null)
 
-  function gereClic(string) {
+  useEffect(() => {
+    window.addEventListener("scroll", observeDefilement)
+    return () => window.removeEventListener("scroll", observeDefilement)
+  }, [])
+
+  function observeDefilement() {
+    const hauteurCachantBouton = 1000
+    const defilement =
+      document.body.scrollTop || document.documentElement.scrollTop
+    if (defilement < hauteurCachantBouton) {
+      etablitBoutonRetourVisible(false)
+    } else {
+      etablitBoutonRetourVisible(true)
+    }
+  }
+
+  function gereClicDefilement(string) {
     if (string === "compétences") {
       ref.current = refCompetences.current
     } else if (string === "aventures") {
       ref.current = refAventures.current
     } else if (string === "réalisations") {
       ref.current = refRealisations.current
+    } else if (string === "haut") {
+      ref.current = refHeader.current
     }
     ref.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
     <>
-      <Header gereClic={gereClic} />
+      {boutonRetourVisible && (
+        <BoutonRetour gereClicDefilement={gereClicDefilement} />
+      )}
+      <Header ref={refHeader} gereClicDefilement={gereClicDefilement} />
       <main>
         <Presentation histoire={true} donnees={biographie} />
         <Competences ref={refCompetences} />

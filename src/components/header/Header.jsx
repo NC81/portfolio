@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useState, forwardRef } from "react"
 import cerveau from "../../assets/images/cerveau.jpg"
 import vaisseau from "../../assets/images/vaisseau.jpg"
 import hero from "../../assets/images/hero.jpg"
 import Ciblage from "../ciblage/Ciblage"
 
-export default function Header({ gereClic }) {
+export default forwardRef(function Header({ gereClicDefilement }, ref) {
   const [verrouillageCiblePetite, etablitVerrouillageCiblePetite] =
     useState(false)
   const [verrouillageCibleMoyenne, etablitVerrouillageCibleMoyenne] =
@@ -13,7 +13,7 @@ export default function Header({ gereClic }) {
     useState(false)
 
   return (
-    <header className="page-conteneur header">
+    <header ref={ref} className="page-conteneur header">
       <div className="page-contenu">
         <h1>
           2024
@@ -29,7 +29,7 @@ export default function Header({ gereClic }) {
         <div className="header__corps">
           <div className="header__colonne header--petit">
             <div
-              onClick={() => gereClic("compétences")}
+              onClick={() => gereClicDefilement("compétences")}
               onMouseEnter={() => {
                 etablitVerrouillageCiblePetite(true)
               }}
@@ -48,7 +48,7 @@ export default function Header({ gereClic }) {
             <span>COMPÉTENCES</span>
           </div>
           <div
-            onClick={() => gereClic("aventures")}
+            onClick={() => gereClicDefilement("aventures")}
             onMouseEnter={() => {
               etablitVerrouillageCibleMoyenne(true)
             }}
@@ -72,7 +72,7 @@ export default function Header({ gereClic }) {
           </div>
 
           <div
-            onClick={() => gereClic("réalisations")}
+            onClick={() => gereClicDefilement("réalisations")}
             onMouseEnter={() => {
               etablitVerrouillageCibleGrande(true)
             }}
@@ -95,4 +95,4 @@ export default function Header({ gereClic }) {
       </div>
     </header>
   )
-}
+})

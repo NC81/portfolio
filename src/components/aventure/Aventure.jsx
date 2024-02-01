@@ -1,7 +1,6 @@
-import { forwardRef } from "react"
-import { useState } from "react"
+import { useState, forwardRef } from "react"
 import { motion } from "framer-motion"
-import chevron from "../../assets/icons/icons8-chevron-bas-24.png"
+import chevron from "../../assets/icons/icons8-chevron-bas-64.png"
 import recharger from "../../assets/icons/icons8-recharger-50.png"
 
 export default forwardRef(function Competences({ donnees }, ref) {

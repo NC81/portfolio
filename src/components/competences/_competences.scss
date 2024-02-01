@@ -24,6 +24,9 @@
       @include laptop {
         margin-top: $margin-responsive;
       }
+      @include mobile {
+        list-style-type: none;
+      }
     }
     li {
       margin-bottom: 25px;
