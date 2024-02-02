@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3bc0c316.css",
-    "main.js": "/portfolio/static/js/main.723a0327.js",
+    "main.css": "/portfolio/static/css/main.646a6e95.css",
+    "main.js": "/portfolio/static/js/main.705fe144.js",
     "static/media/ohmyfood-anim-site.webm": "/portfolio/static/media/ohmyfood-anim-site.0263ec3f54b99d64c1e6.webm",
     "static/media/ohmyfood-anim-site.mp4": "/portfolio/static/media/ohmyfood-anim-site.643e41b24b43a955b9ea.mp4",
     "static/media/ohmyfood-anim-chargement.webm": "/portfolio/static/media/ohmyfood-anim-chargement.5e77c85b03bcd2f1d91c.webm",
@@ -31,10 +31,9 @@
     "static/media/reveur.jpg": "/portfolio/static/media/reveur.5efee43167fc50a944e5.jpg",
     "static/media/maquette-mobile-4-1.png": "/portfolio/static/media/maquette-mobile-4-1.2dea046debad9ae0dabb.png",
     "static/media/nourrir.jpg": "/portfolio/static/media/nourrir.fe24c8d6fb122eb97618.jpg",
-    "static/media/relique.jpg": "/portfolio/static/media/relique.e3e8967b620a01eaeb23.jpg",
-    "static/media/puissance.jpg": "/portfolio/static/media/puissance.400c69bededf4c1edd42.jpg",
     "static/media/vol.jpg": "/portfolio/static/media/vol.254fb7e0c513bc012365.jpg",
     "static/media/gardien.jpg": "/portfolio/static/media/gardien.bfb5c615951e389bb039.jpg",
+    "static/media/relique.jpg": "/portfolio/static/media/relique.5ac6375961ba3bc167ed.jpg",
     "static/media/maquette-mobile-2-1.png": "/portfolio/static/media/maquette-mobile-2-1.1f09e306ea21dde2debb.png",
     "static/media/oiseau.jpg": "/portfolio/static/media/oiseau.36c2fdc248215c04afd2.jpg",
     "static/media/Telegraf-UltraBold-800.otf": "/portfolio/static/media/Telegraf-UltraBold-800.eca514c0219abe9f46e4.otf",
@@ -45,6 +44,7 @@
     "static/media/maquette-mobile-3-2.png": "/portfolio/static/media/maquette-mobile-3-2.41abac7a3c1cbe684eae.png",
     "static/media/maquette-mobile-4-2.png": "/portfolio/static/media/maquette-mobile-4-2.4fc4cf7fcbb707c20eaa.png",
     "static/media/Telegraf-Regular-400.otf": "/portfolio/static/media/Telegraf-Regular-400.0c6d87bb06a137bca9a3.otf",
+    "static/media/puissance.jpg": "/portfolio/static/media/puissance.499a378a551e429a67bc.jpg",
     "static/media/maquette-mobile-2-2.png": "/portfolio/static/media/maquette-mobile-2-2.63ec873aee5b60b7ef02.png",
     "static/media/maquette-mobile-3-3.png": "/portfolio/static/media/maquette-mobile-3-3.eed47e7a0db90d655355.png",
     "static/media/arbre.jpg": "/portfolio/static/media/arbre.422f0022a64ac2b2c2b7.jpg",
@@ -58,11 +58,11 @@
     "static/media/iconmonstr-paste-clipboard-lined.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-lined.6a98b41f5d4505adab6ee158b71af600.svg",
     "static/media/iconmonstr-paste-clipboard-filled.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-filled.f3a68cf1d81ac6b1ccfb89048c061b62.svg",
     "index.html": "/portfolio/index.html",
-    "main.3bc0c316.css.map": "/portfolio/static/css/main.3bc0c316.css.map",
-    "main.723a0327.js.map": "/portfolio/static/js/main.723a0327.js.map"
+    "main.646a6e95.css.map": "/portfolio/static/css/main.646a6e95.css.map",
+    "main.705fe144.js.map": "/portfolio/static/js/main.705fe144.js.map"
   },
   "entrypoints": [
-    "static/css/main.3bc0c316.css",
-    "static/js/main.723a0327.js"
+    "static/css/main.646a6e95.css",
+    "static/js/main.705fe144.js"
   ]
 }
