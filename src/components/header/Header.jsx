@@ -29,12 +29,8 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
         <div className="header__corps">
           <div
             onClick={() => gereClicDefilement("compétences")}
-            onMouseEnter={() => {
-              etablitVerrouillageCiblePetite(true)
-            }}
-            onMouseLeave={() => {
-              etablitVerrouillageCiblePetite(false)
-            }}
+            onMouseEnter={() => etablitVerrouillageCiblePetite(true)}
+            onMouseLeave={() => etablitVerrouillageCiblePetite(false)}
             className="header__colonne header--petit"
           >
             <div className="header__cont-img">
@@ -49,12 +45,8 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
           </div>
           <div
             onClick={() => gereClicDefilement("aventures")}
-            onMouseEnter={() => {
-              etablitVerrouillageCibleMoyenne(true)
-            }}
-            onMouseLeave={() => {
-              etablitVerrouillageCibleMoyenne(false)
-            }}
+            onMouseEnter={() => etablitVerrouillageCibleMoyenne(true)}
+            onMouseLeave={() => etablitVerrouillageCibleMoyenne(false)}
             className="header__colonne header--moyen"
           >
             <div className="header__cont-img">
@@ -73,12 +65,8 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
 
           <div
             onClick={() => gereClicDefilement("réalisations")}
-            onMouseEnter={() => {
-              etablitVerrouillageCibleGrande(true)
-            }}
-            onMouseLeave={() => {
-              etablitVerrouillageCibleGrande(false)
-            }}
+            onMouseEnter={() => etablitVerrouillageCibleGrande(true)}
+            onMouseLeave={() => etablitVerrouillageCibleGrande(false)}
             className="header__colonne header--grand"
           >
             <div className="header__cont-img">

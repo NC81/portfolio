@@ -69,15 +69,9 @@ export default function Footer() {
             <li>
               <p>EMAIL</p>
               <p
-                onMouseEnter={() => {
-                  etablitSurvol(true)
-                }}
-                onMouseLeave={() => {
-                  etablitSurvol(false)
-                }}
-                onClick={() => {
-                  gereClic()
-                }}
+                onMouseEnter={() => etablitSurvol(true)}
+                onMouseLeave={() => etablitSurvol(false)}
+                onClick={gereClic}
                 className="footer__email"
               >
                 {survol ? (

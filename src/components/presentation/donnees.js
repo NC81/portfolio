@@ -1,7 +1,3 @@
-import reveur from "../../assets//images/reveur.jpg"
-import travail from "../../assets//images/travail.jpg"
-import futur from "../../assets//images/futur.jpg"
-import reservia from "../../assets//images/reservia.png"
 import ohMyFoodDesktop1 from "../../assets//images/ohmyfood-desktop-1.png"
 import ohMyFoodDesktop2 from "../../assets//images/ohmyfood-desktop-2.png"
 import ohMyFoodMobile1 from "../../assets/images/ohmyfood-mobile-1.png"
@@ -32,6 +28,9 @@ import maquetteMobile41 from "../../assets/images/maquette-mobile-4-1.png"
 import maquetteMobile42 from "../../assets/images/maquette-mobile-4-2.png"
 import maquetteMobile51 from "../../assets/images/maquette-mobile-5-1.png"
 import maquetteMobile52 from "../../assets/images/maquette-mobile-5-2.png"
+import reveur from "../../assets//images/reveur.jpg"
+import travail from "../../assets//images/travail.jpg"
+import reservia from "../../assets//images/reservia.png"
 import sportSee from "../../assets//images/sportsee.png"
 import hrnet1 from "../../assets//images/hrnet-1.png"
 import hrnet2 from "../../assets//images/hrnet-2.png"
@@ -43,11 +42,12 @@ import arbre from "../../assets/images/arbre.jpg"
 import oiseau from "../../assets/images/oiseau.jpg"
 import nourrir from "../../assets/images/nourrir.jpg"
 import vol from "../../assets/images/vol.jpg"
+import futur from "../../assets//images/futur.jpg"
 
 export const biographie = {
   titre: "Qui suis-je ?",
   texte: [
-    "Après un long parcours qui m’a mené dans le travail de la terre, j’ai décidé de reprendre le fil de ma vie en m’engageant dans le développement informatique pour lequel j’ai toujours nourri de grands rêves.",
+    "Après un long parcours qui m’a mené dans le travail de la terre, j’ai décidé à 40 ans de reprendre le fil de ma vie en m’engageant dans le développement informatique pour lequel j’ai toujours nourri de grands rêves.",
     "À force de persévérance, je suis aujourd’hui à l’aune de récolter les fruits de mon travail. Certains outils restent à aiguiser, mais d’ores et déjà, les idées de projets germent dans mon esprit. Toujours tourné vers le ciel.",
   ],
   lien: [
@@ -86,14 +86,14 @@ export const donneesAventure = {
   titre: "Mes Aventures",
   texte: [
     [
-      "Cette statue menaçante gardant l'entrée d'une salle sacrée me ressemblait étrangement. Mais où m'étais-je donc rendu ?",
-      "À l'intérieur de la salle, tout ne faisait plus qu'un. Je regardais la relique comme elle semblait me regarder",
-      "après l'avoir touché du doigt, j'avais gagné un nouveau regard sur moi-même. Depuis lors, je vois des parcelles de futur.",
+      "Une statue menaçante gardant l'entrée d'une salle mystérieuse me ressemblait étrangement. Mais où m'étais-je donc rendu ?",
+      "À l'intérieur de la salle d'une hauteur insondable, tout ne faisait plus qu'un. J'observais la relique comme elle observait mon âme",
+      "après avoir compris qu'il s'agissait d'un puissant miroir, j'avais gagné un regard lucide sur moi-même. Depuis lors, je vois des parcelles de futur.",
     ],
     [
       "Un grand oiseau mystique poussait des cris stridents à proximité de l'arbre millénaire pour me dissuader de l'approcher.",
-      "Après d'innombrables tentatives, j'avais fini par comprendre la pureté de l'énergie qui l'animait. Cela m'avait permis de l'apprivoiser",
-      "mais avant de me quitter, celui-ci m'avait transmis son aptitude a survoler le monde. Depuis lors, je pense apercevoir ma destinée.",
+      "Après d'innombrables tentatives, j'avais fini par comprendre l'universalité de l'énergie qui l'animait. Cela m'avait permis de l'apprivoiser",
+      "l'harmonie qui se produisait m'invitait instinctivement à reproduire son battement d'ailes. De là-haut, désormais, j'aperçois ma destinée.",
     ],
   ],
   image: [

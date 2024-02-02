@@ -37,14 +37,6 @@ export default function Carrousel({
     }
   }
 
-  // function definiClasseSousIndex(index) {
-  //   if (index === sousIndexImageDesktop) {
-  //     return "selection"
-  //   } else {
-  //     return ""
-  //   }
-  // }
-
   return (
     <div className="carrousel">
       <div className="carrousel__cont-img barre-defilement">
@@ -69,22 +61,6 @@ export default function Carrousel({
             ))}
           </ul>
         )}
-        {/* {liste[indexImage].source.length > 1 && (
-          <ul className="carrousel__liste-vues">
-            {liste[indexImage].source.map((el, index) => (
-              <li key={`${index}`}>
-                <button
-                  onClick={() => etablitSousIndexImageDesktop(index)}
-                  className={`bouton bouton--vue ${definiClasseSousIndex(
-                    index
-                  )}`}
-                >
-                  {index + 1}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )} */}
         {liste.length > 1 && (
           <ul className="carrousel__liste-pages">
             {liste.map((el, index) => (
@@ -98,33 +74,6 @@ export default function Carrousel({
             ))}
           </ul>
         )}
-        {/* {liste.length > 1 && (
-          <div className="carrousel__barre-boutons">
-            {indexImage > 0 ? (
-              <button
-                className="bouton bouton--page"
-                onClick={() => gereClic("precedent")}
-              >
-                -
-              </button>
-            ) : (
-              <button className="bouton bouton--faux"></button>
-            )}
-
-            <p>PAGE{`  ${indexImage + 1}/${liste.length}`}</p>
-
-            {indexImage + 1 < liste.length ? (
-              <button
-                className="bouton bouton--page"
-                onClick={() => gereClic("suivant")}
-              >
-                +
-              </button>
-            ) : (
-              <button className="bouton bouton--faux"></button>
-            )}
-          </div>
-        )} */}
       </>
     </div>
   )
