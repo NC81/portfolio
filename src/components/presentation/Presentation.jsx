@@ -32,38 +32,38 @@ export default forwardRef(function Presentation(
   }
   const styleDeFlex = inverse && { flexDirection: "row-reverse" }
 
-  const visuelProjet = !histoire ? "page-presentation__visuel--projet" : ""
-  const texteProjet = !histoire ? "page-presentation__paragr--projet" : ""
+  const visuelProjet = !histoire ? "section-presentation__visuel--projet" : ""
+  const texteProjet = !histoire ? "section-presentation__paragr--projet" : ""
   const lectureGrandTexte =
     donnees.lien && donnees.texte.length >= 3
-      ? "page-presentation__paragr--grand-texte"
+      ? "section-presentation__paragr--grand-texte"
       : ""
   const listeTextesMobile = mobile
-    ? "page-presentation__liste-textes--mobile"
+    ? "section-presentation__liste-textes--mobile"
     : ""
 
   return (
     <section
-      className="page-conteneur page-presentation"
+      className="section section-presentation"
       style={styleDuConteneurDePage}
       ref={ref}
     >
-      <div className="page-contenu">
+      <div className="section__contenu">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="page-titre"
+          className="section-titre"
         >
           <h2 style={styleDeTexte}>{donnees.titre}</h2>
-          <div className="page-titre__ligne" style={styleDeLigne}></div>
+          <div className="section-titre__ligne" style={styleDeLigne}></div>
         </motion.div>
-        <div className="page-presentation__corps" style={styleDeFlex}>
+        <div className="section-presentation__corps" style={styleDeFlex}>
           <motion.div
             initial={{ opacity: 0, translateY: -20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`page-presentation__visuel ${visuelProjet}`}
+            className={`section-presentation__visuel ${visuelProjet}`}
           >
             {donnees.lien && !histoire ? (
               <>
@@ -76,7 +76,7 @@ export default forwardRef(function Presentation(
                 />
 
                 {donnees.texte.length >= 3 && (
-                  <div className="page-presentation__grand-cont-liens">
+                  <div className="section-presentation__grand-cont-liens">
                     {donnees.lien.map((objet, index) => (
                       <Lien
                         style={styleDeTexte}
@@ -89,7 +89,7 @@ export default forwardRef(function Presentation(
               </>
             ) : (
               <img
-                className="page-presentation__img-histoire"
+                className="section-presentation__img-histoire"
                 src={donnees.image[0].source}
                 style={styleDeBordureDimage}
                 alt={donnees.image[0].description}
@@ -110,12 +110,12 @@ export default forwardRef(function Presentation(
             initial={{ opacity: 0, translateY: 20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8 }}
-            className={`page-presentation__liste-textes ${listeTextesMobile}`}
+            className={`section-presentation__liste-textes ${listeTextesMobile}`}
             style={styleDeTexte}
           >
             {donnees.texte.map((el, index) => (
               <p
-                className={`page-presentation__paragr ${texteProjet} ${lectureGrandTexte}`}
+                className={`section-presentation__paragr ${texteProjet} ${lectureGrandTexte}`}
                 style={styleDeTexte}
                 key={`${index}`}
                 dangerouslySetInnerHTML={{

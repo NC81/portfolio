@@ -82,7 +82,7 @@ ul {
   margin: 0;
 }
 
-.page-conteneur {
+.section {
   position: relative;
   height: 770px;
   padding: 70px 40px 0 0;
@@ -92,7 +92,7 @@ ul {
   @include laptop {
     height: auto;
   }
-  .page-contenu {
+  &__contenu {
     width: 90%;
     max-width: 1200px;
     margin: auto;
@@ -105,7 +105,7 @@ ul {
   }
 }
 
-.page-titre {
+.section-titre {
   position: relative;
   display: flex;
   margin-bottom: 75px;

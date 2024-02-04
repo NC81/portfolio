@@ -2,15 +2,15 @@
   height: 780px;
   color: $color-pri;
   background: linear-gradient(180deg, black 0%, $color-sec 100%);
-  .page-titre {
-    @include page-titre($color-pri);
+  &__titre {
+    @include section-titre($color-pri);
     animation: apparait 200ms 50ms backwards;
   }
   @include laptop {
     height: auto;
     padding-bottom: 30px;
   }
-  &__corps {
+  &__nav {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -25,6 +25,28 @@
     &:hover span {
       animation: glisseRaccourciEnBas 300ms forwards;
     }
+    &--petit {
+      width: 15%;
+      animation: glisseADroite 0.4s 100ms backwards ease-out;
+      @include laptop {
+        width: 30%;
+      }
+    }
+    &--moyen {
+      width: 22%;
+      animation: glisseADroite 0.6s 400ms backwards ease-out;
+      @include laptop {
+        width: 40%;
+      }
+    }
+    &--grand {
+      width: 44%;
+      animation: glisseADroite 0.6s 700ms backwards ease-out;
+      @include laptop {
+        width: 100%;
+        margin-top: 50px;
+      }
+    }
     span {
       position: absolute;
       bottom: -30px;
@@ -34,28 +56,7 @@
       font-size: 1rem;
     }
   }
-  &--petit {
-    width: 15%;
-    animation: glisseADroite 0.4s 100ms backwards ease-out;
-    @include laptop {
-      width: 30%;
-    }
-  }
-  &--moyen {
-    width: 22%;
-    animation: glisseADroite 0.6s 400ms backwards ease-out;
-    @include laptop {
-      width: 40%;
-    }
-  }
-  &--grand {
-    width: 44%;
-    animation: glisseADroite 0.6s 700ms backwards ease-out;
-    @include laptop {
-      width: 100%;
-      margin-top: 50px;
-    }
-  }
+
   &__cont-img {
     overflow: hidden;
     border: 1px solid $color-pri;

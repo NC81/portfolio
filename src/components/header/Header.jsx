@@ -13,25 +13,25 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
     useState(false)
 
   return (
-    <header ref={ref} className="page-conteneur header">
-      <div className="page-contenu">
+    <header ref={ref} className="section header">
+      <div className="section__contenu">
         <h1>
           2024
           <br />
           Portfolio
         </h1>
-        <div className="page-titre">
+        <div className="section-titre header__titre">
           <h2>
             Nicolas Candeli, <br />
             Développeur Front-End
           </h2>
         </div>
-        <div className="header__corps">
+        <nav className="header__nav">
           <div
             onClick={() => gereClicDefilement("compétences")}
             onMouseEnter={() => etablitVerrouillageCiblePetite(true)}
             onMouseLeave={() => etablitVerrouillageCiblePetite(false)}
-            className="header__colonne header--petit"
+            className="header__colonne header__colonne--petit"
           >
             <div className="header__cont-img">
               <img
@@ -47,7 +47,7 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
             onClick={() => gereClicDefilement("aventures")}
             onMouseEnter={() => etablitVerrouillageCibleMoyenne(true)}
             onMouseLeave={() => etablitVerrouillageCibleMoyenne(false)}
-            className="header__colonne header--moyen"
+            className="header__colonne header__colonne--moyen"
           >
             <div className="header__cont-img">
               <img
@@ -67,7 +67,7 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
             onClick={() => gereClicDefilement("réalisations")}
             onMouseEnter={() => etablitVerrouillageCibleGrande(true)}
             onMouseLeave={() => etablitVerrouillageCibleGrande(false)}
-            className="header__colonne header--grand"
+            className="header__colonne header__colonne--grand"
           >
             <div className="header__cont-img">
               <img
@@ -79,7 +79,7 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
             <Ciblage verrouillage={verrouillageCibleGrande} couleur="#dcbc9f" />
             <span>RÉALISATIONS</span>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   )

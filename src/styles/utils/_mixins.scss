@@ -1,4 +1,4 @@
-@mixin page-titre($color) {
+@mixin section-titre($color) {
   display: flex;
   &:after {
     content: "";

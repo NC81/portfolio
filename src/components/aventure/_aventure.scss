@@ -23,14 +23,18 @@
     text-align: justify;
     font-size: 1.4rem;
     margin: 30px 0;
-    @include tablette {
-      font-size: 1.25rem;
+    @include laptop {
+      font-size: 1.3rem;
       margin: 15px 0;
     }
+    @include tablette {
+      font-size: 1rem;
+      line-height: 26px;
+    }
     @include mobile {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       margin: 10px 0;
-      line-height: 28px;
+      line-height: 24px;
     }
   }
   &__colonne {

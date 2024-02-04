@@ -1,8 +1,8 @@
-.page-competences {
+.section-competences {
   background: linear-gradient(180deg, $color-sec 0%, #bb7c4e 100%);
   font-size: 1.35rem;
-  .page-titre {
-    @include page-titre(white);
+  .section-titre {
+    @include section-titre(white);
   }
   &__corps {
     display: flex;

@@ -1,9 +1,9 @@
 .bouton-retour {
   position: fixed;
-  width: 3%;
+  width: 4%;
   min-width: 18px;
   max-width: 40px;
-  height: 7vh;
+  height: 7.5vh;
   padding: 0;
   z-index: 1;
   top: 3vh;
@@ -12,7 +12,7 @@
   opacity: 0.6;
   transition: opacity 150ms;
   @include mobile {
-    right: 0.5%;
+    right: 1%;
   }
   &:hover {
     opacity: 1;

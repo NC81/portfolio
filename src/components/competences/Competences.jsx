@@ -63,9 +63,9 @@ export default forwardRef(function Competences({}, ref) {
   }
 
   return (
-    <section ref={ref} className="page-conteneur page-competences">
-      <div className="page-contenu">
-        <div className="page-titre">
+    <section ref={ref} className="section section-competences">
+      <div className="section__contenu">
+        <div className="section-titre">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -74,8 +74,8 @@ export default forwardRef(function Competences({}, ref) {
             Mes Compétences
           </motion.h2>
         </div>
-        <div className="page-competences__corps">
-          <div className="page-competences__metier">
+        <div className="section-competences__corps">
+          <div className="section-competences__metier">
             <motion.h3
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -105,7 +105,7 @@ export default forwardRef(function Competences({}, ref) {
             initial={{ opacity: 0, translateX: 20 }}
             whileInView={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="image page-competences__graphique"
+            className="image section-competences__graphique"
           >
             <ul>
               {data.map((el, index) => (

@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import chevron from "../../assets/icons/icons8-chevron-bas-64.png"
 import recharger from "../../assets/icons/icons8-recharger-50.png"
 
-export default forwardRef(function Competences({ donnees }, ref) {
+export default forwardRef(function Aventures({ donnees }, ref) {
   const [indexListeImages, etablitIndexListeImages] = useState(0)
   const [etape, etablitEtape] = useState(1)
 
@@ -26,19 +26,15 @@ export default forwardRef(function Competences({ donnees }, ref) {
   const deuxiemeAventure = indexListeImages === 1 ? "deuxieme-aventure" : ""
 
   return (
-    <section
-      ref={ref}
-      className="page-conteneur"
-      style={styleDuConteneurDePage}
-    >
-      <div className="page-contenu">
-        <div className="page-titre">
+    <section ref={ref} className="section" style={styleDuConteneurDePage}>
+      <div className="section__contenu">
+        <div className="section-titre">
           <h2 style={styleDeTexte}>{donnees.titre}</h2>
-          <div className="page-titre__ligne" style={styleDeLigne}></div>
+          <div className="section-titre__ligne" style={styleDeLigne}></div>
           {etape > 1 && (
             <img
               onClick={() => etablitEtape(1)}
-              className="page-titre__icone-recharger"
+              className="section-titre__icone-recharger"
               src={recharger}
               alt="Recharger"
             />
