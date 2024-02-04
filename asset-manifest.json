@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.646a6e95.css",
-    "main.js": "/portfolio/static/js/main.705fe144.js",
+    "main.css": "/portfolio/static/css/main.24b41fbb.css",
+    "main.js": "/portfolio/static/js/main.2f0f39da.js",
     "static/media/ohmyfood-anim-site.webm": "/portfolio/static/media/ohmyfood-anim-site.0263ec3f54b99d64c1e6.webm",
     "static/media/ohmyfood-anim-site.mp4": "/portfolio/static/media/ohmyfood-anim-site.643e41b24b43a955b9ea.mp4",
     "static/media/ohmyfood-anim-chargement.webm": "/portfolio/static/media/ohmyfood-anim-chargement.5e77c85b03bcd2f1d91c.webm",
@@ -58,11 +58,11 @@
     "static/media/iconmonstr-paste-clipboard-lined.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-lined.6a98b41f5d4505adab6ee158b71af600.svg",
     "static/media/iconmonstr-paste-clipboard-filled.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-filled.f3a68cf1d81ac6b1ccfb89048c061b62.svg",
     "index.html": "/portfolio/index.html",
-    "main.646a6e95.css.map": "/portfolio/static/css/main.646a6e95.css.map",
-    "main.705fe144.js.map": "/portfolio/static/js/main.705fe144.js.map"
+    "main.24b41fbb.css.map": "/portfolio/static/css/main.24b41fbb.css.map",
+    "main.2f0f39da.js.map": "/portfolio/static/js/main.2f0f39da.js.map"
   },
   "entrypoints": [
-    "static/css/main.646a6e95.css",
-    "static/js/main.705fe144.js"
+    "static/css/main.24b41fbb.css",
+    "static/js/main.2f0f39da.js"
   ]
 }
