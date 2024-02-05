@@ -1,11 +1,12 @@
 .carrousel {
   position: relative;
   &__cont-img {
-    max-height: 420px;
+    max-height: 390px;
     overflow-y: scroll;
   }
   &__img {
     width: 100%;
+    vertical-align: bottom;
   }
   &__liste-medias {
     display: flex;
@@ -14,21 +15,48 @@
     height: 50px;
     justify-content: space-between;
   }
+  &__barre-boutons {
+    position: relative;
+    min-height: 18px;
+    margin-top: 20px;
+  }
+  &__bouton-mobile {
+    position: absolute;
+    bottom: 4px;
+    cursor: pointer;
+    &:hover {
+      animation: clignote 600ms infinite;
+    }
+    .ligne-invisible {
+      position: absolute;
+      width: 90%;
+      height: 1px;
+      top: 42%;
+      left: 5%;
+      background-color: white;
+      transform: rotate(45deg);
+    }
+  }
   &__liste-pages {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 15px;
     gap: 2%;
   }
   &__liste-vues {
     position: absolute;
     display: flex;
-    bottom: 15px;
+    bottom: 20px;
     right: 20px;
     gap: 5px;
-    @include mobile {
-      right: initial;
-    }
+  }
+}
+
+@keyframes clignote {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }

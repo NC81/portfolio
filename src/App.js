@@ -62,16 +62,20 @@ export default function App() {
         <Presentation histoire={true} donnees={biographie} />
         <Competences ref={refCompetences} />
         <Presentation histoire={true} donnees={philosophie} inverse={true} />
-        <Presentation ref={refRealisations} donnees={donneesProjet1} />
+        <Presentation
+          ref={refRealisations}
+          donnees={donneesProjet1}
+          mobile={{ placement: "super-droite" }}
+        />
         <Presentation
           donnees={donneesProjet2}
           inverse={true}
-          mobile={{ placement: "gauche", media: "image" }}
+          mobile={{ placement: "gauche" }}
         />
         <Aventure ref={refAventures} donnees={donneesAventure} />
         <Presentation
           donnees={donneesProjet3}
-          mobile={{ placement: "droite", media: "image" }}
+          mobile={{ placement: "droite" }}
         />
         <Presentation donnees={donneesProjet4} inverse={true} />
         <Presentation donnees={donneesProjet5} />

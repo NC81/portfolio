@@ -1,4 +1,5 @@
 import { useState } from "react"
+import iconeMobile from "../../assets/icons/icons8-smartphone-24.png"
 
 export default function Carrousel({
   indexImage,
@@ -6,6 +7,9 @@ export default function Carrousel({
   etablitSousIndexImageMobile,
   liste,
   style,
+  mobile,
+  mobileVisible,
+  etablitMobileVisible,
 }) {
   const [sousIndexImageDesktop, etablitSousIndexImageDesktop] = useState(0)
 
@@ -13,12 +17,6 @@ export default function Carrousel({
     etablitSousIndexImageMobile(0)
     etablitSousIndexImageDesktop(0)
     etablitindexImage(index)
-
-    // if (direction === "precedent") {
-    //   etablitindexImage(indexImage - 1)
-    // } else {
-    //   etablitindexImage(indexImage + 1)
-    // }
   }
 
   function definiClasseSelonIndex(index) {
@@ -47,7 +45,7 @@ export default function Carrousel({
           alt={liste[indexImage].description}
         />
       </div>
-      <>
+      <div className="carrousel__barre-boutons">
         {liste[indexImage].source.length > 1 && (
           <ul className="carrousel__liste-vues">
             {liste[indexImage].source.map((el, index) => (
@@ -74,7 +72,16 @@ export default function Carrousel({
             ))}
           </ul>
         )}
-      </>
+        {mobile && (
+          <button
+            onClick={() => etablitMobileVisible(!mobileVisible)}
+            className="carrousel__bouton-mobile"
+          >
+            <img src={iconeMobile} alt="Mobile" />
+            {mobileVisible && <div className="ligne-invisible"></div>}
+          </button>
+        )}
+      </div>
     </div>
   )
 }

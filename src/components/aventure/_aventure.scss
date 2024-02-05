@@ -1,8 +1,8 @@
 .aventure-etape {
   display: flex;
   justify-content: center;
-  height: 552px;
-  padding-bottom: 30px;
+  height: 600px;
+  padding-bottom: $section-padding-bottom;
   gap: 6%;
   &__icone {
     position: absolute;

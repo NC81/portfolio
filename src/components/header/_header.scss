@@ -1,5 +1,5 @@
 .header {
-  height: 780px;
+  padding-top: 70px;
   color: $color-pri;
   background: linear-gradient(180deg, black 0%, $color-sec 100%);
   &__titre {
@@ -8,12 +8,12 @@
   }
   @include laptop {
     height: auto;
-    padding-bottom: 30px;
   }
   &__nav {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-bottom: $section-padding-bottom;
   }
   &__colonne {
     position: relative;
@@ -62,8 +62,8 @@
     border: 1px solid $color-pri;
   }
   &__img {
-    display: block;
     width: 100%;
+    vertical-align: bottom;
     transition: transform 200ms;
   }
 }

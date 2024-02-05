@@ -1,8 +1,8 @@
 import { useState, forwardRef } from "react"
 import Lien from "../../components/lien/Lien"
+import Carrousel from "../carrousel/Carrousel"
 import Mobile from "../../components/mobile/Mobile"
 import { motion } from "framer-motion"
-import Carrousel from "../carrousel/Carrousel"
 
 export default forwardRef(function Presentation(
   { donnees, histoire, inverse, mobile },
@@ -10,42 +10,61 @@ export default forwardRef(function Presentation(
 ) {
   const [indexImage, etablitindexImage] = useState(0)
   const [sousIndexImageMobile, etablitSousIndexImageMobile] = useState(0)
+  const [mobileVisible, etablitMobileVisible] = useState(true)
 
   function formateTexteGras(texte) {
     return texte.replace(/(\*\*|__)(.*?)\1/g, "<strong>$2</strong>")
   }
+  function calculeTailleTexte() {
+    let longueurTexte = 0
+    for (let texte of donnees.texte) {
+      longueurTexte += texte.split("").length
+    }
+    return longueurTexte
+  }
 
-  const styleDeTexte = {
+  const petit =
+    mobile?.placement === "super-droite"
+      ? "section-presentation__liste-textes--petit"
+      : ""
+  const styleTexte = {
     color: `${donnees.couleur.texte}`,
   }
-  const styleDuConteneurDePage = {
+  const styleConteneurDePage = {
     color: `${donnees.couleur.texte}`,
     background: `linear-gradient(180deg, ${donnees.couleur.fond1} 0%, ${donnees.couleur.fond2} 100%)`,
   }
-  const styleDeBordureDimage = histoire
+  const styleBordureDimage = histoire
     ? {
         border: `1px solid ${donnees.couleur.texte}`,
       }
     : undefined
-  const styleDeLigne = {
+  const styleLigne = {
     background: `linear-gradient(90deg, ${donnees.couleur.texte}, transparent)`,
   }
-  const styleDeFlex = inverse && { flexDirection: "row-reverse" }
+  const styleFlex = inverse && { flexDirection: "row-reverse" }
 
-  const visuelProjet = !histoire ? "section-presentation__visuel--projet" : ""
-  const texteProjet = !histoire ? "section-presentation__paragr--projet" : ""
-  const lectureGrandTexte =
-    donnees.lien && donnees.texte.length >= 3
+  const classeVisuelProjet = !histoire
+    ? "section-presentation__visuel--projet"
+    : ""
+  const classeTexteProjet = !histoire
+    ? "section-presentation__paragr--projet"
+    : ""
+  const classeLectureGrandTexte =
+    donnees.lien && calculeTailleTexte() > 500
       ? "section-presentation__paragr--grand-texte"
       : ""
-  const listeTextesMobile = mobile
+  const classeListeTextesMobile = mobile
     ? "section-presentation__liste-textes--mobile"
     : ""
+  const classeMobileInvisible = mobileVisible
+    ? ""
+    : "section-presentation__liste-textes--mobile-invisible"
 
   return (
     <section
       className="section section-presentation"
-      style={styleDuConteneurDePage}
+      style={styleConteneurDePage}
       ref={ref}
     >
       <div className="section__contenu">
@@ -55,15 +74,15 @@ export default forwardRef(function Presentation(
           transition={{ duration: 0.5 }}
           className="section-titre"
         >
-          <h2 style={styleDeTexte}>{donnees.titre}</h2>
-          <div className="section-titre__ligne" style={styleDeLigne}></div>
+          <h2 style={styleTexte}>{donnees.titre}</h2>
+          <div className="section-titre__ligne" style={styleLigne}></div>
         </motion.div>
-        <div className="section-presentation__corps" style={styleDeFlex}>
+        <div className="section-presentation__corps" style={styleFlex}>
           <motion.div
             initial={{ opacity: 0, translateY: -20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`section-presentation__visuel ${visuelProjet}`}
+            className={`section-presentation__visuel ${classeVisuelProjet}`}
           >
             {donnees.lien && !histoire ? (
               <>
@@ -72,17 +91,16 @@ export default forwardRef(function Presentation(
                   etablitindexImage={etablitindexImage}
                   etablitSousIndexImageMobile={etablitSousIndexImageMobile}
                   liste={donnees.image}
-                  style={styleDeBordureDimage}
+                  style={styleBordureDimage}
+                  mobile={mobile}
+                  mobileVisible={mobileVisible}
+                  etablitMobileVisible={etablitMobileVisible}
                 />
 
-                {donnees.texte.length >= 3 && (
+                {calculeTailleTexte() >= 500 && !histoire && (
                   <div className="section-presentation__grand-cont-liens">
                     {donnees.lien.map((objet, index) => (
-                      <Lien
-                        style={styleDeTexte}
-                        objet={objet}
-                        key={`${index}`}
-                      />
+                      <Lien style={styleTexte} objet={objet} key={`${index}`} />
                     ))}
                   </div>
                 )}
@@ -91,11 +109,11 @@ export default forwardRef(function Presentation(
               <img
                 className="section-presentation__img-histoire"
                 src={donnees.image[0].source}
-                style={styleDeBordureDimage}
+                style={styleBordureDimage}
                 alt={donnees.image[0].description}
               />
             )}
-            {mobile && (
+            {mobile && mobileVisible && (
               <Mobile
                 indexImage={indexImage}
                 sousIndexImageMobile={sousIndexImageMobile}
@@ -110,13 +128,13 @@ export default forwardRef(function Presentation(
             initial={{ opacity: 0, translateY: 20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8 }}
-            className={`section-presentation__liste-textes ${listeTextesMobile}`}
-            style={styleDeTexte}
+            className={`section-presentation__liste-textes ${classeListeTextesMobile} ${petit} ${classeMobileInvisible}`}
+            style={styleTexte}
           >
             {donnees.texte.map((el, index) => (
               <p
-                className={`section-presentation__paragr ${texteProjet} ${lectureGrandTexte}`}
-                style={styleDeTexte}
+                className={`section-presentation__paragr ${classeTexteProjet} ${classeLectureGrandTexte}`}
+                style={styleTexte}
                 key={`${index}`}
                 dangerouslySetInnerHTML={{
                   __html: formateTexteGras(el),
@@ -125,9 +143,9 @@ export default forwardRef(function Presentation(
             ))}
 
             {donnees.lien &&
-              donnees.texte.length <= 2 &&
+              (calculeTailleTexte() < 500 || histoire) &&
               donnees.lien.map((objet, index) => (
-                <Lien style={styleDeTexte} objet={objet} key={`${index}`} />
+                <Lien style={styleTexte} objet={objet} key={`${index}`} />
               ))}
           </motion.div>
         </div>

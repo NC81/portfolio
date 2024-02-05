@@ -1,6 +1,9 @@
 .footer {
   background-color: #243435;
-  padding-bottom: 55px;
+  padding-bottom: $section-padding-bottom;
+  @include mobile {
+    padding-bottom: 50px;
+  }
   &__titre {
     max-width: 100%;
     font-family: "Telegraph Ultra";

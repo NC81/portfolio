@@ -34,6 +34,7 @@
   }
   &__img {
     width: 100%;
+    vertical-align: bottom;
   }
   &--gauche {
     top: 10%;
@@ -41,16 +42,19 @@
   }
   &--droite {
     top: 5%;
-    right: -30%;
+    right: -27%;
+  }
+  &--super-droite {
+    top: 5%;
+    right: -36%;
   }
   @include laptop {
-    top: -8%;
-    left: -15%;
+    top: -13%;
+    right: initial;
+    left: -16%;
   }
   @include mobile {
-    top: initial;
-    left: initial;
-    right: -3%;
-    bottom: 8%;
+    top: -10%;
+    left: -6%;
   }
 }

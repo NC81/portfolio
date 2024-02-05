@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: $section-padding-bottom;
     @include laptop {
       flex-wrap: wrap-reverse;
     }
@@ -42,7 +43,19 @@
       width: 100%;
     }
     &--mobile {
+      width: 38%;
+      @include laptop {
+        width: 100%;
+      }
+    }
+    &--petit {
       width: 35%;
+      @include laptop {
+        width: 100%;
+      }
+    }
+    &--mobile-invisible {
+      width: 48%;
       @include laptop {
         width: 100%;
       }

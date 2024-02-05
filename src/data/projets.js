@@ -29,15 +29,16 @@ import maquetteMobile42 from "../assets/images/maquette-mobile-4-2.png"
 import maquetteMobile51 from "../assets/images/maquette-mobile-5-1.png"
 import maquetteMobile52 from "../assets/images/maquette-mobile-5-2.png"
 import reservia from "../assets//images/reservia.png"
+import reserviaMobile from "../assets/images/reservia-mobile.png"
 import sportSee from "../assets//images/sportsee.png"
 import hrnet1 from "../assets//images/hrnet-1.png"
 import hrnet2 from "../assets//images/hrnet-2.png"
 
 export const donneesProjet1 = {
-  titre: "Site de location d’hébergement",
+  titre: "Transformation d'une maquette en site web avec HTML/CSS",
   texte: [
-    "Ce premier projet, basé sur l’apprentissage de **HTML** et **CSS**, m'a permis de canaliser mon perfectionnisme naissant en consacrant mes efforts à la reproduction rigoureuse de la maquette initiale.",
-    "Bien plus qu'une simple validation de compétences techniques, il a jeté les bases d’un état d'esprit axé sur la qualité et le dépassement de mes limites.",
+    "Ce premier projet, basé sur l’apprentissage de **HTML** et **CSS**, m'a permis de canaliser mon perfectionnisme naissant en consacrant mes efforts à la reproduction rigoureuse d'une maquette de site de location d’hébergement.",
+    "Bien plus qu'une simple validation de compétences techniques, il a jeté les bases d’un état d'esprit axé sur la recherche d'excellence.",
   ],
   lien: [
     {
@@ -52,6 +53,10 @@ export const donneesProjet1 = {
       source: [reservia],
     },
   ],
+  mobile: {
+    image: [[reserviaMobile]],
+    video: [],
+  },
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#919ba5" },
 }
 
