@@ -24,7 +24,7 @@ export default function Lien({ objet, style }) {
         rel="noreferrer noopener"
       >
         {objet.texte}
-        <Ciblage verrouillage={verrouillageLien} couleur="white" petit={true} />
+        <Ciblage verrouillage={verrouillageLien} couleur={style} petit={true} />
       </motion.a>
     </>
   )

@@ -21,7 +21,7 @@ export default function Footer() {
     <footer className="section footer">
       <div className="section__contenu">
         <motion.h2
-          initial={{ opacity: 0, translateY: -20 }}
+          initial={{ opacity: 0, translateY: -10 }}
           whileInView={{ opacity: 1, translateY: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="footer__titre"

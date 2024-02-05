@@ -174,7 +174,7 @@ button {
     }
   }
   &:not(.selection):hover {
-    animation: clignote 600ms infinite;
+    animation: clignoteIconePage 600ms infinite;
   }
   &.selection {
     background-color: white;
@@ -201,6 +201,25 @@ button {
       height: 14px;
     }
   }
+  &--affichage-mobile {
+    position: absolute;
+    bottom: 4px;
+    cursor: pointer;
+    @include mediaAvecSurvol {
+      &:hover {
+        animation: clignoteIconeMobile 600ms infinite;
+      }
+    }
+    .ligne-invisible {
+      position: absolute;
+      width: 90%;
+      height: 1px;
+      top: 42%;
+      left: 5%;
+      background-color: white;
+      transform: rotate(45deg);
+    }
+  }
 }
 
 @keyframes glisseEnBas {
@@ -214,7 +233,7 @@ button {
   }
 }
 
-@keyframes clignote {
+@keyframes clignoteIconePage {
   0% {
     background-color: #959595;
   }
@@ -223,5 +242,14 @@ button {
   }
   100% {
     background-color: #959595;
+  }
+}
+
+@keyframes clignoteIconeMobile {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }

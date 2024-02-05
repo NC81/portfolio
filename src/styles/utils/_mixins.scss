@@ -36,3 +36,9 @@
     @content;
   }
 }
+
+@mixin mediaAvecSurvol {
+  @media (hover: hover) {
+    @content;
+  }
+}

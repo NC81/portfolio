@@ -19,7 +19,7 @@ export default function Carrousel({
     etablitindexImage(index)
   }
 
-  function definiClasseSelonIndex(index) {
+  function definitClasseSelonIndex(index) {
     if (index === indexImage) {
       return "selection"
     } else {
@@ -27,7 +27,7 @@ export default function Carrousel({
     }
   }
 
-  function definiClasseSelonSousIndex(index) {
+  function definitClasseSelonSousIndex(index) {
     if (index === sousIndexImageDesktop) {
       return "selection"
     } else {
@@ -51,7 +51,7 @@ export default function Carrousel({
             {liste[indexImage].source.map((el, index) => (
               <li
                 onClick={() => etablitSousIndexImageDesktop(index)}
-                className={`bouton bouton--vue-desktop ${definiClasseSelonSousIndex(
+                className={`bouton bouton--vue-desktop ${definitClasseSelonSousIndex(
                   index
                 )}`}
                 key={`${index}`}
@@ -64,7 +64,7 @@ export default function Carrousel({
             {liste.map((el, index) => (
               <li
                 onClick={() => gereChangementDePage(index)}
-                className={`bouton bouton--page ${definiClasseSelonIndex(
+                className={`bouton bouton--page ${definitClasseSelonIndex(
                   index
                 )}`}
                 key={`${index}`}
@@ -75,7 +75,7 @@ export default function Carrousel({
         {mobile && (
           <button
             onClick={() => etablitMobileVisible(!mobileVisible)}
-            className="carrousel__bouton-mobile"
+            className="bouton--affichage-mobile"
           >
             <img src={iconeMobile} alt="Mobile" />
             {mobileVisible && <div className="ligne-invisible"></div>}

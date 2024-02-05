@@ -79,7 +79,7 @@ export default forwardRef(function Presentation(
         </motion.div>
         <div className="section-presentation__corps" style={styleFlex}>
           <motion.div
-            initial={{ opacity: 0, translateY: -20 }}
+            initial={{ opacity: 0, translateY: -10 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={`section-presentation__visuel ${classeVisuelProjet}`}
@@ -125,9 +125,9 @@ export default forwardRef(function Presentation(
             )}
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, translateY: 20 }}
+            initial={{ opacity: 0, translateY: 10 }}
             whileInView={{ opacity: 1, translateY: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className={`section-presentation__liste-textes ${classeListeTextesMobile} ${petit} ${classeMobileInvisible}`}
             style={styleTexte}
           >

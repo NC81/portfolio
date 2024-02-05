@@ -86,7 +86,7 @@ export default forwardRef(function Competences({}, ref) {
               JAVASCRIPT / REACT
             </motion.h3>
             <motion.ul
-              initial={{ opacity: 0, translateX: -20 }}
+              initial={{ opacity: 0, translateX: -10 }}
               whileInView={{ opacity: 1, translateX: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -102,7 +102,7 @@ export default forwardRef(function Competences({}, ref) {
             </motion.ul>
           </div>
           <motion.div
-            initial={{ opacity: 0, translateX: 20 }}
+            initial={{ opacity: 0, translateX: 10 }}
             whileInView={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="image section-competences__graphique"

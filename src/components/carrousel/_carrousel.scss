@@ -20,23 +20,6 @@
     min-height: 18px;
     margin-top: 20px;
   }
-  &__bouton-mobile {
-    position: absolute;
-    bottom: 4px;
-    cursor: pointer;
-    &:hover {
-      animation: clignote 600ms infinite;
-    }
-    .ligne-invisible {
-      position: absolute;
-      width: 90%;
-      height: 1px;
-      top: 42%;
-      left: 5%;
-      background-color: white;
-      transform: rotate(45deg);
-    }
-  }
   &__liste-pages {
     position: relative;
     display: flex;
@@ -49,14 +32,5 @@
     bottom: 20px;
     right: 20px;
     gap: 5px;
-  }
-}
-
-@keyframes clignote {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
   }
 }

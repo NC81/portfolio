@@ -27,21 +27,21 @@
     }
     &--petit {
       width: 15%;
-      animation: glisseADroite 0.4s 100ms backwards ease-out;
+      animation: glisseADroite 600ms 100ms backwards ease-out;
       @include laptop {
         width: 30%;
       }
     }
     &--moyen {
       width: 22%;
-      animation: glisseADroite 0.6s 400ms backwards ease-out;
+      animation: glisseADroite 600ms 300ms backwards ease-out;
       @include laptop {
         width: 40%;
       }
     }
     &--grand {
       width: 44%;
-      animation: glisseADroite 0.6s 700ms backwards ease-out;
+      animation: glisseADroite 600ms 500ms backwards ease-out;
       @include laptop {
         width: 100%;
         margin-top: 50px;
@@ -70,7 +70,7 @@
 
 @keyframes glisseADroite {
   from {
-    transform: translateX(-30px);
+    transform: translateX(-10px);
     opacity: 0;
   }
   to {

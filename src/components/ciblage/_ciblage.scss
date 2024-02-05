@@ -10,8 +10,8 @@
   &--haut-gauche {
     top: -10px;
     left: -10px;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
+    border-top: 2px solid;
+    border-left: 2px solid;
     &.verrouillage {
       transform: translate(8px, 8px);
     }
@@ -19,8 +19,8 @@
   &--haut-droite {
     top: -10px;
     right: -10px;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
+    border-top: 2px solid;
+    border-right: 2px solid;
     &.verrouillage {
       transform: translate(-8px, 8px);
     }
@@ -28,8 +28,8 @@
   &--bas-gauche {
     bottom: -10px;
     left: -10px;
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
     &.verrouillage {
       transform: translate(8px, -8px);
     }
@@ -37,8 +37,8 @@
   &--bas-droite {
     bottom: -10px;
     right: -10px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
     &.verrouillage {
       transform: translate(-8px, -8px);
     }
