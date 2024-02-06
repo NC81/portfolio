@@ -18,8 +18,8 @@ export default function Footer() {
   }
 
   return (
-    <footer className="section footer">
-      <div className="section__contenu">
+    <footer className="footer">
+      <div className="section-contenu">
         <motion.h2
           initial={{ opacity: 0, translateY: -10 }}
           whileInView={{ opacity: 1, translateY: 0 }}

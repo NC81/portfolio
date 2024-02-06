@@ -29,12 +29,13 @@
     }
     @include tablette {
       font-size: 1rem;
-      line-height: 26px;
+      margin: 10px 0;
+      line-height: 25px;
     }
     @include mobile {
       font-size: 0.9rem;
-      margin: 10px 0;
-      line-height: 24px;
+      margin: 6px 0;
+      line-height: 23px;
     }
   }
   &__colonne {
@@ -102,11 +103,11 @@
       height: 100%;
       overflow: hidden;
       border-radius: 155px;
-      animation: arronditBordureEtape2 400ms;
+      animation: arronditBordureEtape2 200ms;
       &::before {
         @include cache-image(100%, -1);
         border-radius: 155px;
-        animation: arronditBordureEtape2 400ms,
+        animation: arronditBordureEtape2 200ms,
           retireCacheImage 500ms cubic-bezier(0, 0, 0.17, 1.01);
       }
     }

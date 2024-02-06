@@ -2,10 +2,6 @@
   padding-top: 70px;
   color: $color-pri;
   background: linear-gradient(180deg, black 0%, $color-sec 100%);
-  &__titre {
-    @include section-titre($color-pri);
-    animation: apparait 200ms 50ms backwards;
-  }
   @include laptop {
     height: auto;
   }
@@ -22,8 +18,10 @@
     &:hover .header__img {
       transform: scale(1.1);
     }
-    &:hover span {
-      animation: glisseRaccourciEnBas 300ms forwards;
+    @include mediaAvecSurvol(hover) {
+      &:hover span {
+        animation: glisseRaccourciEnBas 300ms forwards;
+      }
     }
     &--petit {
       width: 15%;
@@ -54,9 +52,17 @@
       width: 100%;
       text-align: center;
       font-size: 1rem;
+      @include mediaAvecSurvol(none) {
+        opacity: 1;
+      }
+      @include laptop {
+        font-size: 0.9rem;
+      }
+      @include mobile {
+        font-size: 0.8rem;
+      }
     }
   }
-
   &__cont-img {
     overflow: hidden;
     border: 1px solid $color-pri;
@@ -69,30 +75,21 @@
 }
 
 @keyframes glisseADroite {
-  from {
+  0% {
     transform: translateX(-10px);
     opacity: 0;
   }
-  to {
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-@keyframes apparait {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes glisseRaccourciEnBas {
-  from {
+  0% {
     transform: translateY(-10px);
   }
-  to {
+  100% {
     opacity: 1;
   }
 }

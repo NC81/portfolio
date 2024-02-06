@@ -1,5 +1,6 @@
 import { useState, forwardRef } from "react"
 import { motion } from "framer-motion"
+import TitreSection from "../titre-section/TitreSection"
 import chevron from "../../assets/icons/icons8-chevron-bas-64.png"
 import recharger from "../../assets/icons/icons8-recharger-50.png"
 
@@ -8,15 +9,9 @@ export default forwardRef(function Aventures({ donnees }, ref) {
   const [etape, etablitEtape] = useState(1)
 
   const lieu = indexListeImages === 0 ? "Le Temple" : "L'Arbre sacré"
-  const styleDeTexte = {
-    color: `${donnees.couleur.texte}`,
-  }
   const styleDuConteneurDePage = {
     color: `${donnees.couleur.texte}`,
     background: `linear-gradient(180deg, ${donnees.couleur.fond1} 0%, ${donnees.couleur.fond2} 100%)`,
-  }
-  const styleDeLigne = {
-    background: `linear-gradient(90deg, ${donnees.couleur.texte}, transparent)`,
   }
   const styleDeBordureDimage = !donnees.lien
     ? {
@@ -26,20 +21,19 @@ export default forwardRef(function Aventures({ donnees }, ref) {
   const deuxiemeAventure = indexListeImages === 1 ? "deuxieme-aventure" : ""
 
   return (
-    <section ref={ref} className="section" style={styleDuConteneurDePage}>
-      <div className="section__contenu">
-        <div className="section-titre">
-          <h2 style={styleDeTexte}>{donnees.titre}</h2>
-          <div className="section-titre__ligne" style={styleDeLigne}></div>
-          {etape > 1 && (
+    <section ref={ref} style={styleDuConteneurDePage}>
+      <div className="section-contenu">
+        {etape > 1 && (
+          <button className="bouton--recharger">
             <img
               onClick={() => etablitEtape(1)}
-              className="section-titre__icone-recharger"
+              className="header-section__icone-recharger"
               src={recharger}
               alt="Recharger"
             />
-          )}
-        </div>
+          </button>
+        )}
+        <TitreSection titre={donnees.titre} />
         {etape === 1 && (
           <div className={`aventure-etape aventure-etape--1`}>
             <motion.div

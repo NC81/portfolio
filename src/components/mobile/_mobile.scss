@@ -11,6 +11,9 @@
     top: 14%;
     left: 11%;
     overflow-y: scroll;
+    @-moz-document url-prefix() {
+      width: 77%;
+    }
   }
   &__liste-medias {
     position: absolute;

@@ -1,4 +1,5 @@
 import { useState, forwardRef } from "react"
+import TitreSection from "../titre-section/TitreSection"
 import Lien from "../../components/lien/Lien"
 import Carrousel from "../carrousel/Carrousel"
 import Mobile from "../../components/mobile/Mobile"
@@ -15,6 +16,7 @@ export default forwardRef(function Presentation(
   function formateTexteGras(texte) {
     return texte.replace(/(\*\*|__)(.*?)\1/g, "<strong>$2</strong>")
   }
+
   function calculeTailleTexte() {
     let longueurTexte = 0
     for (let texte of donnees.texte) {
@@ -39,9 +41,6 @@ export default forwardRef(function Presentation(
         border: `1px solid ${donnees.couleur.texte}`,
       }
     : undefined
-  const styleLigne = {
-    background: `linear-gradient(90deg, ${donnees.couleur.texte}, transparent)`,
-  }
   const styleFlex = inverse && { flexDirection: "row-reverse" }
 
   const classeVisuelProjet = !histoire
@@ -63,28 +62,27 @@ export default forwardRef(function Presentation(
 
   return (
     <section
-      className="section section-presentation"
+      className="section-presentation"
       style={styleConteneurDePage}
       ref={ref}
     >
-      <div className="section__contenu">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="section-titre"
-        >
-          <h2 style={styleTexte}>{donnees.titre}</h2>
-          <div className="section-titre__ligne" style={styleLigne}></div>
-        </motion.div>
+      <div className="section-contenu">
+        <TitreSection titre={donnees.titre} couleur={donnees.couleur.texte} />
         <div className="section-presentation__corps" style={styleFlex}>
-          <motion.div
-            initial={{ opacity: 0, translateY: -10 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`section-presentation__visuel ${classeVisuelProjet}`}
-          >
-            {donnees.lien && !histoire ? (
+          {histoire ? (
+            <img
+              className="section-presentation__visuel"
+              src={donnees.image[0].source}
+              style={styleBordureDimage}
+              alt={donnees.image[0].description}
+            />
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, translateY: -10 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className={`section-presentation__visuel ${classeVisuelProjet}`}
+            >
               <>
                 <Carrousel
                   indexImage={indexImage}
@@ -105,25 +103,19 @@ export default forwardRef(function Presentation(
                   </div>
                 )}
               </>
-            ) : (
-              <img
-                className="section-presentation__img-histoire"
-                src={donnees.image[0].source}
-                style={styleBordureDimage}
-                alt={donnees.image[0].description}
-              />
-            )}
-            {mobile && mobileVisible && (
-              <Mobile
-                indexImage={indexImage}
-                sousIndexImageMobile={sousIndexImageMobile}
-                etablitSousIndexImageMobile={etablitSousIndexImageMobile}
-                donneesMobile={donnees.mobile}
-                donneesDesktop={donnees.image}
-                placement={mobile.placement}
-              />
-            )}
-          </motion.div>
+
+              {mobile && mobileVisible && (
+                <Mobile
+                  indexImage={indexImage}
+                  sousIndexImageMobile={sousIndexImageMobile}
+                  etablitSousIndexImageMobile={etablitSousIndexImageMobile}
+                  donneesMobile={donnees.mobile}
+                  donneesDesktop={donnees.image}
+                  placement={mobile.placement}
+                />
+              )}
+            </motion.div>
+          )}
           <motion.div
             initial={{ opacity: 0, translateY: 10 }}
             whileInView={{ opacity: 1, translateY: 0 }}

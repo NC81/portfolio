@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import BoutonRetour from "./components/bouton-retour/BoutonRetour"
+import BoutonDefilementHaut from "./components/bouton-defilement-haut/BoutonDefilementHaut"
 import Header from "./components/header/Header"
 import Presentation from "./components/presentation/Presentation"
 import Competences from "./components/competences/Competences"
@@ -16,7 +16,8 @@ import { donneesProjet5 } from "./data/projets"
 import { donneesAventure } from "./data/histoires"
 
 export default function App() {
-  const [boutonRetourVisible, etablitBoutonRetourVisible] = useState(false)
+  const [boutonDefilementHautVisible, etablitBoutonDefilementHautVisible] =
+    useState(false)
   const ref = useRef(null)
   const refHeader = useRef(null)
   const refCompetences = useRef(null)
@@ -37,13 +38,13 @@ export default function App() {
   }
 
   function observeDefilement() {
-    const hauteurCachantBouton = 1000
+    const hauteurCachantBoutonDefilement = 1000
     const defilement =
       document.body.scrollTop || document.documentElement.scrollTop
-    if (defilement < hauteurCachantBouton) {
-      etablitBoutonRetourVisible(false)
+    if (defilement < hauteurCachantBoutonDefilement) {
+      etablitBoutonDefilementHautVisible(false)
     } else {
-      etablitBoutonRetourVisible(true)
+      etablitBoutonDefilementHautVisible(true)
     }
   }
 
@@ -54,8 +55,8 @@ export default function App() {
 
   return (
     <>
-      {boutonRetourVisible && (
-        <BoutonRetour gereClicDefilement={gereClicDefilement} />
+      {boutonDefilementHautVisible && (
+        <BoutonDefilementHaut gereClicDefilement={gereClicDefilement} />
       )}
       <Header ref={refHeader} gereClicDefilement={gereClicDefilement} />
       <main>

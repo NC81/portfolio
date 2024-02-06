@@ -35,9 +35,10 @@ h1 {
   width: max-content;
   margin: 0;
   font: normal 5.6rem "Telegraph Ultra";
+  color: $color-pri;
   line-height: 102px;
   letter-spacing: 2px;
-  animation: glisseEnBas 250ms 150ms backwards ease-in;
+  animation: apparait 600ms 800ms backwards ease-out;
   @include laptop {
     position: static;
     margin-bottom: $margin-responsive;
@@ -52,16 +53,28 @@ h1 {
   }
 }
 
-h2 {
-  max-width: 40%;
-  margin: 0 40px 0 0;
-  font-weight: 300;
-  font-size: 1.8rem;
-  @include laptop {
-    max-width: 52%;
+.section-titre {
+  display: flex;
+  margin-bottom: 75px;
+  h2 {
+    max-width: 40%;
+    margin: 0 40px 0 0;
+    font-weight: 300;
+    font-size: 1.8rem;
+    @include tablette {
+      font-size: 1.4rem;
+    }
+    @include laptop {
+      max-width: 52%;
+    }
   }
-  @include tablette {
-    font-size: 1.4rem;
+  @include laptop {
+    margin-bottom: 50px;
+  }
+  &__ligne {
+    flex: 1;
+    height: 1px;
+    margin-top: 18px;
   }
 }
 
@@ -82,48 +95,16 @@ ul {
   margin: 0;
 }
 
-.section {
+.section-contenu {
   position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
   @include laptop {
-    height: auto;
+    width: 70%;
   }
-  &__contenu {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    @include laptop {
-      width: 70%;
-    }
-    @include mobile {
-      width: 86%;
-    }
-  }
-}
-
-.section-titre {
-  position: relative;
-  display: flex;
-  margin-bottom: 75px;
-  @include laptop {
-    margin-bottom: 50px;
-  }
-  &__ligne {
-    flex: 1;
-    height: 1px;
-    margin-top: 18px;
-  }
-  &__icone-recharger {
-    position: absolute;
-    width: 24px;
-    bottom: -40px;
-    right: 0;
-    opacity: 0.6;
-    cursor: pointer;
-    transition: transform 300ms;
-    &:hover {
-      opacity: 1;
-      transform: rotate(180deg);
-    }
+  @include mobile {
+    width: 86%;
   }
 }
 
@@ -205,30 +186,45 @@ button {
     position: absolute;
     bottom: 4px;
     cursor: pointer;
-    @include mediaAvecSurvol {
+    @include mediaAvecSurvol(hover) {
       &:hover {
         animation: clignoteIconeMobile 600ms infinite;
       }
     }
-    .ligne-invisible {
+    &.mobile-visible::after {
+      content: "";
       position: absolute;
       width: 90%;
       height: 1px;
-      top: 42%;
-      left: 5%;
+      top: 12px;
+      left: 2px;
       background-color: white;
       transform: rotate(45deg);
     }
   }
+  &--recharger {
+    position: absolute;
+    width: 40px;
+    top: 40px;
+    right: 0;
+    cursor: pointer;
+    &:hover img {
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+    img {
+      width: 100%;
+      opacity: 0.6;
+      transition: transform 300ms;
+    }
+  }
 }
 
-@keyframes glisseEnBas {
-  from {
-    transform: translateY(-20px);
+@keyframes apparait {
+  0% {
     opacity: 0;
   }
-  to {
-    transform: translateX(0);
+  100% {
     opacity: 1;
   }
 }

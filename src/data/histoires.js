@@ -25,7 +25,7 @@ export const biographie = {
   image: [
     {
       description:
-        "Un jardinier avec un panier rempli de plantes à la main observe un vaisseau spatial devant une immense planète en arrière-plan.",
+        "Un jardinier avec un panier à la main rempli de plantes contemple un vaisseau spatial volant devant une immense planète avec des anneaux en arrière-plan.",
       source: reveur,
     },
   ],
@@ -119,7 +119,7 @@ export const conclusion = {
   image: [
     {
       description:
-        "Un homme observe un paysage extra-terrestre avec d'étranges montagnes à l'horizon et de grandes planètes dans le ciel",
+        "Un homme équipé d'un sac à dos contemple un paysage extra-terrestre de couleur verte composé d'étranges montagnes abruptes à l'horizon et de 3 planètes dans le ciel",
       source: futur,
     },
   ],

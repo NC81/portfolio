@@ -2,6 +2,7 @@ import { useState, forwardRef } from "react"
 import cerveau from "../../assets/images/cerveau.jpg"
 import vaisseau from "../../assets/images/vaisseau.jpg"
 import hero from "../../assets/images/hero.jpg"
+import TitreSection from "../titre-section/TitreSection"
 import Ciblage from "../ciblage/Ciblage"
 
 export default forwardRef(function Header({ gereClicDefilement }, ref) {
@@ -13,19 +14,14 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
     useState(false)
 
   return (
-    <header ref={ref} className="section header">
-      <div className="section__contenu">
+    <header ref={ref} className="header">
+      <div className="section-contenu">
         <h1>
           2024
           <br />
           Portfolio
         </h1>
-        <div className="section-titre header__titre">
-          <h2>
-            Nicolas Candeli, <br />
-            Développeur Front-End
-          </h2>
-        </div>
+        <TitreSection couleur={"#dcbc9f"} header={true} />
         <nav className="header__nav">
           <div
             onClick={() => gereClicDefilement("compétences")}
@@ -37,7 +33,7 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
               <img
                 className="header__img"
                 src={cerveau}
-                alt="Un cerveau rayonnant comme une étoile"
+                alt="Le profil d'une tête de couleur turquoise à l'intérieur de laquelle un cerveau orangé rayonne comme une étoile"
               />
             </div>
             <Ciblage verrouillage={verrouillageCiblePetite} couleur="#dcbc9f" />
@@ -53,7 +49,7 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
               <img
                 className="header__img"
                 src={vaisseau}
-                alt="Un vaisseau dans un nuage de gas multicolore en face d'une étoile."
+                alt="Un grand vaisseau spatial avec des cheminées navigue dans un nuage de gaz multicolore en face d'une étoile."
               />
             </div>
             <Ciblage
@@ -73,7 +69,7 @@ export default forwardRef(function Header({ gereClicDefilement }, ref) {
               <img
                 className="header__img"
                 src={hero}
-                alt="Un pilote de vaisseau observe l'espace dans son cockpit à proximité d'une planète, en face d'une étoile."
+                alt="Un pilote de vaisseau observe attentivement l'espace depuis son cockpit à proximité d'une planète, derrière laquelle brille une étoile."
               />
             </div>
             <Ciblage verrouillage={verrouillageCibleGrande} couleur="#dcbc9f" />

@@ -1,5 +1,6 @@
 import { forwardRef } from "react"
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
+import TitreSection from "../titre-section/TitreSection"
 import { motion } from "framer-motion"
 
 export default forwardRef(function Competences({}, ref) {
@@ -63,17 +64,9 @@ export default forwardRef(function Competences({}, ref) {
   }
 
   return (
-    <section ref={ref} className="section section-competences">
-      <div className="section__contenu">
-        <div className="section-titre">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            Mes Compétences
-          </motion.h2>
-        </div>
+    <section ref={ref} className="section-competences">
+      <div className="section-contenu">
+        <TitreSection titre={"Mes Compétences"} />
         <div className="section-competences__corps">
           <div className="section-competences__metier">
             <motion.h3

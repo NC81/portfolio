@@ -35,6 +35,11 @@ export default function Carrousel({
     }
   }
 
+  const classeMobileVisible = mobileVisible ? "mobile-visible" : ""
+  const texteAlternatifIconeMobile = mobileVisible
+    ? "Cache mobile"
+    : "Affiche mobile"
+
   return (
     <div className="carrousel">
       <div className="carrousel__cont-img barre-defilement">
@@ -74,11 +79,10 @@ export default function Carrousel({
         )}
         {mobile && (
           <button
+            className={`bouton--affichage-mobile ${classeMobileVisible}`}
             onClick={() => etablitMobileVisible(!mobileVisible)}
-            className="bouton--affichage-mobile"
           >
-            <img src={iconeMobile} alt="Mobile" />
-            {mobileVisible && <div className="ligne-invisible"></div>}
+            <img src={iconeMobile} alt={texteAlternatifIconeMobile} />
           </button>
         )}
       </div>
