@@ -69,7 +69,7 @@ export default forwardRef(function Aventures({ donnees }, ref) {
               </div>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, translateX: 20 }}
+              initial={{ opacity: 0, translateX: 10 }}
               whileInView={{ opacity: 1, translateX: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="aventure-etape__colonne aventure-etape--1__relative"

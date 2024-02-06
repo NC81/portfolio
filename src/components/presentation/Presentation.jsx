@@ -70,7 +70,10 @@ export default forwardRef(function Presentation(
         <TitreSection titre={donnees.titre} couleur={donnees.couleur.texte} />
         <div className="section-presentation__corps" style={styleFlex}>
           {histoire ? (
-            <img
+            <motion.img
+              initial={{ opacity: 0, translateY: -10 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="section-presentation__visuel"
               src={donnees.image[0].source}
               style={styleBordureDimage}
