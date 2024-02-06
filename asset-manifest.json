@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0c52d781.css",
-    "main.js": "/portfolio/static/js/main.c2bb47d5.js",
+    "main.css": "/portfolio/static/css/main.927fa1aa.css",
+    "main.js": "/portfolio/static/js/main.e3435f81.js",
     "static/media/ohmyfood-anim-site.webm": "/portfolio/static/media/ohmyfood-anim-site.0263ec3f54b99d64c1e6.webm",
     "static/media/ohmyfood-anim-site.mp4": "/portfolio/static/media/ohmyfood-anim-site.643e41b24b43a955b9ea.mp4",
     "static/media/reservia-mobile.png": "/portfolio/static/media/reservia-mobile.892413ae194a49bf3ed0.png",
     "static/media/ohmyfood-anim-chargement.webm": "/portfolio/static/media/ohmyfood-anim-chargement.5e77c85b03bcd2f1d91c.webm",
     "static/media/ohmyfood-desktop-2.png": "/portfolio/static/media/ohmyfood-desktop-2.4d8b00eb2aaee305f4f1.png",
-    "static/media/reservia.png": "/portfolio/static/media/reservia.c379b7f124097fcb1c58.png",
+    "static/media/reservia.png": "/portfolio/static/media/reservia.613ddcce96aad486dcc3.png",
     "static/media/ohmyfood-anim-chargement.mp4": "/portfolio/static/media/ohmyfood-anim-chargement.22bbd22e3a6a796aed89.mp4",
     "static/media/ohmyfood-mobile-1.png": "/portfolio/static/media/ohmyfood-mobile-1.e44d4d73a31c5b2e22be.png",
     "static/media/maquette-desktop-1-1.png": "/portfolio/static/media/maquette-desktop-1-1.97cf69a1e79d90cbb8b7.png",
@@ -59,11 +59,11 @@
     "static/media/iconmonstr-paste-clipboard-lined.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-lined.6a98b41f5d4505adab6ee158b71af600.svg",
     "static/media/iconmonstr-paste-clipboard-filled.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-filled.f3a68cf1d81ac6b1ccfb89048c061b62.svg",
     "index.html": "/portfolio/index.html",
-    "main.0c52d781.css.map": "/portfolio/static/css/main.0c52d781.css.map",
-    "main.c2bb47d5.js.map": "/portfolio/static/js/main.c2bb47d5.js.map"
+    "main.927fa1aa.css.map": "/portfolio/static/css/main.927fa1aa.css.map",
+    "main.e3435f81.js.map": "/portfolio/static/js/main.e3435f81.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c52d781.css",
-    "static/js/main.c2bb47d5.js"
+    "static/css/main.927fa1aa.css",
+    "static/js/main.e3435f81.js"
   ]
 }
