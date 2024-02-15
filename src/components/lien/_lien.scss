@@ -10,5 +10,8 @@
   }
   &:hover {
     font-weight: bold;
+    @-moz-document url-prefix() {
+      letter-spacing: 0.26rem;
+    }
   }
 }

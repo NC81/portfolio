@@ -52,14 +52,14 @@ export const donneesAventure = {
   titre: "Mes Aventures",
   texte: [
     [
-      "Une statue menaçante gardant l'entrée d'une salle mystérieuse me ressemblait étrangement. Mais où m'étais-je donc rendu ?",
-      "À l'intérieur de la salle d'une hauteur insondable, tout ne semblait faire plus qu'un. Plus j'observais la relique, plus sa lumière m'envahissait",
-      "comprenant qu'il s'agissait d'un miroir sacré, j'avais gagné un regard lucide sur moi-même. Depuis lors, je vois des parcelles de futur.",
+      "Une statue menaçante, qui gardait l'entrée d'une salle mystérieuse abritant un objet radieux, me fixait d'un regard foudroyant qui m'était familier.",
+      "À l'intérieur de la salle d'une hauteur insondable, tout ne semblait faire plus qu'un. Plus j'observais la relique, plus sa lumière m'éblouissait",
+      "comprenant qu'il s'agissait d'un puissant miroir antique, j'avais décrypté mon âme avec une lucidité absolue. Depuis lors, j'entrevois des parcelles de futur.",
     ],
     [
-      "Un grand oiseau mystique poussait des cris stridents à proximité d'un arbre millénaire pour me dissuader de l'approcher.",
-      "Après d'innombrables tentatives, j'avais réussi à l'approcher. En comprenant l'universalité de l'énergie qui l'animait, j'avais fini par l'apprivoiser",
-      "l'harmonie de cette rencontre m'invitait instinctivement à reproduire son battement d'ailes. De là-haut, désormais, j'aperçois ma destinée.",
+      "Un grand oiseau mystique poussait des cris stridents au pied d'un arbre millénaire où poussaient d'étranges fruits luminescents.",
+      "La cueillette fut acrobatique, mais j'avais fini par partager avec lui cette ressource ancestrale qui noyait nos sens dans une euphorie commune",
+      "cette harmonie rendait possible la fusion de nos existences issues de la même énergie cosmique. Réalisant que j'avais toujours eu des ailes, désormais, j'aperçois ma destinée.",
     ],
   ],
   image: [

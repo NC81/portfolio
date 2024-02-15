@@ -51,15 +51,11 @@
       opacity: 0;
       width: 100%;
       text-align: center;
-      font-size: 1rem;
       @include mediaAvecSurvol(none) {
         opacity: 1;
       }
-      @include laptop {
-        font-size: 0.9rem;
-      }
-      @include mobile {
-        font-size: 0.8rem;
+      @include tablette {
+        font-size: 0.7rem;
       }
     }
   }
