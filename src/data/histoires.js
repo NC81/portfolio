@@ -57,9 +57,9 @@ export const donneesAventure = {
       "comprenant qu'il s'agissait d'un puissant miroir antique, j'avais décrypté mon âme avec une lucidité absolue. Depuis lors, j'entrevois des parcelles de futur.",
     ],
     [
-      "Un grand oiseau mystique poussait des cris stridents au pied d'un arbre millénaire où poussaient d'étranges fruits luminescents.",
-      "La cueillette fut acrobatique, mais j'avais fini par partager avec lui cette ressource ancestrale qui noyait nos sens dans une euphorie commune",
-      "cette harmonie rendait possible la fusion de nos existences issues de la même énergie cosmique. Réalisant que j'avais toujours eu des ailes, désormais, j'aperçois ma destinée.",
+      "Un grand oiseau mystique planait paisiblement autour d'un arbre millénaire sur lequel poussaient d'étranges plantes luminescentes.",
+      "La cueillette fut acrobatique, mais j'avais voulu partager avec lui cette ressource ancestrale qui l'avait nourri au point de modeler son essence",
+      "j'avais réalisé que nous étions animés par la même énergie cosmique d'où provenait son aptitude à voler. Désormais, depuis le ciel, j'aperçois ma destinée.",
     ],
   ],
   image: [
