@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0a4f6833.css",
-    "main.js": "/portfolio/static/js/main.6f5af0db.js",
+    "main.css": "/portfolio/static/css/main.378c86fd.css",
+    "main.js": "/portfolio/static/js/main.b0748c6f.js",
     "static/media/ohmyfood-anim-site.webm": "/portfolio/static/media/ohmyfood-anim-site.0263ec3f54b99d64c1e6.webm",
     "static/media/ohmyfood-anim-site.mp4": "/portfolio/static/media/ohmyfood-anim-site.643e41b24b43a955b9ea.mp4",
     "static/media/reservia-mobile.png": "/portfolio/static/media/reservia-mobile.892413ae194a49bf3ed0.png",
@@ -59,11 +59,11 @@
     "static/media/iconmonstr-paste-clipboard-lined.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-lined.6a98b41f5d4505adab6ee158b71af600.svg",
     "static/media/iconmonstr-paste-clipboard-filled.svg": "/portfolio/static/media/iconmonstr-paste-clipboard-filled.f3a68cf1d81ac6b1ccfb89048c061b62.svg",
     "index.html": "/portfolio/index.html",
-    "main.0a4f6833.css.map": "/portfolio/static/css/main.0a4f6833.css.map",
-    "main.6f5af0db.js.map": "/portfolio/static/js/main.6f5af0db.js.map"
+    "main.378c86fd.css.map": "/portfolio/static/css/main.378c86fd.css.map",
+    "main.b0748c6f.js.map": "/portfolio/static/js/main.b0748c6f.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a4f6833.css",
-    "static/js/main.6f5af0db.js"
+    "static/css/main.378c86fd.css",
+    "static/js/main.b0748c6f.js"
   ]
 }
