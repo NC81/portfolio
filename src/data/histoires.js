@@ -58,8 +58,8 @@ export const donneesAventure = {
     ],
     [
       "Un grand oiseau mystique planait paisiblement autour d'un arbre millénaire sur lequel poussaient d'étranges plantes luminescentes.",
-      "La cueillette fut acrobatique, mais j'avais voulu partager avec lui cette ressource ancestrale qui l'avait nourri au point de modeler son essence",
-      "j'avais réalisé que nous étions animés par la même énergie cosmique d'où provenait son aptitude à voler. Désormais, depuis le ciel, j'aperçois ma destinée.",
+      "La cueillette fut acrobatique, mais j'avais voulu partager avec lui cette ressource ancestrale qui semblait être à l'origine de son plumage lumineux",
+      "cette communion m'avait fait comprendre que nous étions animés par la même énergie cosmique qui le faisait voler. Désormais, depuis le ciel, j'aperçois ma destinée.",
     ],
   ],
   image: [

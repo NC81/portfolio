@@ -14,6 +14,7 @@ import { donneesProjet3 } from "./data/projets"
 import { donneesProjet4 } from "./data/projets"
 import { donneesProjet5 } from "./data/projets"
 import { donneesAventure } from "./data/histoires"
+import { donneesCompetences } from "./data/competences"
 
 export default function App() {
   const [boutonDefilementHautVisible, etablitBoutonDefilementHautVisible] =
@@ -61,7 +62,7 @@ export default function App() {
       <Header ref={refHeader} gereClicDefilement={gereClicDefilement} />
       <main>
         <Presentation histoire={true} donnees={biographie} />
-        <Competences ref={refCompetences} />
+        <Competences ref={refCompetences} donnees={donneesCompetences} />
         <Presentation histoire={true} donnees={philosophie} inverse={true} />
         <Presentation
           ref={refRealisations}

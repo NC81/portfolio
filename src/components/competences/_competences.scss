@@ -36,11 +36,27 @@
   &__graphique {
     position: relative;
     height: 540px;
-    ul {
+    .liste-types {
+      display: flex;
+      margin-bottom: 5px;
+      gap: 10px;
+    }
+    .type {
+      padding: 0;
+      cursor: pointer;
+    }
+    .type:not(.selection) {
+      color: #b7b7b7;
+    }
+    .type:not(.selection):hover {
+      animation: clignoteType 600ms infinite;
+    }
+    .liste-noms {
       position: absolute;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 12px 0 12px;
       width: 100%;
       height: 100%;
       z-index: 1;
@@ -48,18 +64,27 @@
       letter-spacing: $letter-spacing-title;
       text-align: center;
     }
-    li {
+    li:not(.type) {
       padding-left: 6px;
-      line-height: 32px;
+      line-height: 30px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       @include tablette {
-        font-size: 0.9rem;
-      }
-      @include mobile {
         font-size: 0.8rem;
       }
     }
+  }
+}
+
+@keyframes clignoteType {
+  0% {
+    color: #959595;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: #959595;
   }
 }

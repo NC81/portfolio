@@ -1,64 +1,39 @@
-import { forwardRef } from "react"
+import { useState, forwardRef } from "react"
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
 import TitreSection from "../titre-section/TitreSection"
 import { motion } from "framer-motion"
 
-export default forwardRef(function Competences({}, ref) {
-  const data = [
+export default forwardRef(function Competences({ donnees }, ref) {
+  // Liste regroupant les 3 types de compétences sélectionnables
+  const typesDeCompetences = [
     {
-      name: "HTML",
-      score: 4,
-      left: 1,
-    },
-
-    {
-      name: "CSS",
-      score: 3,
-      left: 1,
+      nom: "Front-End",
+      donnees: donnees.frontend,
     },
     {
-      name: "SASS",
-      score: 3,
-      left: 2,
+      nom: "Back-End",
+      donnees: donnees.backend,
     },
     {
-      name: "STYLED COMPONENTS",
-      score: 3,
-      left: 2,
-    },
-    {
-      name: "JAVASCRIPT",
-      score: 3,
-      left: 2,
-    },
-    {
-      name: "REACT",
-      score: 3,
-      left: 2,
-    },
-    {
-      name: "REACT ROUTER",
-      score: 4,
-      left: 1,
-    },
-    {
-      name: "JEST / REACT TESTING LIBRARY",
-      score: 3,
-      left: 2,
-    },
-    {
-      name: "REDUX / REDUX TOOLKIT",
-      score: 3,
-      left: 2,
-    },
-    {
-      name: "RECHARTS",
-      score: 3,
-      left: 1,
+      nom: "Outils",
+      donnees: donnees.outils,
     },
   ]
 
-  const axisStyle = {
+  // Type de compétences sélectionné affichant le graphique
+  const [typeActuel, changeTypeActuel] = useState(typesDeCompetences[0])
+
+  // Fonction de sélection au clic du type de compétences
+  function selectionneTypeActuel(string) {
+    const nouveauType = typesDeCompetences.find((el) => el.nom === string)
+    changeTypeActuel(nouveauType)
+  }
+
+  const styleDynamiqueDuConteneur = {
+    height: `${54 * typeActuel.donnees.length}px`,
+  }
+
+  const styleDeLAxeY = {
     fill: "white",
     fontSize: "14px",
   }
@@ -99,20 +74,34 @@ export default forwardRef(function Competences({}, ref) {
             whileInView={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="image section-competences__graphique"
+            style={styleDynamiqueDuConteneur}
           >
-            <ul>
-              {data.map((el, index) => (
-                <li key={`el.name-${index}`}>{el.name}</li>
+            <ul className="liste-types">
+              {typesDeCompetences.map(({ nom }, index) => (
+                <li
+                  className={`type ${
+                    nom === typeActuel.nom ? "selection" : ""
+                  }`}
+                  onClick={() => selectionneTypeActuel(nom)}
+                  key={`type-${index}`}
+                >
+                  {nom}
+                </li>
+              ))}
+            </ul>
+            <ul className="liste-noms">
+              {typeActuel.donnees.map(({ name }, index) => (
+                <li key={`name-${index}`}>{name}</li>
               ))}
             </ul>
             <ResponsiveContainer>
               <BarChart
-                data={data}
+                data={typeActuel.donnees}
                 margin={{
-                  top: -15,
-                  bottom: -15,
+                  top: 0,
+                  bottom: 0,
                 }}
-                barSize={32}
+                barSize={30}
                 layout="vertical"
               >
                 <XAxis hide type="number" domain={[0, 5]} />
@@ -120,13 +109,14 @@ export default forwardRef(function Competences({}, ref) {
                   hide
                   type="category"
                   dataKey="name"
-                  style={axisStyle}
+                  style={styleDeLAxeY}
                 ></YAxis>
                 <Bar
                   dataKey="score"
                   position="center"
                   fill="#919ba5"
                   background={{ fill: "#5c3539" }}
+                  isAnimationActive={false}
                 />
               </BarChart>
             </ResponsiveContainer>
