@@ -1,4 +1,14 @@
-export default function Ciblage({ verrouillage, couleur, petit }) {
+type CiblageProps = {
+  verrouillage: boolean
+  couleur: string
+  petit?: string
+}
+
+export default function Ciblage({
+  verrouillage,
+  couleur,
+  petit,
+}: CiblageProps) {
   const style = {
     borderColor: `${couleur}`,
   }

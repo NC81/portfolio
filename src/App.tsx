@@ -5,37 +5,45 @@ import Presentation from "./components/presentation/Presentation"
 import Competences from "./components/competences/Competences"
 import Footer from "./components/footer/Footer"
 import Aventure from "./components/aventure/Aventure"
-import { biographie } from "./data/histoires"
-import { philosophie } from "./data/histoires"
-import { conclusion } from "./data/histoires"
-import { donneesProjet1 } from "./data/projets"
-import { donneesProjet2 } from "./data/projets"
-import { donneesProjet3 } from "./data/projets"
-import { donneesProjet4 } from "./data/projets"
-import { donneesProjet5 } from "./data/projets"
-import { donneesAventure } from "./data/histoires"
 import { donneesCompetences } from "./data/competences"
+import {
+  biographie,
+  philosophie,
+  conclusion,
+  donneesProjet1,
+  donneesProjet2,
+  donneesProjet3,
+  donneesProjet4,
+  donneesProjet5,
+  donneesAventure,
+} from "./data/projets"
+
+export type GereClicDefilementArg =
+  | "compétences"
+  | "aventures"
+  | "réalisations"
+  | "haut"
 
 export default function App() {
   const [boutonDefilementHautVisible, etablitBoutonDefilementHautVisible] =
-    useState(false)
-  const ref = useRef(null)
-  const refHeader = useRef(null)
-  const refCompetences = useRef(null)
-  const refAventures = useRef(null)
-  const refRealisations = useRef(null)
+    useState<boolean>(false)
+  const refHeader = useRef<HTMLElement>(null)
+  const refCompetences = useRef<HTMLElement>(null)
+  const refAventures = useRef<HTMLElement>(null)
+  const refRealisations = useRef<HTMLElement>(null)
+  const refDefilement = useRef<HTMLElement | null>(null)
 
-  function gereClicDefilement(string) {
-    if (string === "compétences") {
-      ref.current = refCompetences.current
-    } else if (string === "aventures") {
-      ref.current = refAventures.current
-    } else if (string === "réalisations") {
-      ref.current = refRealisations.current
-    } else if (string === "haut") {
-      ref.current = refHeader.current
+  function gereClicDefilement(type: GereClicDefilementArg) {
+    if (type === "compétences") {
+      refDefilement.current = refCompetences.current
+    } else if (type === "aventures") {
+      refDefilement.current = refAventures.current
+    } else if (type === "réalisations") {
+      refDefilement.current = refRealisations.current
+    } else if (type === "haut") {
+      refDefilement.current = refHeader.current
     }
-    ref.current?.scrollIntoView({ behavior: "smooth" })
+    refDefilement.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   function observeDefilement() {

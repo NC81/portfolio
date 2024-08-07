@@ -2,10 +2,32 @@ import { useState, forwardRef } from "react"
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
 import TitreSection from "../titre-section/TitreSection"
 import { motion } from "framer-motion"
+import {
+  type Competence,
+  type DonneesCompetences,
+} from "../../data/competences"
 
-export default forwardRef(function Competences({ donnees }, ref) {
+// Type des données de compétences
+type CompetencesType = {
+  donnees: DonneesCompetences
+}
+
+// Type pour les différents types de compétences
+type TypeDeCompetence = "Front-End" | "Back-End" | "Outils"
+
+// Type des objets dans typesDeCompetences
+type CompetenceFinale = {
+  nom: TypeDeCompetence
+  donnees: Competence[]
+}
+
+// Composant Compétences
+export default forwardRef<HTMLElement, CompetencesType>(function Competences(
+  { donnees },
+  ref
+) {
   // Liste regroupant les 3 types de compétences sélectionnables
-  const typesDeCompetences = [
+  const typesDeCompetences: CompetenceFinale[] = [
     {
       nom: "Front-End",
       donnees: donnees.frontend,
@@ -21,12 +43,16 @@ export default forwardRef(function Competences({ donnees }, ref) {
   ]
 
   // Type de compétences sélectionné affichant le graphique
-  const [typeActuel, changeTypeActuel] = useState(typesDeCompetences[0])
+  const [typeActuel, changeTypeActuel] = useState<CompetenceFinale>(
+    typesDeCompetences[0]
+  )
 
   // Fonction de sélection au clic du type de compétences
-  function selectionneTypeActuel(string) {
-    const nouveauType = typesDeCompetences.find((el) => el.nom === string)
-    changeTypeActuel(nouveauType)
+  function selectionneTypeActuel(type: TypeDeCompetence) {
+    const nouveauType = typesDeCompetences.find((el) => el.nom === type)
+    if (nouveauType) {
+      changeTypeActuel(nouveauType)
+    }
   }
 
   const styleDynamiqueDuConteneur = {
@@ -113,7 +139,7 @@ export default forwardRef(function Competences({ donnees }, ref) {
                 ></YAxis>
                 <Bar
                   dataKey="score"
-                  position="center"
+                  // position="center"
                   fill="#919ba5"
                   background={{ fill: "#5c3539" }}
                   isAnimationActive={false}

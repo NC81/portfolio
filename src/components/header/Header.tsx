@@ -4,8 +4,16 @@ import vaisseau from "../../assets/images/vaisseau.jpg"
 import hero from "../../assets/images/hero.jpg"
 import TitreSection from "../titre-section/TitreSection"
 import Ciblage from "../ciblage/Ciblage"
+import { type GereClicDefilementArg } from "../../App"
 
-export default forwardRef(function Header({ gereClicDefilement }, ref) {
+type ClicDefilementType = {
+  gereClicDefilement: (type: GereClicDefilementArg) => void
+}
+
+export default forwardRef<HTMLElement, ClicDefilementType>(function Header(
+  { gereClicDefilement },
+  ref
+) {
   const [verrouillageCiblePetite, etablitVerrouillageCiblePetite] =
     useState(false)
   const [verrouillageCibleMoyenne, etablitVerrouillageCibleMoyenne] =

@@ -1,6 +1,16 @@
 import { motion } from "framer-motion"
 
-export default function TitreSection({ titre, couleur, header }) {
+type TitreSectionProps = {
+  titre?: string
+  couleur?: string
+  header?: boolean
+}
+
+export default function TitreSection({
+  titre,
+  couleur,
+  header,
+}: TitreSectionProps) {
   const styleTexteHeader = couleur
     ? {
         color: `${couleur}`,

@@ -3,8 +3,16 @@ import { motion } from "framer-motion"
 import TitreSection from "../titre-section/TitreSection"
 import chevron from "../../assets/icons/icons8-chevron-bas-64.png"
 import recharger from "../../assets/icons/icons8-recharger-50.png"
+import { type DonneesAventure } from "../../data/projets"
 
-export default forwardRef(function Aventures({ donnees }, ref) {
+type AventuresProps = {
+  donnees: DonneesAventure
+}
+
+export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
+  { donnees },
+  ref
+) {
   const [indexListeImages, etablitIndexListeImages] = useState(0)
   const [etape, etablitEtape] = useState(1)
 

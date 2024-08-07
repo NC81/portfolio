@@ -1,5 +1,17 @@
+export type Competence = {
+  name: string
+  score: number
+  left: number
+}
+
+export type DonneesCompetences = {
+  frontend: Competence[]
+  backend: Competence[]
+  outils: Competence[]
+}
+
 // 3 Listes regroupant les types de compétences (frontend, backend, outils) exploitées dans le graphique
-export const donneesCompetences = {
+export const donneesCompetences: DonneesCompetences = {
   frontend: [
     {
       name: "HTML",

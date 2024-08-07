@@ -1,6 +1,17 @@
 import { useState } from "react"
 import iconeMobile from "../../assets/icons/icons8-smartphone-24.png"
 
+type CarrouselProps = {
+  indexImage: number
+  etablitindexImage: (index: number) => void
+  etablitSousIndexImageMobile: (index: number) => void
+  liste: { description: string; source: string[] }[]
+  style: React.CSSProperties | undefined
+  mobile: { placement: "gauche" | "droite" | "super-droite" } | undefined
+  mobileVisible: boolean
+  etablitMobileVisible: (bool: boolean) => void
+}
+
 export default function Carrousel({
   indexImage,
   etablitindexImage,
@@ -10,16 +21,17 @@ export default function Carrousel({
   mobile,
   mobileVisible,
   etablitMobileVisible,
-}) {
-  const [sousIndexImageDesktop, etablitSousIndexImageDesktop] = useState(0)
+}: CarrouselProps) {
+  const [sousIndexImageDesktop, etablitSousIndexImageDesktop] =
+    useState<number>(0)
 
-  function gereChangementDePage(index) {
+  function gereChangementDePage(index: number) {
     etablitSousIndexImageMobile(0)
     etablitSousIndexImageDesktop(0)
     etablitindexImage(index)
   }
 
-  function definitClasseSelonIndex(index) {
+  function definitClasseSelonIndex(index: number): string {
     if (index === indexImage) {
       return "selection"
     } else {
@@ -27,7 +39,7 @@ export default function Carrousel({
     }
   }
 
-  function definitClasseSelonSousIndex(index) {
+  function definitClasseSelonSousIndex(index: number): string {
     if (index === sousIndexImageDesktop) {
       return "selection"
     } else {

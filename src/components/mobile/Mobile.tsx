@@ -3,16 +3,34 @@ import android from "../../assets/images/android.png"
 import iconeVideo from "../../assets/icons/icons8-film-30.png"
 import iconeImage from "../../assets/icons/icons8-photo-24.png"
 
+type MobileProps = {
+  indexImage: number
+  sousIndexImageMobile: number
+  etablitSousIndexImageMobile: (index: number) => void
+  donneesMobile: {
+    image: string[][]
+    video: {
+      webm: string
+      mp4: string
+    }[]
+  }
+  donneesDesktop: { description: string; source: string[] }[]
+  mobile: { placement: "gauche" | "droite" | "super-droite" }
+}
+
 export default function Mobile({
   donneesMobile,
   donneesDesktop,
   indexImage,
   sousIndexImageMobile,
   etablitSousIndexImageMobile,
-  placement,
-}) {
-  const videoref = useRef()
-  const [sourceVideo, etablitSourceVideo] = useState(donneesMobile.video[0])
+  mobile,
+}: MobileProps) {
+  const videoref = useRef<HTMLVideoElement>(null)
+  const [sourceVideo, etablitSourceVideo] = useState<{
+    webm: string
+    mp4: string
+  }>(donneesMobile.video[0])
   const [typeDeMedia, etablitTypeDeMedia] = useState(
     donneesMobile.image ? "image" : "video"
   )
@@ -32,7 +50,7 @@ export default function Mobile({
   const imageSelection = typeDeMedia === "image" ? "selection" : ""
   const videoSelection = typeDeMedia === "video" ? "selection" : ""
 
-  function definitClasseSelonSousIndex(index) {
+  function definitClasseSelonSousIndex(index: number): string {
     if (index === sousIndexImageMobile) {
       return "selection"
     } else {
@@ -40,7 +58,10 @@ export default function Mobile({
     }
   }
 
-  function definitClasseSelonSourceVideo(source) {
+  function definitClasseSelonSourceVideo(source: {
+    webm: string
+    mp4: string
+  }): string {
     if (source === sourceVideo) {
       return "selection"
     } else {
@@ -58,7 +79,7 @@ export default function Mobile({
   }
 
   return (
-    <div className={`mobile mobile--${placement}`}>
+    <div className={`mobile mobile--${mobile.placement}`}>
       <img className="mobile__boitier" src={android} alt="Un mobile android" />
       <div className="mobile__liste-medias">
         {donneesMobile.image.length > 0 && donneesMobile.video.length > 0 && (

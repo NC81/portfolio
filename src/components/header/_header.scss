@@ -2,6 +2,9 @@
   padding-top: 70px;
   color: $color-pri;
   background: linear-gradient(180deg, black 0%, $color-sec 100%);
+  @include mobile {
+    padding-top: 50px;
+  }
   @include laptop {
     height: auto;
   }
