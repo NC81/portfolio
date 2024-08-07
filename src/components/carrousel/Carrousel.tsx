@@ -5,9 +5,8 @@ type CarrouselProps = {
   indexImage: number
   etablitindexImage: (index: number) => void
   etablitSousIndexImageMobile: (index: number) => void
-  liste: { description: string; source: string[] }[]
-  style: React.CSSProperties | undefined
-  mobile: { placement: "gauche" | "droite" | "super-droite" } | undefined
+  liste: { alt: string; src: string[] }[]
+  mobileCote: "gauche" | "droite" | "super-droite" | undefined
   mobileVisible: boolean
   etablitMobileVisible: (bool: boolean) => void
 }
@@ -17,8 +16,7 @@ export default function Carrousel({
   etablitindexImage,
   etablitSousIndexImageMobile,
   liste,
-  style,
-  mobile,
+  mobileCote,
   mobileVisible,
   etablitMobileVisible,
 }: CarrouselProps) {
@@ -57,15 +55,14 @@ export default function Carrousel({
       <div className="carrousel__cont-img barre-defilement">
         <img
           className="carrousel__img"
-          src={liste[indexImage].source[sousIndexImageDesktop]}
-          style={style}
-          alt={liste[indexImage].description}
+          src={liste[indexImage].src[sousIndexImageDesktop]}
+          alt={liste[indexImage].alt}
         />
       </div>
       <div className="carrousel__barre-boutons">
-        {liste[indexImage].source.length > 1 && (
+        {liste[indexImage].src.length > 1 && (
           <ul className="carrousel__liste-vues">
-            {liste[indexImage].source.map((el, index) => (
+            {liste[indexImage].src.map((el, index) => (
               <li
                 onClick={() => etablitSousIndexImageDesktop(index)}
                 className={`bouton bouton--vue-desktop ${definitClasseSelonSousIndex(
@@ -89,7 +86,7 @@ export default function Carrousel({
             ))}
           </ul>
         )}
-        {mobile && (
+        {mobileCote && (
           <button
             className={`bouton--affichage-mobile ${classeMobileVisible}`}
             onClick={() => etablitMobileVisible(!mobileVisible)}

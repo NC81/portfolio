@@ -14,8 +14,8 @@ type MobileProps = {
       mp4: string
     }[]
   }
-  donneesDesktop: { description: string; source: string[] }[]
-  mobile: { placement: "gauche" | "droite" | "super-droite" }
+  donneesDesktop: { alt: string; src: string[] }[]
+  mobileCote: "gauche" | "droite" | "super-droite"
 }
 
 export default function Mobile({
@@ -24,7 +24,7 @@ export default function Mobile({
   indexImage,
   sousIndexImageMobile,
   etablitSousIndexImageMobile,
-  mobile,
+  mobileCote,
 }: MobileProps) {
   const videoref = useRef<HTMLVideoElement>(null)
   const [sourceVideo, etablitSourceVideo] = useState<{
@@ -70,7 +70,7 @@ export default function Mobile({
   }
 
   function convertitDescriptionDesktopEnMobile() {
-    const descriptionImageDesktop = donneesDesktop[indexImage].description
+    const descriptionImageDesktop = donneesDesktop[indexImage].alt
     const descriptionImageAvecMinuscule =
       descriptionImageDesktop[0].toLowerCase() +
       descriptionImageDesktop.slice(1)
@@ -79,7 +79,7 @@ export default function Mobile({
   }
 
   return (
-    <div className={`mobile mobile--${mobile.placement}`}>
+    <div className={`mobile mobile--${mobileCote}`}>
       <img className="mobile__boitier" src={android} alt="Un mobile android" />
       <div className="mobile__liste-medias">
         {donneesMobile.image.length > 0 && donneesMobile.video.length > 0 && (
@@ -128,7 +128,6 @@ export default function Mobile({
             ))}
           </ul>
         )}
-
       <div className="mobile__ecran barre-defilement">
         {typeDeMedia === "video" && (
           <video ref={videoref} className="mobile__video" controls autoPlay>

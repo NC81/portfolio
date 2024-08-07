@@ -66,7 +66,6 @@ export default forwardRef<HTMLElement, ClicDefilementType>(function Header(
             />
             <span>AVENTURES</span>
           </div>
-
           <div
             onClick={() => gereClicDefilement("réalisations")}
             onMouseEnter={() => etablitVerrouillageCibleGrande(true)}

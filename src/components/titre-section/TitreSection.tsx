@@ -11,11 +11,8 @@ export default function TitreSection({
   couleur,
   header,
 }: TitreSectionProps) {
-  const styleTexteHeader = couleur
-    ? {
-        color: `${couleur}`,
-      }
-    : { color: "white" }
+  console.log(couleur)
+  const styleTexteHeader = { color: `${couleur}` }
   const styleLigneHeader = couleur
     ? { background: `linear-gradient(90deg, ${couleur}, transparent)` }
     : { background: `linear-gradient(90deg, white, transparent)` }

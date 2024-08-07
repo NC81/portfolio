@@ -45,12 +45,12 @@ import sportSee from "../assets//images/sportsee.png"
 import hrnet1 from "../assets//images/hrnet-1.png"
 import hrnet2 from "../assets//images/hrnet-2.png"
 
-export type DonneesPhilosophie = {
-  type: "philosophie"
+export type DonneesPersonnelles = {
+  type: "personnel"
   titre: string
   texte: string[]
   lien?: { texte: string; url: string }[]
-  image: { description: string; source: string }[]
+  image: { alt: string; src: string }
   couleur: { texte: string; fond1: string; fond2: string }
 }
 
@@ -59,7 +59,7 @@ export type DonneesProjet = {
   titre: string
   texte: string[]
   lien: { texte: string; url: string }[]
-  image: { description: string; source: string[] }[]
+  image: { alt: string; src: string[] }[]
   couleur: { texte: string; fond1: string; fond2: string }
   mobile?: {
     image: string[][]
@@ -72,12 +72,12 @@ export type DonneesAventure = {
   titre: string
   texte: string[][]
   lien?: { texte: string; url: string }[]
-  image: { description: string; source: string }[][]
+  image: { alt: string; src: string }[][]
   couleur: { texte: string; fond1: string; fond2: string }
 }
 
-export const biographie: DonneesPhilosophie = {
-  type: "philosophie",
+export const donneesBiographie: DonneesPersonnelles = {
+  type: "personnel",
   titre: "Qui suis-je ?",
   texte: [
     "Après un long parcours qui m’a mené dans le travail de la terre, j’ai décidé à 40 ans de reprendre le fil de ma vie en m’engageant dans le développement informatique pour lequel j’ai toujours nourri de grands rêves.",
@@ -89,31 +89,45 @@ export const biographie: DonneesPhilosophie = {
       url: "https://drive.google.com/file/d/195qGy9iQF--YwkrVw1jtEIGIaBUqJjij/view?usp=sharing",
     },
   ],
-  image: [
+  image: 
     {
-      description:
+      alt:
         "Un jardinier avec un panier à la main rempli de plantes contemple un vaisseau spatial volant devant une immense planète avec des anneaux en arrière-plan.",
-      source: reveur,
+      src: reveur,
     },
-  ],
+
   couleur: { texte: "#ffe6ea", fond1: "#5c3539", fond2: "#5c3539" },
 }
 
-export const philosophie: DonneesPhilosophie = {
-  type: "philosophie",
+export const donneesPhilosophie: DonneesPersonnelles = {
+  type: "personnel",
   titre: "Ma Philosophie",
   texte: [
     "Il n'y a pas de gloire à atteindre un objectif sans y consacrer d'efforts.",
     "Cela tombe bien : le bonheur réside dans l’effort et non seulement dans la réalisation.",
   ],
-  image: [
+  image: 
     {
-      description:
+      alt:
         "Un mécanicien répare les pièces d'un vaisseau spatial placé derrière lui.",
-      source: travail,
+      src: travail,
     },
-  ],
   couleur: { texte: "#ffffff", fond1: "#bb7c4e", fond2: "#919ba5" },
+}
+
+export const donneesConclusion: DonneesPersonnelles = {
+  type: "personnel",
+  titre: "Mon État d'esprit",
+  texte: [
+    "Travailler sous contraintes exige d’être créatif. C’est la raison pour laquelle j’ai soif d’aventures professionnelles.",
+  ],
+  image: 
+    {
+      alt:
+        "Un homme équipé d'un sac à dos contemple un paysage extra-terrestre de couleur verte composé d'étranges montagnes abruptes à l'horizon et de 3 planètes dans le ciel",
+      src: futur,
+    },
+  couleur: { texte: "#ffeaed", fond1: "#2b7357", fond2: "#243435" },
 }
 
 export const donneesAventure: DonneesAventure = {
@@ -134,69 +148,53 @@ export const donneesAventure: DonneesAventure = {
   image: [
     [
       {
-        description:
+        alt:
           "Sur une planète rose, un immense temple noir s'érige au loin.",
-        source: temple,
+        src: temple,
       },
       {
-        description:
+        alt:
           "Dans un temple obscure, une statue aux yeux émettant une couleur violette garde l'entrée d'une salle.",
-        source: gardien,
+        src: gardien,
       },
       {
-        description:
+        alt:
           "Une relique lumineuse de forme ronde émet une couleur violette.",
-        source: relique,
+        src: relique,
       },
       {
-        description:
+        alt:
           "Un homme barbu à proximité d'écrans d'ordinateur émet une puissante lumière rose par ses yeux.",
-        source: puissance,
+        src: puissance,
       },
     ],
     [
       {
-        description:
+        alt:
           "Sur une planète rose, un immense arbre blanc aux feuilles roses s'érige au loin.",
-        source: arbre,
+        src: arbre,
       },
       {
-        description:
+        alt:
           "Au pied d'un grand arbre blanc aux feuilles roses, la silhouette d'un homme assis observe la silhouette d'un grand oiseau en plein vol.",
-        source: oiseau,
+        src: oiseau,
       },
       {
-        description:
+        alt:
           "Au pied d'un grand arbre blanc aux feuilles roses, un homme nourrit un grand oiseau blanc aux ailes déployées.",
-        source: nourrir,
+        src: nourrir,
       },
       {
-        description:
+        alt:
           "À partir d'un grand arbre blanc aux feuilles roses, un homme barbu avec des ailes aux extrémités roses prend son envol.",
-        source: vol,
+        src: vol,
       },
     ],
   ],
   couleur: { texte: "#ffffff", fond1: "#5e4a7d", fond2: "#032637" },
 }
 
-export const conclusion: DonneesPhilosophie = {
-  type: "philosophie",
-  titre: "Mon État d'esprit",
-  texte: [
-    "Travailler sous contraintes exige d’être créatif. C’est la raison pour laquelle j’ai soif d’aventures professionnelles.",
-  ],
-  image: [
-    {
-      description:
-        "Un homme équipé d'un sac à dos contemple un paysage extra-terrestre de couleur verte composé d'étranges montagnes abruptes à l'horizon et de 3 planètes dans le ciel",
-      source: futur,
-    },
-  ],
-  couleur: { texte: "#ffeaed", fond1: "#2b7357", fond2: "#243435" },
-}
-
-export const donneesProjet1: DonneesProjet = {
+export const donneesProjetDebut: DonneesProjet = {
   type: 'projet',
   titre: "Transformation d'une maquette en site web avec HTML/CSS",
   texte: [
@@ -211,9 +209,9 @@ export const donneesProjet1: DonneesProjet = {
   ],
   image: [
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de location de logement appelée Reservia.",
-      source: [reservia],
+      src: [reservia],
     },
   ],
   mobile: {
@@ -223,7 +221,7 @@ export const donneesProjet1: DonneesProjet = {
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#919ba5" },
 }
 
-export const donneesProjet2: DonneesProjet = {
+export const donneesProjetSass: DonneesProjet = {
   type: 'projet',
   titre: "Dynamisation de pages d’un restaurant avec des animations CSS",
   texte: [
@@ -238,15 +236,15 @@ export const donneesProjet2: DonneesProjet = {
   ],
   image: [
     {
-      description:
+      alt:
         "Une capture d'écran du restaurant Oh My Food montrant la page d'accueil.",
-      source: [ohMyFoodDesktop1],
+      src: [ohMyFoodDesktop1],
     },
 
     {
-      description:
+      alt:
         "Une capture d'écran du restaurant Oh My Food montrant la page d'un restaurant avec différents menus.",
-      source: [ohMyFoodDesktop2],
+      src: [ohMyFoodDesktop2],
     },
   ],
   mobile: {
@@ -259,7 +257,7 @@ export const donneesProjet2: DonneesProjet = {
   couleur: { texte: "#ffffff", fond1: "#919ba5", fond2: "#5e4a7d" },
 }
 
-export const donneesProjet3: DonneesProjet = {
+export const donneesProjetBesoins: DonneesProjet = {
   type: 'projet',
   titre: "Définition des besoins pour une App de soutien scolaire",
   texte: [
@@ -274,29 +272,29 @@ export const donneesProjet3: DonneesProjet = {
   ],
   image: [
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de soutien scolaire montrant la page d'accueil.",
-      source: [maquetteDesktop11, maquetteDesktop12],
+      src: [maquetteDesktop11, maquetteDesktop12],
     },
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de soutien scolaire montrant le tableau de bord.",
-      source: [maquetteDesktop21, maquetteDesktop22, maquetteDesktop23],
+      src: [maquetteDesktop21, maquetteDesktop22, maquetteDesktop23],
     },
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de soutien scolaire montrant le chat.",
-      source: [maquetteDesktop31, maquetteDesktop32, maquetteDesktop33],
+      src: [maquetteDesktop31, maquetteDesktop32, maquetteDesktop33],
     },
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de soutien scolaire montrant la gestion de tâches.",
-      source: [maquetteDesktop41, maquetteDesktop42],
+      src: [maquetteDesktop41, maquetteDesktop42],
     },
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de soutien scolaire montrant le calendrier",
-      source: [maquetteDesktop51, maquetteDesktop52],
+      src: [maquetteDesktop51, maquetteDesktop52],
     },
   ],
   mobile: {
@@ -312,7 +310,7 @@ export const donneesProjet3: DonneesProjet = {
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#032637" },
 }
 
-export const donneesProjet4: DonneesProjet = {
+export const donneesProjetRecharts: DonneesProjet = {
   type: 'projet',
   titre: "Tableau de bord d'analytics avec Recharts",
   texte: [
@@ -327,15 +325,15 @@ export const donneesProjet4: DonneesProjet = {
   ],
   image: [
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de suivi de performances sportives appelée SportSee montrant divers types de graphiques.",
-      source: [sportSee],
+      src: [sportSee],
     },
   ],
   couleur: { texte: "#ffffff", fond1: "#032637", fond2: "#2b7357" },
 }
 
-export const donneesProjet5: DonneesProjet = {
+export const donneesProjetMigration: DonneesProjet = {
   type: 'projet',
   titre: "Migration d’une librairie jQuery vers React",
   texte: [
@@ -356,14 +354,14 @@ export const donneesProjet5: DonneesProjet = {
   ],
   image: [
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de gestion d'employés appelée HRnet montrant un formulaire d'inscription.",
-      source: [hrnet1],
+      src: [hrnet1],
     },
     {
-      description:
+      alt:
         "Une capture d'écran d'une application de gestion d'employés appelée HRnet montrant une liste d'employés.",
-      source: [hrnet2],
+      src: [hrnet2],
     },
   ],
   couleur: { texte: "#ffffff", fond1: "#2b7357", fond2: "#2b7357" },

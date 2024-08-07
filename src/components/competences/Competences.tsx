@@ -139,7 +139,6 @@ export default forwardRef<HTMLElement, CompetencesType>(function Competences(
                 ></YAxis>
                 <Bar
                   dataKey="score"
-                  // position="center"
                   fill="#919ba5"
                   background={{ fill: "#5c3539" }}
                   isAnimationActive={false}

@@ -6,8 +6,8 @@ import pressePapierPlein2 from "../../assets/icons/iconmonstr-paste-clipboard-fi
 import { motion } from "framer-motion"
 
 export default function Footer() {
-  const [survol, etablitSurvol] = useState(false)
-  const [confirmation, afficheConfirmation] = useState(false)
+  const [survol, etablitSurvol] = useState<boolean>(false)
+  const [confirmation, afficheConfirmation] = useState<boolean>(false)
 
   function gereClic() {
     navigator.clipboard.writeText("nicolas.candeli@outlook.fr")
@@ -51,7 +51,6 @@ export default function Footer() {
             alt=""
           />
         </div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

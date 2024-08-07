@@ -70,7 +70,7 @@ export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
                     etablitEtape(2)
                   }}
                   className="aventure-etape--1__visuel"
-                  src={donnees.image[0][0].source}
+                  src={donnees.image[0][0].src}
                   alt=""
                 />
                 <h3>Le Temple</h3>
@@ -102,7 +102,7 @@ export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
                     etablitEtape(2)
                   }}
                   className="aventure-etape--1__visuel"
-                  src={donnees.image[1][0].source}
+                  src={donnees.image[1][0].src}
                   alt=""
                 />
                 <h3>L'Arbre sacré</h3>
@@ -132,7 +132,7 @@ export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
                 <img
                   className={`aventure-etape--2__visuel ${deuxiemeAventure}`}
                   onClick={() => etablitEtape(3)}
-                  src={donnees.image[indexListeImages][1].source}
+                  src={donnees.image[indexListeImages][1].src}
                   alt=""
                 />
               </div>
@@ -153,7 +153,7 @@ export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
               <img
                 className={deuxiemeAventure}
                 style={styleDeBordureDimage}
-                src={donnees.image[indexListeImages][2].source}
+                src={donnees.image[indexListeImages][2].src}
                 alt=""
               />
             </div>
@@ -163,7 +163,7 @@ export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
               <img
                 className={deuxiemeAventure}
                 style={styleDeBordureDimage}
-                src={donnees.image[indexListeImages][3].source}
+                src={donnees.image[indexListeImages][3].src}
                 alt=""
               />
               <p>... {donnees.texte[indexListeImages][2]}</p>

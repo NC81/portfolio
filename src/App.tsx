@@ -1,20 +1,21 @@
 import { useState, useEffect, useRef } from "react"
 import BoutonDefilementHaut from "./components/bouton-defilement-haut/BoutonDefilementHaut"
 import Header from "./components/header/Header"
-import Presentation from "./components/presentation/Presentation"
+import Projet from "./components/projet/Projet"
 import Competences from "./components/competences/Competences"
 import Footer from "./components/footer/Footer"
 import Aventure from "./components/aventure/Aventure"
+import Personnel from "./components/personnel/Personnel"
 import { donneesCompetences } from "./data/competences"
 import {
-  biographie,
-  philosophie,
-  conclusion,
-  donneesProjet1,
-  donneesProjet2,
-  donneesProjet3,
-  donneesProjet4,
-  donneesProjet5,
+  donneesBiographie,
+  donneesPhilosophie,
+  donneesConclusion,
+  donneesProjetDebut,
+  donneesProjetSass,
+  donneesProjetBesoins,
+  donneesProjetRecharts,
+  donneesProjetMigration,
   donneesAventure,
 } from "./data/projets"
 
@@ -69,27 +70,24 @@ export default function App() {
       )}
       <Header ref={refHeader} gereClicDefilement={gereClicDefilement} />
       <main>
-        <Presentation histoire={true} donnees={biographie} />
+        <Personnel donnees={donneesBiographie} />
         <Competences ref={refCompetences} donnees={donneesCompetences} />
-        <Presentation histoire={true} donnees={philosophie} inverse={true} />
-        <Presentation
+        <Personnel donnees={donneesPhilosophie} inverse={true} />
+        <Projet
           ref={refRealisations}
-          donnees={donneesProjet1}
-          mobile={{ placement: "super-droite" }}
+          donnees={donneesProjetDebut}
+          mobileCote={"super-droite"}
         />
-        <Presentation
-          donnees={donneesProjet2}
+        <Projet
+          donnees={donneesProjetSass}
           inverse={true}
-          mobile={{ placement: "gauche" }}
+          mobileCote={"gauche"}
         />
         <Aventure ref={refAventures} donnees={donneesAventure} />
-        <Presentation
-          donnees={donneesProjet3}
-          mobile={{ placement: "droite" }}
-        />
-        <Presentation donnees={donneesProjet4} inverse={true} />
-        <Presentation donnees={donneesProjet5} />
-        <Presentation histoire={true} donnees={conclusion} />
+        <Projet donnees={donneesProjetBesoins} mobileCote={"droite"} />
+        <Projet donnees={donneesProjetRecharts} inverse={true} />
+        <Projet donnees={donneesProjetMigration} />
+        <Personnel donnees={donneesConclusion} />
       </main>
       <Footer />
     </>
