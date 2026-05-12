@@ -36,17 +36,17 @@ export const donneesCompetences: DonneesCompetences = {
     },
     {
       name: "JAVASCRIPT",
-      score: 3,
+      score: 4,
       left: 2,
     },
     {
       name: "TYPESCRIPT",
-      score: 2,
+      score: 3,
       left: 3,
     },
     {
       name: "REACT / REACT ROUTER",
-      score: 3,
+      score: 4,
       left: 2,
     },
     {
@@ -56,7 +56,7 @@ export const donneesCompetences: DonneesCompetences = {
     },
     {
       name: "REDUX / REDUX TOOLKIT",
-      score: 3,
+      score: 4,
       left: 2,
     },
     {
