@@ -1,4 +1,4 @@
-import { useState, forwardRef } from "react"
+import { useState, type Ref } from "react"
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
 import TitreSection from "../titre-section/TitreSection"
 import { motion } from "framer-motion"
@@ -10,10 +10,11 @@ import {
 // Type des données de compétences
 type CompetencesType = {
   donnees: DonneesCompetences
+  ref?: Ref<HTMLElement>
 }
 
 // Type pour les différents types de compétences
-type TypeDeCompetence = "Front-End" | "Back-End" | "Outils"
+type TypeDeCompetence = "Front-End" | "Outils" | "Back-End"
 
 // Type des objets dans typesDeCompetences
 type CompetenceFinale = {
@@ -22,10 +23,7 @@ type CompetenceFinale = {
 }
 
 // Composant Compétences
-export default forwardRef<HTMLElement, CompetencesType>(function Competences(
-  { donnees },
-  ref
-) {
+export default function Competences({ donnees, ref }: CompetencesType) {
   // Liste regroupant les 3 types de compétences sélectionnables
   const typesDeCompetences: CompetenceFinale[] = [
     {
@@ -33,18 +31,18 @@ export default forwardRef<HTMLElement, CompetencesType>(function Competences(
       donnees: donnees.frontend,
     },
     {
-      nom: "Back-End",
-      donnees: donnees.backend,
-    },
-    {
       nom: "Outils",
       donnees: donnees.outils,
+    },
+    {
+      nom: "Back-End",
+      donnees: donnees.backend,
     },
   ]
 
   // Type de compétences sélectionné affichant le graphique
   const [typeActuel, changeTypeActuel] = useState<CompetenceFinale>(
-    typesDeCompetences[0]
+    typesDeCompetences[0],
   )
 
   // Fonction de sélection au clic du type de compétences
@@ -150,4 +148,4 @@ export default forwardRef<HTMLElement, CompetencesType>(function Competences(
       </div>
     </section>
   )
-})
+}

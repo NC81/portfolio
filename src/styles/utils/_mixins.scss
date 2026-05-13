@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @mixin cache-image($hauteur, $zIndex) {
   content: "";
   position: absolute;

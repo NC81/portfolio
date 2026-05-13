@@ -1,4 +1,4 @@
-import { useState, forwardRef } from "react"
+import { useState, type Ref } from "react"
 import cerveau from "../../assets/images/cerveau.jpg"
 import vaisseau from "../../assets/images/vaisseau.jpg"
 import hero from "../../assets/images/hero.jpg"
@@ -8,12 +8,10 @@ import { type GereClicDefilementArg } from "../../App"
 
 type ClicDefilementType = {
   gereClicDefilement: (type: GereClicDefilementArg) => void
+  ref?: Ref<HTMLElement>
 }
 
-export default forwardRef<HTMLElement, ClicDefilementType>(function Header(
-  { gereClicDefilement },
-  ref,
-) {
+export default function Header({ gereClicDefilement, ref }: ClicDefilementType) {
   const [verrouillageCiblePetite, etablitVerrouillageCiblePetite] =
     useState(false)
   const [verrouillageCibleMoyenne, etablitVerrouillageCibleMoyenne] =
@@ -86,4 +84,4 @@ export default forwardRef<HTMLElement, ClicDefilementType>(function Header(
       </div>
     </header>
   )
-})
+}

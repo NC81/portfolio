@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import { type Ref } from "react"
 import TitreSection from "../titre-section/TitreSection"
 import Lien from "../lien/Lien"
 import { motion } from "framer-motion"
@@ -7,12 +7,10 @@ import { type DonneesPersonnelles } from "../../data/projets"
 type PersonnelProps = {
   donnees: DonneesPersonnelles
   inverse?: boolean
+  ref?: Ref<HTMLElement>
 }
 
-export default forwardRef<HTMLElement, PersonnelProps>(function Personnel(
-  { donnees, inverse },
-  ref
-) {
+export default function Personnel({ donnees, inverse, ref }: PersonnelProps) {
   const styleTexte = {
     color: `${donnees.couleur.texte}`,
   }
@@ -69,4 +67,4 @@ export default forwardRef<HTMLElement, PersonnelProps>(function Personnel(
       </div>
     </section>
   )
-})
+}

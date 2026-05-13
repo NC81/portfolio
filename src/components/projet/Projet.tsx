@@ -1,4 +1,4 @@
-import { useState, forwardRef } from "react"
+import { useState, type Ref } from "react"
 import TitreSection from "../titre-section/TitreSection"
 import Lien from "../lien/Lien"
 import Carrousel from "../carrousel/Carrousel"
@@ -10,12 +10,15 @@ type ProjetProps = {
   donnees: DonneesProjet
   inverse?: true
   mobileCote?: "gauche" | "droite" | "super-droite"
+  ref?: Ref<HTMLElement>
 }
 
-export default forwardRef<HTMLElement, ProjetProps>(function Projet(
-  { donnees, inverse, mobileCote },
-  ref
-) {
+export default function Projet({
+  donnees,
+  inverse,
+  mobileCote,
+  ref,
+}: ProjetProps) {
   const [indexImage, etablitindexImage] = useState<number>(0)
   const [sousIndexImageMobile, etablitSousIndexImageMobile] =
     useState<number>(0)
@@ -127,4 +130,4 @@ export default forwardRef<HTMLElement, ProjetProps>(function Projet(
       </div>
     </section>
   )
-})
+}

@@ -1,4 +1,4 @@
-import { useState, forwardRef } from "react"
+import { useState, type Ref } from "react"
 import { motion } from "framer-motion"
 import TitreSection from "../titre-section/TitreSection"
 import chevron from "../../assets/icons/icons8-chevron-bas-64.png"
@@ -7,12 +7,10 @@ import { type DonneesAventure } from "../../data/projets"
 
 type AventuresProps = {
   donnees: DonneesAventure
+  ref?: Ref<HTMLElement>
 }
 
-export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
-  { donnees },
-  ref
-) {
+export default function Aventures({ donnees, ref }: AventuresProps) {
   const [indexListeImages, etablitIndexListeImages] = useState(0)
   const [etape, etablitEtape] = useState(1)
 
@@ -173,4 +171,4 @@ export default forwardRef<HTMLElement, AventuresProps>(function Aventures(
       </div>
     </section>
   )
-})
+}
