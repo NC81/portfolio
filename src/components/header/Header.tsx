@@ -12,7 +12,7 @@ type ClicDefilementType = {
 
 export default forwardRef<HTMLElement, ClicDefilementType>(function Header(
   { gereClicDefilement },
-  ref
+  ref,
 ) {
   const [verrouillageCiblePetite, etablitVerrouillageCiblePetite] =
     useState(false)
@@ -25,7 +25,7 @@ export default forwardRef<HTMLElement, ClicDefilementType>(function Header(
     <header ref={ref} className="header">
       <div className="section-contenu">
         <h1>
-          2024
+          2026
           <br />
           Portfolio
         </h1>
