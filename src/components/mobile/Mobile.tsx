@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react"
+import clsx from "clsx"
 import android from "../../assets/images/android.png"
 import iconeVideo from "../../assets/icons/icons8-film-30.png"
 import iconeImage from "../../assets/icons/icons8-photo-24.png"
@@ -47,28 +48,6 @@ export default function Mobile({
     }
   }
 
-  const imageSelection = typeDeMedia === "image" ? "selection" : ""
-  const videoSelection = typeDeMedia === "video" ? "selection" : ""
-
-  function definitClasseSelonSousIndex(index: number): string {
-    if (index === sousIndexImageMobile) {
-      return "selection"
-    } else {
-      return ""
-    }
-  }
-
-  function definitClasseSelonSourceVideo(source: {
-    webm: string
-    mp4: string
-  }): string {
-    if (source === sourceVideo) {
-      return "selection"
-    } else {
-      return ""
-    }
-  }
-
   function convertitDescriptionDesktopEnMobile() {
     const descriptionImageDesktop = donneesDesktop[indexImage].alt
     const descriptionImageAvecMinuscule =
@@ -86,13 +65,13 @@ export default function Mobile({
           <>
             <button
               onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
-              className={`bouton bouton--media ${imageSelection}`}
+              className={clsx("bouton bouton--media", typeDeMedia === "image" && "selection")}
             >
               <img src={iconeImage} alt="Captures d'écran" />
             </button>
             <button
               onClick={() => etablitTypeDeMedia(gereClicTypeDeMedia())}
-              className={`bouton bouton--media ${videoSelection}`}
+              className={clsx("bouton bouton--media", typeDeMedia === "video" && "selection")}
             >
               <img src={iconeVideo} alt="Vidéos" />
             </button>
@@ -106,9 +85,7 @@ export default function Mobile({
             {donneesMobile.video.map((el, index) => (
               <li
                 onClick={() => etablitSourceVideo(el)}
-                className={`bouton bouton--vue-mobile ${definitClasseSelonSourceVideo(
-                  el
-                )}`}
+                className={clsx("bouton bouton--vue-mobile", el === sourceVideo && "selection")}
                 key={`${index}`}
               ></li>
             ))}
@@ -120,9 +97,7 @@ export default function Mobile({
             {donneesMobile.image[indexImage].map((el, index) => (
               <li
                 onClick={() => etablitSousIndexImageMobile(index)}
-                className={`bouton bouton--vue-mobile ${definitClasseSelonSousIndex(
-                  index
-                )}`}
+                className={clsx("bouton bouton--vue-mobile", index === sousIndexImageMobile && "selection")}
                 key={`${index}`}
               ></li>
             ))}

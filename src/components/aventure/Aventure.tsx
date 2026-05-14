@@ -1,5 +1,6 @@
 import { useState, type Ref } from "react"
 import { motion } from "framer-motion"
+import clsx from "clsx"
 import TitreSection from "../titre-section/TitreSection"
 import chevron from "../../assets/icons/icons8-chevron-bas-64.png"
 import recharger from "../../assets/icons/icons8-recharger-50.png"
@@ -24,8 +25,6 @@ export default function Aventures({ donnees, ref }: AventuresProps) {
         border: `1px solid ${donnees.couleur.texte}`,
       }
     : undefined
-  const deuxiemeAventure = indexListeImages === 1 ? "deuxieme-aventure" : ""
-
   return (
     <section ref={ref} style={styleDuConteneurDePage}>
       <div className="section-contenu">
@@ -41,7 +40,7 @@ export default function Aventures({ donnees, ref }: AventuresProps) {
         )}
         <TitreSection titre={donnees.titre} />
         {etape === 1 && (
-          <div className={`aventure-etape aventure-etape--1`}>
+          <div className="aventure-etape aventure-etape--1">
             <motion.div
               initial={{ opacity: 0, translateX: -10 }}
               whileInView={{ opacity: 1, translateX: 0 }}
@@ -110,7 +109,7 @@ export default function Aventures({ donnees, ref }: AventuresProps) {
         )}
         {etape === 2 && (
           <div
-            className={`aventure-etape aventure-etape--2 ${deuxiemeAventure}`}
+            className={clsx("aventure-etape aventure-etape--2", indexListeImages === 1 && "deuxieme-aventure")}
           >
             <div className="aventure-etape__colonne aventure-etape--2__relative">
               <img
@@ -128,7 +127,7 @@ export default function Aventures({ donnees, ref }: AventuresProps) {
                 style={styleDeBordureDimage}
               >
                 <img
-                  className={`aventure-etape--2__visuel ${deuxiemeAventure}`}
+                  className={clsx("aventure-etape--2__visuel", indexListeImages === 1 && "deuxieme-aventure")}
                   onClick={() => etablitEtape(3)}
                   src={donnees.image[indexListeImages][1].src}
                   alt=""
@@ -143,23 +142,23 @@ export default function Aventures({ donnees, ref }: AventuresProps) {
           </div>
         )}
         {etape === 3 && (
-          <div className={`aventure-etape aventure-etape--3`}>
+          <div className="aventure-etape aventure-etape--3">
             <div
-              className={`aventure-etape__colonne aventure-etape--3--gauche ${deuxiemeAventure}`}
+              className={clsx("aventure-etape__colonne aventure-etape--3--gauche", indexListeImages === 1 && "deuxieme-aventure")}
             >
               <p>{donnees.texte[indexListeImages][1]} ...</p>
               <img
-                className={deuxiemeAventure}
+                className={clsx(indexListeImages === 1 && "deuxieme-aventure")}
                 style={styleDeBordureDimage}
                 src={donnees.image[indexListeImages][2].src}
                 alt=""
               />
             </div>
             <div
-              className={`aventure-etape__colonne aventure-etape--3--droite ${deuxiemeAventure}`}
+              className={clsx("aventure-etape__colonne aventure-etape--3--droite", indexListeImages === 1 && "deuxieme-aventure")}
             >
               <img
-                className={deuxiemeAventure}
+                className={clsx(indexListeImages === 1 && "deuxieme-aventure")}
                 style={styleDeBordureDimage}
                 src={donnees.image[indexListeImages][3].src}
                 alt=""

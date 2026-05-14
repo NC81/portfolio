@@ -1,4 +1,5 @@
 import { useState, type Ref } from "react"
+import clsx from "clsx"
 import TitreSection from "../titre-section/TitreSection"
 import Lien from "../lien/Lien"
 import Carrousel from "../carrousel/Carrousel"
@@ -42,8 +43,6 @@ export default function Projet({
     return longueurTexte
   }
 
-  const petit =
-    mobileCote === "super-droite" ? "section-projet__liste-textes--petit" : ""
   const styleTexte = {
     color: `${donnees.couleur.texte}`,
   }
@@ -54,16 +53,6 @@ export default function Projet({
   const styleFlex: React.CSSProperties = inverse
     ? { flexDirection: "row-reverse" }
     : { flexDirection: "row" }
-  const classeLectureGrandTexte =
-    donnees.lien && calculeTailleTexte() > 500
-      ? "section-projet__paragr--grand-texte"
-      : ""
-  const classeListeTextesMobile = mobileCote
-    ? "section-projet__liste-textes--mobile"
-    : ""
-  const classeMobileInvisible = mobileVisible
-    ? ""
-    : "section-projet__liste-textes--mobile-invisible"
 
   return (
     <section className="section-projet" style={styleConteneurDePage} ref={ref}>
@@ -74,7 +63,7 @@ export default function Projet({
             initial={{ opacity: 0, translateY: -10 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`section-projet__visuel`}
+            className="section-projet__visuel"
           >
             <>
               <Carrousel
@@ -109,12 +98,24 @@ export default function Projet({
             initial={{ opacity: 0, translateY: 10 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`section-projet__liste-textes ${classeListeTextesMobile} ${petit} ${classeMobileInvisible}`}
+            className={clsx(
+              "section-projet__liste-textes",
+              mobileCote && "section-projet__liste-textes--mobile",
+              mobileCote === "super-droite" &&
+                "section-projet__liste-textes--petit",
+              !mobileVisible &&
+                "section-projet__liste-textes--mobile-invisible",
+            )}
             style={styleTexte}
           >
             {donnees.texte.map((el, index) => (
               <p
-                className={`section-projet__paragr section-projet__paragr--projet ${classeLectureGrandTexte}`}
+                className={clsx(
+                  "section-projet__paragr section-projet__paragr--projet",
+                  donnees.lien &&
+                    calculeTailleTexte() > 500 &&
+                    "section-projet__paragr--grand-texte",
+                )}
                 style={styleTexte}
                 key={`${index}`}
               >

@@ -1,3 +1,5 @@
+import clsx from "clsx"
+
 type CiblageProps = {
   verrouillage: boolean
   couleur: string
@@ -12,26 +14,23 @@ export default function Ciblage({
   const style = {
     borderColor: `${couleur}`,
   }
-  const classeVerrouillage = verrouillage ? "verrouillage" : ""
-  const classePetit = petit ? "petit" : ""
-
   return (
     <>
       <div
         style={style}
-        className={`angle angle--haut-gauche ${classeVerrouillage} ${classePetit}`}
+        className={clsx("angle angle--haut-gauche", verrouillage && "verrouillage", petit && "petit")}
       ></div>
       <div
         style={style}
-        className={`angle angle--haut-droite ${classeVerrouillage} ${classePetit}`}
+        className={clsx("angle angle--haut-droite", verrouillage && "verrouillage", petit && "petit")}
       ></div>
       <div
         style={style}
-        className={`angle angle--bas-gauche ${classeVerrouillage} ${classePetit}`}
+        className={clsx("angle angle--bas-gauche", verrouillage && "verrouillage", petit && "petit")}
       ></div>
       <div
         style={style}
-        className={`angle angle--bas-droite ${classeVerrouillage} ${classePetit}`}
+        className={clsx("angle angle--bas-droite", verrouillage && "verrouillage", petit && "petit")}
       ></div>
     </>
   )

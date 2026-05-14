@@ -1,4 +1,5 @@
 import { useState } from "react"
+import clsx from "clsx"
 import iconeMobile from "../../assets/icons/icons8-smartphone-24.png"
 
 type CarrouselProps = {
@@ -29,23 +30,6 @@ export default function Carrousel({
     etablitindexImage(index)
   }
 
-  function definitClasseSelonIndex(index: number): string {
-    if (index === indexImage) {
-      return "selection"
-    } else {
-      return ""
-    }
-  }
-
-  function definitClasseSelonSousIndex(index: number): string {
-    if (index === sousIndexImageDesktop) {
-      return "selection"
-    } else {
-      return ""
-    }
-  }
-
-  const classeMobileVisible = mobileVisible ? "mobile-visible" : ""
   const texteAlternatifIconeMobile = mobileVisible
     ? "Cache mobile"
     : "Affiche mobile"
@@ -65,9 +49,7 @@ export default function Carrousel({
             {liste[indexImage].src.map((el, index) => (
               <li
                 onClick={() => etablitSousIndexImageDesktop(index)}
-                className={`bouton bouton--vue-desktop ${definitClasseSelonSousIndex(
-                  index
-                )}`}
+                className={clsx("bouton bouton--vue-desktop", index === sousIndexImageDesktop && "selection")}
                 key={`${index}`}
               ></li>
             ))}
@@ -78,9 +60,7 @@ export default function Carrousel({
             {liste.map((el, index) => (
               <li
                 onClick={() => gereChangementDePage(index)}
-                className={`bouton bouton--page ${definitClasseSelonIndex(
-                  index
-                )}`}
+                className={clsx("bouton bouton--page", index === indexImage && "selection")}
                 key={`${index}`}
               ></li>
             ))}
@@ -88,7 +68,7 @@ export default function Carrousel({
         )}
         {mobileCote && (
           <button
-            className={`bouton--affichage-mobile ${classeMobileVisible}`}
+            className={clsx("bouton--affichage-mobile", mobileVisible && "mobile-visible")}
             onClick={() => etablitMobileVisible(!mobileVisible)}
           >
             <img src={iconeMobile} alt={texteAlternatifIconeMobile} />

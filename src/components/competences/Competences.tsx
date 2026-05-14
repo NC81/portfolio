@@ -1,5 +1,6 @@
 import { useState, type Ref } from "react"
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
+import clsx from "clsx"
 import TitreSection from "../titre-section/TitreSection"
 import { motion } from "framer-motion"
 import {
@@ -103,9 +104,7 @@ export default function Competences({ donnees, ref }: CompetencesType) {
             <ul className="liste-types">
               {typesDeCompetences.map(({ nom }, index) => (
                 <li
-                  className={`type ${
-                    nom === typeActuel.nom ? "selection" : ""
-                  }`}
+                  className={clsx("type", nom === typeActuel.nom && "selection")}
                   onClick={() => selectionneTypeActuel(nom)}
                   key={`type-${index}`}
                 >
